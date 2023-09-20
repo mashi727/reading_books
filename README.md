@@ -13,9 +13,7 @@ Key Quiestionを中心に、文献から情報を収集
 
 - Fintech関連の情報集約
   - [Pythonによるファイナンス第2版](/books/fintech/Pythonによるファイナンス第2版/memo.md)
-
-
-
+    - [pdfへのリンク](https://www.dropbox.com/scl/fi/fi9emckn1dahkpzuu4sfq/Python-2.pdf?rlkey=rabm4oqkobvysz7sa0uzkrto4&dl=0)
 
 
 
