@@ -1,0 +1,191 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="TOP"/>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="addr0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="din0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="dout0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="r_req0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="r_ack0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="w_req0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="w_ack0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="addr1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="din1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="dout1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="r_req1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="r_ack1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="w_req1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="w_ack1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="addr2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="din2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="dout2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="r_req2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="r_ack2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="w_req2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="w_ack2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="addr3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="din3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="dout3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="r_req3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="r_ack3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="w_req3"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="sharedmem" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="w_ack3"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

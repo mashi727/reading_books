@@ -1,0 +1,162 @@
+
+
+================================================================
+== Vivado HLS Report for 'bno055_uart_wait_tmr'
+================================================================
+* Date:           Fri May 27 17:23:02 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        bno055_uart
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.89|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----------+-----+-----------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    | min |    max    | min |    max    |   Type  |
+    +-----+-----------+-----+-----------+---------+
+    |    3|  100000002|    3|  100000002|   none  |
+    +-----+-----------+-----+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----------+----------+-----------+-----------+---------------+----------+
+        |          |     Latency     | Iteration|  Initiation Interval  |      Trip     |          |
+        | Loop Name| min |    max    |  Latency |  achieved |   target  |     Count     | Pipelined|
+        +----------+-----+-----------+----------+-----------+-----------+---------------+----------+
+        |- Loop 1  |    1|  100000000|         1|          -|          -| 1 ~ 100000000 |    no    |
+        +----------+-----+-----------+----------+-----------+-----------+---------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 3
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	3  / (!exitcond)
+* FSM state operations: 
+
+ <State 1>: 1.28ns
+ST_1: tmr_read [1/1] 1.28ns
+:0  %tmr_read = call i28 @_ssdm_op_Read.ap_auto.i28(i28 %tmr)
+
+
+ <State 2>: 1.57ns
+ST_2: stg_5 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_2: stg_6 [1/1] 1.57ns
+:2  br label %1
+
+
+ <State 3>: 2.89ns
+ST_3: t [1/1] 0.00ns
+:0  %t = phi i27 [ 0, %0 ], [ %t_1, %2 ]
+
+ST_3: t_cast [1/1] 0.00ns
+:1  %t_cast = zext i27 %t to i28
+
+ST_3: exitcond [1/1] 2.89ns
+:2  %exitcond = icmp eq i28 %t_cast, %tmr_read
+
+ST_3: empty [1/1] 0.00ns
+:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 100000000, i64 0) nounwind
+
+ST_3: t_1 [1/1] 2.27ns
+:4  %t_1 = add i27 %t, 1
+
+ST_3: stg_12 [1/1] 0.00ns
+:5  br i1 %exitcond, label %3, label %2
+
+ST_3: dummy_tmr_out_read [1/1] 1.28ns
+:0  %dummy_tmr_out_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @dummy_tmr_out)
+
+ST_3: not_s [1/1] 1.37ns
+:1  %not_s = xor i1 %dummy_tmr_out_read, true
+
+ST_3: stg_15 [1/1] 0.00ns
+:2  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @dummy_tmr_out, i1 %not_s)
+
+ST_3: stg_16 [1/1] 0.00ns
+:3  br label %1
+
+ST_3: stg_17 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_3: stg_18 [1/1] 0.00ns
+:1  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

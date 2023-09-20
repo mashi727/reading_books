@@ -1,0 +1,11 @@
+bno055_uart_mul_mul_8ns_16ns_20_1
+bno055_uart_write_mem
+bno055_uart_wait_tmr
+bno055_uart_uart_send_byte
+bno055_uart_read_uart_rx
+bno055_uart_uart_receive_byte
+bno055_uart_uart_write_reg
+bno055_uart_uart_read_reg
+bno055_uart_bin2char
+bno055_uart_uart_read_reg16
+bno055_uart

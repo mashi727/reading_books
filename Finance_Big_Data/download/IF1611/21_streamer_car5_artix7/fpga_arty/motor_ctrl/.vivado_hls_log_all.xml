@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_rack' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:23.303+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_rreq' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:23.168+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_wack' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:23.139+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_wreq' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:23.106+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_dout' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:23.065+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_din' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:23.038+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_addr' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:23.010+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_pwm' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.978+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_dir' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.949+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'l_pwm' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.908+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'l_dir' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.879+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'dummy_tmr_out' will be exposed as RTL port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.847+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_rreq' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.806+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_wreq' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.751+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_dout' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.711+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_addr' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.636+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'r_pwm' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.530+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'r_dir' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.501+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'l_pwm' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.443+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'l_dir' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.409+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dummy_tmr_out' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:22.386+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] 'Loop-2' (motor_ctrl.c:256:3) in function 'motor_ctrl' is an infinite loop." projectName="motor_ctrl" solutionName="solution1" date="2016-05-27T23:00:18.152+0100" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

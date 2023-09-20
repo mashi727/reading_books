@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'i2c_val' will not be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.606+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_rack' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.543+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_rreq' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.493+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_wack' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.457+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_wreq' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.431+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_dout' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.388+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_din' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.337+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_addr' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.302+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'auto_inc_regad_in' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.238+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'dev_addr_in' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.210+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'i2c_sda_oe' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.113+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'i2c_sda_out' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.092+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'i2c_in' will be exposed as RTL port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.055+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_rreq' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:54.016+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_wreq' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:53.981+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_dout' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:53.910+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_addr' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:53.879+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'i2c_sda_oe' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:53.856+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'i2c_sda_out' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:53.841+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-562] Loop 'Loop-1.21.1' (i2c_slave_core.c:314) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.480+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-562] Loop 'Loop-1.21.1.2' (i2c_slave_core.c:326) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.268+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-562] Loop 'Loop-1.20' (i2c_slave_core.c:428) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.206+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-562] Loop 'Loop-1.20.1.2' (i2c_slave_core.c:439) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.186+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-562] Loop 'Loop-1.20.1.1' (i2c_slave_core.c:431) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.166+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-562] Loop 'Loop-1.13' (i2c_slave_core.c:295) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.141+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-562] Loop 'Loop-1.3' (i2c_slave_core.c:192) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.101+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-562] Loop 'Loop-1.2' (i2c_slave_core.c:185) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.101+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] 'Loop-1' (i2c_slave_core.c:178:3) in function 'i2c_slave_core' is an infinite loop." projectName="i2c_slave_core" solutionName="solution1" date="2016-05-27T18:05:51.054+0100" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

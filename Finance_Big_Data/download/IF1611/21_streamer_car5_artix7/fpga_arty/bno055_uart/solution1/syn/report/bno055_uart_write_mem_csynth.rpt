@@ -1,0 +1,131 @@
+
+
+================================================================
+== Vivado HLS Report for 'bno055_uart_write_mem'
+================================================================
+* Date:           Fri May 27 17:23:05 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        bno055_uart
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      1.28|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         1|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT  |
++-----------------+---------+-------+-------+-------+
+|DSP              |        -|      -|      -|      -|
+|Expression       |        -|      -|      -|      -|
+|FIFO             |        -|      -|      -|      -|
+|Instance         |        -|      -|      -|      -|
+|Memory           |        -|      -|      -|      -|
+|Multiplexer      |        -|      -|      -|      2|
+|Register         |        -|      -|      6|      -|
++-----------------+---------+-------+-------+-------+
+|Total            |        0|      0|      6|      2|
++-----------------+---------+-------+-------+-------+
+|Available        |      100|     90|  41600|  20800|
++-----------------+---------+-------+-------+-------+
+|Utilization (%)  |        0|      0|   ~0  |   ~0  |
++-----------------+---------+-------+-------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |   1|          7|    1|          7|
+    |mem_wreq   |   1|          3|    1|          3|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |   2|         10|    2|         10|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------+---+----+-----+-----------+
+    |    Name   | FF| LUT| Bits| Const Bits|
+    +-----------+---+----+-----+-----------+
+    |ap_CS_fsm  |  6|   0|    6|          0|
+    +-----------+---+----+-----+-----------+
+    |Total      |  6|   0|    6|          0|
+    +-----------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+-----------------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  |     Source Object     |    C Type    |
++-----------------+-----+-----+------------+-----------------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs | bno055_uart_write_mem | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs | bno055_uart_write_mem | return value |
+|ap_start         |  in |    1| ap_ctrl_hs | bno055_uart_write_mem | return value |
+|ap_done          | out |    1| ap_ctrl_hs | bno055_uart_write_mem | return value |
+|ap_idle          | out |    1| ap_ctrl_hs | bno055_uart_write_mem | return value |
+|ap_ready         | out |    1| ap_ctrl_hs | bno055_uart_write_mem | return value |
+|addr             |  in |    8|   ap_none  |          addr         |    scalar    |
+|data             |  in |    8|   ap_none  |          data         |    scalar    |
+|mem_addr         | out |    8|   ap_vld   |        mem_addr       |    pointer   |
+|mem_addr_ap_vld  | out |    1|   ap_vld   |        mem_addr       |    pointer   |
+|mem_dout         | out |    8|   ap_vld   |        mem_dout       |    pointer   |
+|mem_dout_ap_vld  | out |    1|   ap_vld   |        mem_dout       |    pointer   |
+|mem_wreq         | out |    1|   ap_vld   |        mem_wreq       |    pointer   |
+|mem_wreq_ap_vld  | out |    1|   ap_vld   |        mem_wreq       |    pointer   |
+|mem_wack         |  in |    1|   ap_none  |        mem_wack       |    pointer   |
++-----------------+-----+-----+------------+-----------------------+--------------+
+

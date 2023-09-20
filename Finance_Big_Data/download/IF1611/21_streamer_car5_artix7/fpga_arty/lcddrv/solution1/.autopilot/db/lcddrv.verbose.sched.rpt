@@ -1,0 +1,441 @@
+
+
+================================================================
+== Vivado HLS Report for 'lcddrv'
+================================================================
+* Date:           Fri May 27 17:26:42 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        lcddrv
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.86|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         ?|          -|          -|  inf |    no    |
+        | + Loop 1.1  |    ?|    ?|         ?|          -|          -|    16|    no    |
+        | + Loop 1.2  |    ?|    ?|         ?|          -|          -|    16|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 0
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 22
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / (!exitcond1)
+	14  / (exitcond1)
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	9  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / (!exitcond)
+	22  / (exitcond)
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	17  / true
+22 --> 
+	5  / true
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: dummy_tmr_out_load [2/2] 0.00ns
+:1  %dummy_tmr_out_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @dummy_tmr_out) nounwind
+
+ST_1: rs_load [2/2] 0.00ns
+:3  %rs_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @rs) nounwind
+
+ST_1: en_load [2/2] 0.00ns
+:5  %en_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @en) nounwind
+
+ST_1: data_load [2/2] 0.00ns
+:7  %data_load = call i4 @_ssdm_op_Read.ap_none.volatile.i4P(i4* @data) nounwind
+
+ST_1: ind_load [2/2] 0.00ns
+:9  %ind_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @ind) nounwind
+
+ST_1: mem_addr_load [2/2] 0.00ns
+:11  %mem_addr_load = call i5 @_ssdm_op_Read.ap_none.volatile.i5P(i5* @mem_addr) nounwind
+
+ST_1: mem_req_load [2/2] 0.00ns
+:15  %mem_req_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_req) nounwind
+
+
+ <State 2>: 0.00ns
+ST_2: dummy_tmr_out_load [1/2] 0.00ns
+:1  %dummy_tmr_out_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @dummy_tmr_out) nounwind
+
+ST_2: rs_load [1/2] 0.00ns
+:3  %rs_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @rs) nounwind
+
+ST_2: en_load [1/2] 0.00ns
+:5  %en_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @en) nounwind
+
+ST_2: data_load [1/2] 0.00ns
+:7  %data_load = call i4 @_ssdm_op_Read.ap_none.volatile.i4P(i4* @data) nounwind
+
+ST_2: ind_load [1/2] 0.00ns
+:9  %ind_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @ind) nounwind
+
+ST_2: mem_addr_load [1/2] 0.00ns
+:11  %mem_addr_load = call i5 @_ssdm_op_Read.ap_none.volatile.i5P(i5* @mem_addr) nounwind
+
+ST_2: mem_req_load [1/2] 0.00ns
+:15  %mem_req_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_req) nounwind
+
+
+ <State 3>: 0.00ns
+ST_3: stg_37 [2/2] 0.00ns
+:19  call fastcc void @lcddrv_init_lcd()
+
+
+ <State 4>: 0.00ns
+ST_4: stg_38 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecTopModule()
+
+ST_4: stg_39 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecInterface(i1* @dummy_tmr_out, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: stg_40 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecInterface(i1* @rs, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: stg_41 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecInterface(i1* @en, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: stg_42 [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecInterface(i4* @data, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: stg_43 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecInterface(i1* @ind, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: stg_44 [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecInterface(i5* @mem_addr, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: mem_din_load [1/1] 0.00ns
+:13  %mem_din_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_din) nounwind
+
+ST_4: stg_46 [1/1] 0.00ns
+:14  call void (...)* @_ssdm_op_SpecInterface(i8* @mem_din, [8 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: stg_47 [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_req, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: mem_ack_load [1/1] 0.00ns
+:17  %mem_ack_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_ack) nounwind
+
+ST_4: stg_49 [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_ack, [8 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_4: stg_50 [1/2] 0.00ns
+:19  call fastcc void @lcddrv_init_lcd()
+
+ST_4: stg_51 [1/1] 0.00ns
+:20  br label %1
+
+
+ <State 5>: 1.48ns
+ST_5: stg_52 [2/2] 1.48ns
+:2  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext -8)
+
+
+ <State 6>: 0.00ns
+ST_6: stg_53 [1/2] 0.00ns
+:2  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext -8)
+
+
+ <State 7>: 1.48ns
+ST_7: stg_54 [2/2] 1.48ns
+:3  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+
+ <State 8>: 1.57ns
+ST_8: loop_begin [1/1] 0.00ns
+:0  %loop_begin = call i32 (...)* @_ssdm_op_SpecLoopBegin() nounwind
+
+ST_8: tmp [1/1] 0.00ns
+:1  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str2) nounwind
+
+ST_8: stg_57 [1/2] 0.00ns
+:3  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+ST_8: stg_58 [1/1] 1.57ns
+:4  br label %2
+
+
+ <State 9>: 2.37ns
+ST_9: pos [1/1] 0.00ns
+:0  %pos = phi i5 [ 0, %1 ], [ %pos_2, %3 ]
+
+ST_9: exitcond1 [1/1] 2.37ns
+:1  %exitcond1 = icmp eq i5 %pos, -16
+
+ST_9: empty [1/1] 0.00ns
+:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16) nounwind
+
+ST_9: pos_2 [1/1] 1.67ns
+:3  %pos_2 = add i5 %pos, 1
+
+ST_9: stg_63 [1/1] 0.00ns
+:4  br i1 %exitcond1, label %4, label %3
+
+ST_9: dt [2/2] 1.04ns
+:0  %dt = call fastcc zeroext i8 @lcddrv_read_mem(i5 zeroext %pos)
+
+ST_9: stg_65 [2/2] 1.48ns
+:0  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext -4)
+
+
+ <State 10>: 1.48ns
+ST_10: dt [1/2] 0.00ns
+:0  %dt = call fastcc zeroext i8 @lcddrv_read_mem(i5 zeroext %pos)
+
+ST_10: tmp_1 [1/1] 0.00ns
+:1  %tmp_1 = call i4 @_ssdm_op_PartSelect.i4.i8.i32.i32(i8 %dt, i32 4, i32 7)
+
+ST_10: stg_68 [2/2] 1.48ns
+:2  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext true, i4 zeroext %tmp_1)
+
+ST_10: tmp_2 [1/1] 0.00ns
+:3  %tmp_2 = trunc i8 %dt to i4
+
+
+ <State 11>: 0.00ns
+ST_11: stg_70 [1/2] 0.00ns
+:2  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext true, i4 zeroext %tmp_1)
+
+
+ <State 12>: 1.48ns
+ST_12: stg_71 [2/2] 1.48ns
+:4  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext true, i4 zeroext %tmp_2)
+
+
+ <State 13>: 0.00ns
+ST_13: stg_72 [1/2] 0.00ns
+:4  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext true, i4 zeroext %tmp_2)
+
+ST_13: stg_73 [1/1] 0.00ns
+:5  br label %2
+
+
+ <State 14>: 0.00ns
+ST_14: stg_74 [1/2] 0.00ns
+:0  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext -4)
+
+
+ <State 15>: 1.48ns
+ST_15: stg_75 [2/2] 1.48ns
+:1  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+
+ <State 16>: 1.57ns
+ST_16: stg_76 [1/2] 0.00ns
+:1  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+ST_16: stg_77 [1/1] 1.57ns
+:2  br label %5
+
+
+ <State 17>: 2.65ns
+ST_17: pos_1 [1/1] 0.00ns
+:0  %pos_1 = phi i6 [ 16, %4 ], [ %pos_3, %6 ]
+
+ST_17: exitcond [1/1] 2.40ns
+:1  %exitcond = icmp eq i6 %pos_1, -32
+
+ST_17: empty_4 [1/1] 0.00ns
+:2  %empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16) nounwind
+
+ST_17: stg_81 [1/1] 0.00ns
+:3  br i1 %exitcond, label %7, label %6
+
+ST_17: tmp_3 [1/1] 0.00ns
+:0  %tmp_3 = trunc i6 %pos_1 to i5
+
+ST_17: dt_1 [2/2] 1.04ns
+:1  %dt_1 = call fastcc zeroext i8 @lcddrv_read_mem(i5 zeroext %tmp_3)
+
+ST_17: pos_3 [1/1] 1.67ns
+:6  %pos_3 = add i6 1, %pos_1
+
+ST_17: stg_85 [2/2] 2.65ns
+:1  call fastcc void @lcddrv_wait_tmr(i25 10000000) nounwind
+
+
+ <State 18>: 1.48ns
+ST_18: dt_1 [1/2] 0.00ns
+:1  %dt_1 = call fastcc zeroext i8 @lcddrv_read_mem(i5 zeroext %tmp_3)
+
+ST_18: tmp_5 [1/1] 0.00ns
+:2  %tmp_5 = call i4 @_ssdm_op_PartSelect.i4.i8.i32.i32(i8 %dt_1, i32 4, i32 7)
+
+ST_18: stg_88 [2/2] 1.48ns
+:3  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext true, i4 zeroext %tmp_5)
+
+ST_18: tmp_4 [1/1] 0.00ns
+:4  %tmp_4 = trunc i8 %dt_1 to i4
+
+
+ <State 19>: 0.00ns
+ST_19: stg_90 [1/2] 0.00ns
+:3  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext true, i4 zeroext %tmp_5)
+
+
+ <State 20>: 1.48ns
+ST_20: stg_91 [2/2] 1.48ns
+:5  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext true, i4 zeroext %tmp_4)
+
+
+ <State 21>: 0.00ns
+ST_21: stg_92 [1/2] 0.00ns
+:5  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext true, i4 zeroext %tmp_4)
+
+ST_21: stg_93 [1/1] 0.00ns
+:7  br label %5
+
+
+ <State 22>: 2.65ns
+ST_22: stg_94 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_22: stg_95 [1/2] 2.65ns
+:1  call fastcc void @lcddrv_wait_tmr(i25 10000000) nounwind
+
+ST_22: empty_5 [1/1] 0.00ns
+:2  %empty_5 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str2, i32 %tmp) nounwind
+
+ST_22: stg_97 [1/1] 0.00ns
+:3  br label %1
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

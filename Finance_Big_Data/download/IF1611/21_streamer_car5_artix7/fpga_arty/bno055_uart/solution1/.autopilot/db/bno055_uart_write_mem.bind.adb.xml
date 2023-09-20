@@ -1,0 +1,466 @@
+<stg><name>bno055_uart_write_mem</name>
+
+
+<trans_list>
+
+<trans id="26" from="1" to="2">
+<condition id="6">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="27" from="2" to="3">
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="28" from="3" to="4">
+<condition id="9">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="29" from="4" to="4">
+<condition id="13">
+<or_exp><and_exp><literal name="mem_wack_read" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="30" from="4" to="5">
+<condition id="11">
+<or_exp><and_exp><literal name="mem_wack_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="31" from="5" to="6">
+<condition id="14">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="7" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:0  %data_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %data) nounwind
+
+]]></node>
+<StgValue><ssdm name="data_read"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="8" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:1  %addr_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %addr) nounwind
+
+]]></node>
+<StgValue><ssdm name="addr_read"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="9" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="9" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="10" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="10" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8">
+<![CDATA[
+:3  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="11" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="11" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8">
+<![CDATA[
+:4  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_dout, i8 %data_read) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="12" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="12" bw="0" op_0_bw="0" op_1_bw="1" op_2_bw="1">
+<![CDATA[
+:5  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_wreq, i1 false) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="13" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="13" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="14" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="14" bw="0" op_0_bw="0">
+<![CDATA[
+:7  br label %._crit_edge
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="15" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="16" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8">
+<![CDATA[
+._crit_edge:0  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="16" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="17" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8">
+<![CDATA[
+._crit_edge:1  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_dout, i8 %data_read) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="17" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="18" bw="0" op_0_bw="0" op_1_bw="1" op_2_bw="1">
+<![CDATA[
+._crit_edge:2  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_wreq, i1 true) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="18" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="19" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+._crit_edge:3  %mem_wack_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_wack) nounwind
+
+]]></node>
+<StgValue><ssdm name="mem_wack_read"/></StgValue>
+</operation>
+
+<operation id="19" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="20" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+._crit_edge:4  br i1 %mem_wack_read, label %1, label %._crit_edge
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="20" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="22" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="21" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="23" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8">
+<![CDATA[
+:1  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="22" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="24" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8">
+<![CDATA[
+:2  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_dout, i8 %data_read) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="23" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="25" bw="0" op_0_bw="0" op_1_bw="1" op_2_bw="1">
+<![CDATA[
+:3  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_wreq, i1 false) nounwind
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="24" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="26" bw="0" op_0_bw="0" op_1_bw="32">
+<![CDATA[
+:4  call void (...)* @_ssdm_op_Wait(i32 1)
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="25" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="5">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="27" bw="0">
+<![CDATA[
+:5  ret void
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="32" name="addr" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="addr"/></StgValue>
+</port>
+<port id="33" name="data" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="data"/></StgValue>
+</port>
+<port id="34" name="mem_addr" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="mem_addr"/></StgValue>
+</port>
+<port id="35" name="mem_dout" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="mem_dout"/></StgValue>
+</port>
+<port id="36" name="mem_wreq" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="mem_wreq"/></StgValue>
+</port>
+<port id="37" name="mem_wack" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="mem_wack"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="39" from="_ssdm_op_Read.ap_auto.i8" to="data_read" fromId="38" toId="7">
+</dataflow>
+<dataflow id="40" from="data" to="data_read" fromId="33" toId="7">
+</dataflow>
+<dataflow id="41" from="_ssdm_op_Read.ap_auto.i8" to="addr_read" fromId="38" toId="8">
+</dataflow>
+<dataflow id="42" from="addr" to="addr_read" fromId="32" toId="8">
+</dataflow>
+<dataflow id="44" from="_ssdm_op_Wait" to="stg_9" fromId="43" toId="9">
+</dataflow>
+<dataflow id="46" from="stg_45" to="stg_9" fromId="45" toId="9">
+</dataflow>
+<dataflow id="48" from="_ssdm_op_Write.ap_none.volatile.i8P" to="stg_10" fromId="47" toId="10">
+</dataflow>
+<dataflow id="49" from="mem_addr" to="stg_10" fromId="34" toId="10">
+</dataflow>
+<dataflow id="50" from="addr_read" to="stg_10" fromId="8" toId="10">
+</dataflow>
+<dataflow id="51" from="_ssdm_op_Write.ap_none.volatile.i8P" to="stg_11" fromId="47" toId="11">
+</dataflow>
+<dataflow id="52" from="mem_dout" to="stg_11" fromId="35" toId="11">
+</dataflow>
+<dataflow id="53" from="data_read" to="stg_11" fromId="7" toId="11">
+</dataflow>
+<dataflow id="55" from="_ssdm_op_Write.ap_none.volatile.i1P" to="stg_12" fromId="54" toId="12">
+</dataflow>
+<dataflow id="56" from="mem_wreq" to="stg_12" fromId="36" toId="12">
+</dataflow>
+<dataflow id="58" from="stg_57" to="stg_12" fromId="57" toId="12">
+</dataflow>
+<dataflow id="59" from="_ssdm_op_Wait" to="stg_13" fromId="43" toId="13">
+</dataflow>
+<dataflow id="60" from="stg_45" to="stg_13" fromId="45" toId="13">
+</dataflow>
+<dataflow id="61" from="_ssdm_op_Write.ap_none.volatile.i8P" to="stg_15" fromId="47" toId="15">
+</dataflow>
+<dataflow id="62" from="mem_addr" to="stg_15" fromId="34" toId="15">
+</dataflow>
+<dataflow id="63" from="addr_read" to="stg_15" fromId="8" toId="15">
+</dataflow>
+<dataflow id="64" from="_ssdm_op_Write.ap_none.volatile.i8P" to="stg_16" fromId="47" toId="16">
+</dataflow>
+<dataflow id="65" from="mem_dout" to="stg_16" fromId="35" toId="16">
+</dataflow>
+<dataflow id="66" from="data_read" to="stg_16" fromId="7" toId="16">
+</dataflow>
+<dataflow id="67" from="_ssdm_op_Write.ap_none.volatile.i1P" to="stg_17" fromId="54" toId="17">
+</dataflow>
+<dataflow id="68" from="mem_wreq" to="stg_17" fromId="36" toId="17">
+</dataflow>
+<dataflow id="70" from="stg_69" to="stg_17" fromId="69" toId="17">
+</dataflow>
+<dataflow id="72" from="_ssdm_op_Read.ap_none.volatile.i1P" to="mem_wack_read" fromId="71" toId="18">
+</dataflow>
+<dataflow id="73" from="mem_wack" to="mem_wack_read" fromId="37" toId="18">
+</dataflow>
+<dataflow id="74" from="mem_wack_read" to="stg_19" fromId="18" toId="19">
+</dataflow>
+<dataflow id="75" from="_ssdm_op_Wait" to="stg_20" fromId="43" toId="20">
+</dataflow>
+<dataflow id="76" from="stg_45" to="stg_20" fromId="45" toId="20">
+</dataflow>
+<dataflow id="77" from="_ssdm_op_Write.ap_none.volatile.i8P" to="stg_21" fromId="47" toId="21">
+</dataflow>
+<dataflow id="78" from="mem_addr" to="stg_21" fromId="34" toId="21">
+</dataflow>
+<dataflow id="79" from="addr_read" to="stg_21" fromId="8" toId="21">
+</dataflow>
+<dataflow id="80" from="_ssdm_op_Write.ap_none.volatile.i8P" to="stg_22" fromId="47" toId="22">
+</dataflow>
+<dataflow id="81" from="mem_dout" to="stg_22" fromId="35" toId="22">
+</dataflow>
+<dataflow id="82" from="data_read" to="stg_22" fromId="7" toId="22">
+</dataflow>
+<dataflow id="83" from="_ssdm_op_Write.ap_none.volatile.i1P" to="stg_23" fromId="54" toId="23">
+</dataflow>
+<dataflow id="84" from="mem_wreq" to="stg_23" fromId="36" toId="23">
+</dataflow>
+<dataflow id="85" from="stg_57" to="stg_23" fromId="57" toId="23">
+</dataflow>
+<dataflow id="86" from="_ssdm_op_Wait" to="stg_24" fromId="43" toId="24">
+</dataflow>
+<dataflow id="87" from="stg_45" to="stg_24" fromId="45" toId="24">
+</dataflow>
+<dataflow id="88" from="mem_wack_read" to="stg_4" fromId="18" toId="4">
+</dataflow>
+</dataflows>
+
+
+</stg>

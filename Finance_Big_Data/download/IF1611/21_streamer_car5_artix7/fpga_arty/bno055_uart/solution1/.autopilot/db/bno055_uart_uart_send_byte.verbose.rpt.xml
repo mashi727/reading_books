@@ -1,0 +1,129 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'bno055_uart_uart_send_byte'" level="0">
+<item name = "Date">Fri May 27 17:23:06 2016
+</item>
+<item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
+<item name = "Project">bno055_uart</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a35ticsg324-1l</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 2.89, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">60, 1000000050, 60, 1000000050, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_bno055_uart_wait_tmr_fu_71">bno055_uart_wait_tmr, 3, 100000002, 3, 100000002, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">48, 800000040, 6 ~ 100000005, -, -, 8, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 6</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, 30, 68</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 19</column>
+<column name="Register">-, -, 33, -</column>
+<specialColumn name="Available">100, 90, 41600, 20800</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="grp_bno055_uart_wait_tmr_fu_71">bno055_uart_wait_tmr, 0, 0, 30, 68</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_1_fu_85_p2">+, 0, 0, 4, 4, 1</column>
+<column name="exitcond_fu_79_p2">icmp, 0, 0, 2, 4, 5</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">4, 10, 1, 10</column>
+<column name="dummy_tmr_out_o">1, 2, 1, 2</column>
+<column name="dummy_tmr_out_o_ap_vld">1, 2, 1, 2</column>
+<column name="i_reg_51">4, 2, 4, 8</column>
+<column name="p_Val2_s_reg_62">8, 2, 8, 16</column>
+<column name="uart_tx">1, 4, 1, 4</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">9, 0, 9, 0</column>
+<column name="ap_reg_grp_bno055_uart_wait_tmr_fu_71_ap_start">1, 0, 1, 0</column>
+<column name="i_1_reg_118">4, 0, 4, 0</column>
+<column name="i_reg_51">4, 0, 4, 0</column>
+<column name="p_Val2_s_reg_62">8, 0, 8, 0</column>
+<column name="tmp_reg_123">7, 0, 8, 1</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, bno055_uart_uart_send_byte, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, bno055_uart_uart_send_byte, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, bno055_uart_uart_send_byte, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, bno055_uart_uart_send_byte, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, bno055_uart_uart_send_byte, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, bno055_uart_uart_send_byte, return value</column>
+<column name="data">in, 8, ap_none, data, scalar</column>
+<column name="uart_tx">out, 1, ap_vld, uart_tx, pointer</column>
+<column name="uart_tx_ap_vld">out, 1, ap_vld, uart_tx, pointer</column>
+<column name="dummy_tmr_out_i">in, 1, ap_ovld, dummy_tmr_out, pointer</column>
+<column name="dummy_tmr_out_o">out, 1, ap_ovld, dummy_tmr_out, pointer</column>
+<column name="dummy_tmr_out_o_ap_vld">out, 1, ap_ovld, dummy_tmr_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

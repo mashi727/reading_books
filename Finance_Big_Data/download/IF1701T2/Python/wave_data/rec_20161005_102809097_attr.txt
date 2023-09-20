@@ -1,0 +1,7 @@
+Start time:	20161005_102809144
+End time:	20161005_102809097
+Gain ch1:	x1000
+Gain ch2:	x1000
+Filter ch1:	30Hz
+Filter ch2:	30Hz
+Sampling rate:	200Hz

@@ -1,0 +1,5 @@
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+start
+end
+$finish called at time : 910 ns : File "D:/hdl_testbench_sample/testbench.v" Line 36

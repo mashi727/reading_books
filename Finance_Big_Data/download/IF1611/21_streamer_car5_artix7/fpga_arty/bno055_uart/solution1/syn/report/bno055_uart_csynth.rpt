@@ -1,0 +1,212 @@
+
+
+================================================================
+== Vivado HLS Report for 'bno055_uart'
+================================================================
+* Date:           Fri May 27 17:23:09 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        bno055_uart
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.18|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------+-----------------------------+-----+-----------+-----+-----------+---------+
+        |                                        |                             |     Latency     |     Interval    | Pipeline|
+        |                Instance                |            Module           | min |    max    | min |    max    |   Type  |
+        +----------------------------------------+-----------------------------+-----+-----------+-----+-----------+---------+
+        |grp_bno055_uart_uart_read_reg16_fu_200  |bno055_uart_uart_read_reg16  |    ?|          ?|    ?|          ?|   none  |
+        |grp_bno055_uart_uart_read_reg_fu_210    |bno055_uart_uart_read_reg    |    ?|          ?|    ?|          ?|   none  |
+        |grp_bno055_uart_uart_write_reg_fu_225   |bno055_uart_uart_write_reg   |    ?|          ?|    ?|          ?|   none  |
+        |grp_bno055_uart_wait_tmr_fu_244         |bno055_uart_wait_tmr         |    3|  100000002|    3|  100000002|   none  |
+        |grp_bno055_uart_write_mem_fu_254        |bno055_uart_write_mem        |    ?|          ?|    ?|          ?|   none  |
+        |grp_bno055_uart_bin2char_fu_277         |bno055_uart_bin2char         |    0|          0|    0|          0|   none  |
+        +----------------------------------------+-----------------------------+-----+-----------+-----+-----------+---------+
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         ?|          -|          -|  inf |    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT  |
++-----------------+---------+-------+-------+-------+
+|DSP              |        -|      1|      -|      -|
+|Expression       |        -|      -|      0|     25|
+|FIFO             |        -|      -|      -|      -|
+|Instance         |        -|      -|    815|   1312|
+|Memory           |        -|      -|      -|      -|
+|Multiplexer      |        -|      -|      -|    164|
+|Register         |        -|      -|    153|      -|
++-----------------+---------+-------+-------+-------+
+|Total            |        0|      1|    968|   1501|
++-----------------+---------+-------+-------+-------+
+|Available        |      100|     90|  41600|  20800|
++-----------------+---------+-------+-------+-------+
+|Utilization (%)  |        0|      1|      2|      7|
++-----------------+---------+-------+-------+-------+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------+-----------------------------+---------+-------+-----+-----+
+    |                Instance                |            Module           | BRAM_18K| DSP48E|  FF | LUT |
+    +----------------------------------------+-----------------------------+---------+-------+-----+-----+
+    |grp_bno055_uart_bin2char_fu_277         |bno055_uart_bin2char         |        0|      0|    0|   35|
+    |grp_bno055_uart_uart_read_reg_fu_210    |bno055_uart_uart_read_reg    |        0|      0|  255|  398|
+    |grp_bno055_uart_uart_read_reg16_fu_200  |bno055_uart_uart_read_reg16  |        0|      0|  281|  433|
+    |grp_bno055_uart_uart_write_reg_fu_225   |bno055_uart_uart_write_reg   |        0|      0|  243|  376|
+    |grp_bno055_uart_wait_tmr_fu_244         |bno055_uart_wait_tmr         |        0|      0|   30|   68|
+    |grp_bno055_uart_write_mem_fu_254        |bno055_uart_write_mem        |        0|      0|    6|    2|
+    +----------------------------------------+-----------------------------+---------+-------+-----+-----+
+    |Total                                   |                             |        0|      0|  815| 1312|
+    +----------------------------------------+-----------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    +---------------------------------------+-----------------------------------+-----------+
+    |                Instance               |               Module              | Expression|
+    +---------------------------------------+-----------------------------------+-----------+
+    |bno055_uart_mul_mul_8ns_16ns_20_1_U27  |bno055_uart_mul_mul_8ns_16ns_20_1  |  i0 * i1  |
+    +---------------------------------------+-----------------------------------+-----------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+-------+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |tmp_4_fu_323_p2  |    or    |      0|  0|  12|           8|           4|
+    |tmp_5_fu_330_p2  |    or    |      0|  0|  13|           8|           9|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |Total            |          |      0|  0|  25|          16|          13|
+    +-----------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |                      Name                      | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                       |  78|         44|    1|         44|
+    |dummy_tmr_out_1_data_in                         |   1|          5|    1|          5|
+    |dummy_tmr_out_1_vld_in                          |   1|          5|    1|          5|
+    |grp_bno055_uart_bin2char_fu_277_val_r           |   4|          3|    4|         12|
+    |grp_bno055_uart_uart_read_reg_fu_210_reg_addr   |   8|          5|    8|         40|
+    |grp_bno055_uart_uart_write_reg_fu_225_data      |   8|          6|    8|         48|
+    |grp_bno055_uart_uart_write_reg_fu_225_reg_addr  |   7|          6|    7|         42|
+    |grp_bno055_uart_wait_tmr_fu_244_tmr             |  28|          4|   28|        112|
+    |grp_bno055_uart_write_mem_fu_254_addr           |  16|          8|    8|         64|
+    |grp_bno055_uart_write_mem_fu_254_data           |   8|          7|    8|         56|
+    |mem_addr_1_vld_in                               |   1|          2|    1|          2|
+    |mem_dout_1_vld_in                               |   1|          2|    1|          2|
+    |mem_wreq_1_vld_in                               |   1|          2|    1|          2|
+    |uart_tx_1_data_in                               |   1|          5|    1|          5|
+    |uart_tx_1_vld_in                                |   1|          5|    1|          5|
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                           | 164|        109|   79|        444|
+    +------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------------------------+----+----+-----+-----------+
+    |                          Name                          | FF | LUT| Bits| Const Bits|
+    +--------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                               |  43|   0|   43|          0|
+    |ap_reg_grp_bno055_uart_uart_read_reg16_fu_200_ap_start  |   1|   0|    1|          0|
+    |ap_reg_grp_bno055_uart_uart_read_reg_fu_210_ap_start    |   1|   0|    1|          0|
+    |ap_reg_grp_bno055_uart_uart_write_reg_fu_225_ap_start   |   1|   0|    1|          0|
+    |ap_reg_grp_bno055_uart_wait_tmr_fu_244_ap_start         |   1|   0|    1|          0|
+    |ap_reg_grp_bno055_uart_write_mem_fu_254_ap_start        |   1|   0|    1|          0|
+    |dt_2_reg_415                                            |   8|   0|    8|          0|
+    |dummy_tmr_out_0_data_reg                                |   1|   0|    1|          0|
+    |dummy_tmr_out_0_vld_reg                                 |   0|   0|    1|          1|
+    |dummy_tmr_out_1_data_reg                                |   1|   0|    1|          0|
+    |dummy_tmr_out_1_vld_reg                                 |   0|   0|    1|          1|
+    |e_tmp_1_reg_440                                         |   8|   0|    8|          0|
+    |mem_addr_1_data_reg                                     |   8|   0|    8|          0|
+    |mem_addr_1_vld_reg                                      |   0|   0|    1|          1|
+    |mem_dout_1_data_reg                                     |   8|   0|    8|          0|
+    |mem_dout_1_vld_reg                                      |   0|   0|    1|          1|
+    |mem_wreq_1_data_reg                                     |   1|   0|    1|          0|
+    |mem_wreq_1_vld_reg                                      |   0|   0|    1|          1|
+    |p_trunc2_ext_reg_445                                    |   7|   0|    8|          1|
+    |p_trunc_ext_reg_430                                     |   7|   0|    8|          1|
+    |reg_292                                                 |   4|   0|    4|          0|
+    |tmp_10_reg_425                                          |   4|   0|    4|          0|
+    |tmp_11_reg_435                                          |   8|   0|    8|          0|
+    |tmp_2_reg_450                                           |   8|   0|    8|          0|
+    |tmp_4_reg_410                                           |   4|   0|    8|          4|
+    |tmp_5_reg_420                                           |   7|   0|    8|          1|
+    |tmp_6_reg_455                                           |   8|   0|    8|          0|
+    |tmp_reg_400                                             |   6|   0|    6|          0|
+    |tmp_s_reg_405                                           |   6|   0|    8|          2|
+    |uart_tx_1_data_reg                                      |   1|   0|    1|          0|
+    |uart_tx_1_vld_reg                                       |   0|   0|    1|          1|
+    +--------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                   | 153|   0|  168|         15|
+    +--------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+---------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  | Source Object |    C Type    |
++-----------------+-----+-----+------------+---------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs |  bno055_uart  | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs |  bno055_uart  | return value |
+|ap_start         |  in |    1| ap_ctrl_hs |  bno055_uart  | return value |
+|ap_done          | out |    1| ap_ctrl_hs |  bno055_uart  | return value |
+|ap_idle          | out |    1| ap_ctrl_hs |  bno055_uart  | return value |
+|ap_ready         | out |    1| ap_ctrl_hs |  bno055_uart  | return value |
+|dummy_tmr_out_i  |  in |    1|   ap_none  | dummy_tmr_out |    pointer   |
+|dummy_tmr_out_o  | out |    1|   ap_none  | dummy_tmr_out |    pointer   |
+|uart_rx          |  in |    1|   ap_none  |    uart_rx    |    pointer   |
+|uart_tx_i        |  in |    1|   ap_none  |    uart_tx    |    pointer   |
+|uart_tx_o        | out |    1|   ap_none  |    uart_tx    |    pointer   |
+|mem_addr_i       |  in |    8|   ap_none  |    mem_addr   |    pointer   |
+|mem_addr_o       | out |    8|   ap_none  |    mem_addr   |    pointer   |
+|mem_din          |  in |    8|   ap_none  |    mem_din    |    pointer   |
+|mem_dout_i       |  in |    8|   ap_none  |    mem_dout   |    pointer   |
+|mem_dout_o       | out |    8|   ap_none  |    mem_dout   |    pointer   |
+|mem_wreq_i       |  in |    1|   ap_none  |    mem_wreq   |    pointer   |
+|mem_wreq_o       | out |    1|   ap_none  |    mem_wreq   |    pointer   |
+|mem_wack         |  in |    1|   ap_none  |    mem_wack   |    pointer   |
+|mem_rreq         |  in |    1|   ap_none  |    mem_rreq   |    pointer   |
+|mem_rack         |  in |    1|   ap_none  |    mem_rack   |    pointer   |
++-----------------+-----+-----+------------+---------------+--------------+
+

@@ -1,0 +1,324 @@
+
+
+================================================================
+== Vivado HLS Report for 'bno055_uart_uart_read_reg16'
+================================================================
+* Date:           Fri May 27 17:23:04 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        bno055_uart
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.89|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 20
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	15  / (tmp)
+	13  / (!tmp & tmp_s)
+	20  / (!tmp & !tmp_s)
+13 --> 
+	14  / true
+14 --> 
+	20  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+* FSM state operations: 
+
+ <State 1>: 1.28ns
+ST_1: stg_21 [2/2] 1.28ns
+:0  call fastcc void @bno055_uart_uart_send_byte(i8 zeroext -86)
+
+
+ <State 2>: 0.00ns
+ST_2: stg_22 [1/2] 0.00ns
+:0  call fastcc void @bno055_uart_uart_send_byte(i8 zeroext -86)
+
+
+ <State 3>: 1.28ns
+ST_3: stg_23 [2/2] 1.28ns
+:2  call fastcc void @bno055_uart_uart_send_byte(i8 zeroext 1)
+
+
+ <State 4>: 0.00ns
+ST_4: stg_24 [1/2] 0.00ns
+:2  call fastcc void @bno055_uart_uart_send_byte(i8 zeroext 1)
+
+
+ <State 5>: 1.28ns
+ST_5: stg_25 [2/2] 1.28ns
+:4  call fastcc void @bno055_uart_uart_send_byte(i8 zeroext 26)
+
+
+ <State 6>: 0.00ns
+ST_6: stg_26 [1/2] 0.00ns
+:4  call fastcc void @bno055_uart_uart_send_byte(i8 zeroext 26)
+
+
+ <State 7>: 1.28ns
+ST_7: stg_27 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_7: stg_28 [2/2] 1.28ns
+:6  call fastcc void @bno055_uart_uart_send_byte(i8 zeroext 2)
+
+
+ <State 8>: 0.00ns
+ST_8: stg_29 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_8: stg_30 [1/2] 0.00ns
+:6  call fastcc void @bno055_uart_uart_send_byte(i8 zeroext 2)
+
+
+ <State 9>: 2.65ns
+ST_9: stg_31 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_9: stg_32 [2/2] 2.65ns
+:8  call fastcc void @bno055_uart_wait_tmr(i28 1) nounwind
+
+
+ <State 10>: 2.65ns
+ST_10: stg_33 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_10: stg_34 [1/2] 2.65ns
+:8  call fastcc void @bno055_uart_wait_tmr(i28 1) nounwind
+
+
+ <State 11>: 0.00ns
+ST_11: stg_35 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_11: buf [2/2] 0.00ns
+:10  %buf = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+
+ <State 12>: 2.47ns
+ST_12: buf [1/2] 0.00ns
+:10  %buf = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+ST_12: stg_38 [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_12: tmp [1/1] 2.47ns
+:12  %tmp = icmp eq i8 %buf, -69
+
+ST_12: stg_40 [1/1] 0.00ns
+:13  br i1 %tmp, label %1, label %2
+
+ST_12: tmp_s [1/1] 2.47ns
+:0  %tmp_s = icmp eq i8 %buf, -18
+
+ST_12: stg_42 [1/1] 0.00ns
+:1  br i1 %tmp_s, label %3, label %4
+
+ST_12: tmp_2 [1/1] 0.00ns
+:0  %tmp_2 = zext i8 %buf to i16
+
+ST_12: stg_44 [1/1] 1.57ns
+:1  br label %5
+
+
+ <State 13>: 0.00ns
+ST_13: buf_1 [2/2] 0.00ns
+:1  %buf_1 = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+
+ <State 14>: 1.57ns
+ST_14: stg_46 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_14: buf_1 [1/2] 0.00ns
+:1  %buf_1 = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+ST_14: tmp_1 [1/1] 0.00ns
+:2  %tmp_1 = zext i8 %buf_1 to i16
+
+ST_14: stg_49 [1/1] 1.57ns
+:3  br label %5
+
+
+ <State 15>: 0.00ns
+ST_15: empty [2/2] 0.00ns
+:1  %empty = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+
+ <State 16>: 0.00ns
+ST_16: empty [1/2] 0.00ns
+:1  %empty = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+
+ <State 17>: 0.00ns
+ST_17: bh [2/2] 0.00ns
+:3  %bh = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+
+ <State 18>: 0.00ns
+ST_18: stg_53 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_18: bh [1/2] 0.00ns
+:3  %bh = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+
+ <State 19>: 0.00ns
+ST_19: stg_55 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_19: bl [2/2] 0.00ns
+:5  %bl = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+
+ <State 20>: 1.57ns
+ST_20: stg_57 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_20: bl [1/2] 0.00ns
+:5  %bl = call fastcc zeroext i8 @bno055_uart_uart_receive_byte()
+
+ST_20: tmp_9 [1/1] 0.00ns
+:6  %tmp_9 = call i16 @_ssdm_op_BitConcatenate.i16.i8.i8(i8 %bh, i8 %bl)
+
+ST_20: stg_60 [1/1] 1.57ns
+:7  br label %5
+
+ST_20: p_0 [1/1] 0.00ns
+:0  %p_0 = phi i16 [ %tmp_9, %1 ], [ %tmp_1, %3 ], [ %tmp_2, %4 ]
+
+ST_20: stg_62 [1/1] 0.00ns
+:1  ret i16 %p_0
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

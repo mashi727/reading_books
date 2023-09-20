@@ -1,0 +1,303 @@
+
+
+================================================================
+== Vivado HLS Report for 'bno055_uart_uart_receive_byte'
+================================================================
+* Date:           Fri May 27 17:23:02 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        bno055_uart
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.89|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+------------------+----------------+-----------+-----------+--------------+----------+
+        |          |         Latency        |    Iteration   |  Initiation Interval  |     Trip     |          |
+        | Loop Name| min |        max       |     Latency    |  achieved |   target  |     Count    | Pipelined|
+        +----------+-----+------------------+----------------+-----------+-----------+--------------+----------+
+        |- Loop 1  |    ?|                 ?|               1|          -|          -|             ?|    no    |
+        |- Loop 2  |    2|  1000000050000002|  2 ~ 100000005 |          -|          -| 1 ~ 10000000 |    no    |
+        |- Loop 3  |   88|        1600000072| 11 ~ 200000009 |          -|          -|             8|    no    |
+        +----------+-----+------------------+----------------+-----------+-----------+--------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 12
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!tmp)
+	3  / (tmp)
+3 --> 
+	6  / (!tmp_1)
+	4  / (tmp_1 & !tmp_2)
+	5  / (tmp_1 & tmp_2)
+4 --> 
+	5  / true
+5 --> 
+	6  / (!tmp_2 & !tmp_3)
+	3  / (tmp_2) | (tmp_3)
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / (!exitcond)
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	8  / true
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: stg_13 [1/1] 0.00ns
+:0  br label %._crit_edge
+
+
+ <State 2>: 2.61ns
+ST_2: stg_14 [1/1] 0.00ns
+._crit_edge:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_2: tmp [1/1] 1.04ns
+._crit_edge:1  %tmp = call fastcc zeroext i1 @bno055_uart_read_uart_rx()
+
+ST_2: stg_16 [1/1] 1.57ns
+._crit_edge:2  br i1 %tmp, label %.preheader, label %._crit_edge
+
+
+ <State 3>: 2.85ns
+ST_3: timer [1/1] 0.00ns
+.preheader:0  %timer = phi i24 [ %timer_1, %._crit_edge1 ], [ 0, %._crit_edge ]
+
+ST_3: tmp_1 [1/1] 2.85ns
+.preheader:1  %tmp_1 = icmp ult i24 %timer, -6777216
+
+ST_3: empty [1/1] 0.00ns
+.preheader:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 10000000, i64 5000000) nounwind
+
+ST_3: timer_1 [1/1] 2.15ns
+.preheader:3  %timer_1 = add i24 %timer, 1
+
+ST_3: stg_21 [1/1] 0.00ns
+.preheader:4  br i1 %tmp_1, label %1, label %.loopexit
+
+ST_3: stg_22 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_3: tmp_2 [1/1] 1.04ns
+:1  %tmp_2 = call fastcc zeroext i1 @bno055_uart_read_uart_rx()
+
+ST_3: stg_24 [1/1] 0.00ns
+:2  br i1 %tmp_2, label %._crit_edge1, label %2
+
+
+ <State 4>: 2.65ns
+ST_4: stg_25 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_4: stg_26 [2/2] 2.65ns
+:1  call fastcc void @bno055_uart_wait_tmr(i28 217) nounwind
+
+
+ <State 5>: 2.65ns
+ST_5: stg_27 [1/2] 2.65ns
+:1  call fastcc void @bno055_uart_wait_tmr(i28 217) nounwind
+
+ST_5: stg_28 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: tmp_3 [1/1] 1.04ns
+:3  %tmp_3 = call fastcc zeroext i1 @bno055_uart_read_uart_rx()
+
+ST_5: stg_30 [1/1] 0.00ns
+:4  br i1 %tmp_3, label %._crit_edge1, label %.loopexit
+
+ST_5: stg_31 [1/1] 0.00ns
+._crit_edge1:0  br label %.preheader
+
+
+ <State 6>: 2.65ns
+ST_6: stg_32 [1/1] 0.00ns
+.loopexit:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_6: stg_33 [2/2] 2.65ns
+.loopexit:1  call fastcc void @bno055_uart_wait_tmr(i28 651) nounwind
+
+
+ <State 7>: 2.65ns
+ST_7: stg_34 [1/2] 2.65ns
+.loopexit:1  call fastcc void @bno055_uart_wait_tmr(i28 651) nounwind
+
+ST_7: stg_35 [1/1] 0.00ns
+.loopexit:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_7: stg_36 [1/1] 1.57ns
+.loopexit:3  br label %3
+
+
+ <State 8>: 2.41ns
+ST_8: data [1/1] 0.00ns
+:0  %data = phi i8 [ 0, %.loopexit ], [ %data_1, %4 ]
+
+ST_8: i [1/1] 0.00ns
+:1  %i = phi i4 [ 0, %.loopexit ], [ %i_2, %4 ]
+
+ST_8: exitcond [1/1] 2.33ns
+:2  %exitcond = icmp eq i4 %i, -8
+
+ST_8: empty_9 [1/1] 0.00ns
+:3  %empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind
+
+ST_8: i_2 [1/1] 0.75ns
+:4  %i_2 = add i4 %i, 1
+
+ST_8: stg_42 [1/1] 0.00ns
+:5  br i1 %exitcond, label %5, label %4
+
+ST_8: stg_43 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_8: tmp_5 [1/1] 1.04ns
+:3  %tmp_5 = call fastcc zeroext i1 @bno055_uart_read_uart_rx()
+
+ST_8: tmp_6 [1/1] 0.00ns
+:5  %tmp_6 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %data, i32 1, i32 7)
+
+ST_8: tmp_4 [1/1] 1.37ns
+:6  %tmp_4 = select i1 %tmp_5, i1 true, i1 false
+
+ST_8: data_1 [1/1] 0.00ns
+:7  %data_1 = call i8 @_ssdm_op_BitConcatenate.i8.i1.i7(i1 %tmp_4, i7 %tmp_6)
+
+ST_8: stg_48 [1/1] 0.00ns
+:0  ret i8 %data
+
+
+ <State 9>: 2.65ns
+ST_9: stg_49 [2/2] 2.65ns
+:1  call fastcc void @bno055_uart_wait_tmr(i28 434) nounwind
+
+ST_9: stg_50 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+
+ <State 10>: 2.65ns
+ST_10: stg_51 [1/2] 2.65ns
+:1  call fastcc void @bno055_uart_wait_tmr(i28 434) nounwind
+
+ST_10: stg_52 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_Wait(i32 1)
+
+
+ <State 11>: 2.65ns
+ST_11: stg_53 [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_11: stg_54 [2/2] 2.65ns
+:9  call fastcc void @bno055_uart_wait_tmr(i28 434) nounwind
+
+
+ <State 12>: 2.65ns
+ST_12: stg_55 [1/2] 2.65ns
+:9  call fastcc void @bno055_uart_wait_tmr(i28 434) nounwind
+
+ST_12: stg_56 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_12: stg_57 [1/1] 0.00ns
+:11  br label %3
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

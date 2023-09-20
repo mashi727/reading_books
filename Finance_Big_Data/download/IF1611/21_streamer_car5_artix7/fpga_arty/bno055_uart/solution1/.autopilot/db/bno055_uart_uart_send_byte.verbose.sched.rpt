@@ -1,0 +1,240 @@
+
+
+================================================================
+== Vivado HLS Report for 'bno055_uart_uart_send_byte'
+================================================================
+* Date:           Fri May 27 17:23:02 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        bno055_uart
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.89|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+------------+-----+------------+---------+
+    |      Latency     |     Interval     | Pipeline|
+    | min |     max    | min |     max    |   Type  |
+    +-----+------------+-----+------------+---------+
+    |   60|  1000000050|   60|  1000000050|   none  |
+    +-----+------------+-----+------------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----------+---------------+-----------+-----------+------+----------+
+        |          |     Latency     |   Iteration   |  Initiation Interval  | Trip |          |
+        | Loop Name| min |    max    |    Latency    |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----------+---------------+-----------+-----------+------+----------+
+        |- Loop 1  |   48|  800000040| 6 ~ 100000005 |          -|          -|     8|    no    |
+        +----------+-----+-----------+---------------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 9
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / (!exitcond)
+	8  / (exitcond)
+6 --> 
+	7  / true
+7 --> 
+	5  / true
+8 --> 
+	9  / true
+9 --> 
+* FSM state operations: 
+
+ <State 1>: 1.28ns
+ST_1: data_read [1/1] 1.28ns
+:0  %data_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %data) nounwind
+
+
+ <State 2>: 0.00ns
+ST_2: stg_11 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_2: stg_12 [1/1] 0.00ns
+:2  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @uart_tx, i1 false) nounwind
+
+
+ <State 3>: 2.65ns
+ST_3: stg_13 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_3: stg_14 [2/2] 2.65ns
+:4  call fastcc void @bno055_uart_wait_tmr(i28 868) nounwind
+
+
+ <State 4>: 2.65ns
+ST_4: stg_15 [1/2] 2.65ns
+:4  call fastcc void @bno055_uart_wait_tmr(i28 868) nounwind
+
+ST_4: stg_16 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_4: stg_17 [1/1] 1.57ns
+:6  br label %1
+
+
+ <State 5>: 2.33ns
+ST_5: i [1/1] 0.00ns
+:0  %i = phi i4 [ 0, %0 ], [ %i_1, %2 ]
+
+ST_5: p_Val2_s [1/1] 0.00ns
+:1  %p_Val2_s = phi i8 [ %data_read, %0 ], [ %tmp, %2 ]
+
+ST_5: exitcond [1/1] 2.33ns
+:2  %exitcond = icmp eq i4 %i, -8
+
+ST_5: empty [1/1] 0.00ns
+:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind
+
+ST_5: i_1 [1/1] 0.75ns
+:4  %i_1 = add i4 %i, 1
+
+ST_5: stg_23 [1/1] 0.00ns
+:5  br i1 %exitcond, label %3, label %2
+
+ST_5: dt [1/1] 0.00ns
+:0  %dt = trunc i8 %p_Val2_s to i1
+
+ST_5: data_assign [1/1] 0.00ns
+:1  %data_assign = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %p_Val2_s, i32 1, i32 7)
+
+ST_5: tmp [1/1] 0.00ns
+:2  %tmp = zext i7 %data_assign to i8
+
+ST_5: stg_27 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: stg_28 [1/1] 0.00ns
+:4  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @uart_tx, i1 %dt) nounwind
+
+ST_5: stg_29 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: stg_30 [1/1] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @uart_tx, i1 true) nounwind
+
+
+ <State 6>: 2.65ns
+ST_6: stg_31 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_6: stg_32 [2/2] 2.65ns
+:6  call fastcc void @bno055_uart_wait_tmr(i28 868) nounwind
+
+
+ <State 7>: 2.65ns
+ST_7: stg_33 [1/2] 2.65ns
+:6  call fastcc void @bno055_uart_wait_tmr(i28 868) nounwind
+
+ST_7: stg_34 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_7: stg_35 [1/1] 0.00ns
+:8  br label %1
+
+
+ <State 8>: 2.65ns
+ST_8: stg_36 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_8: stg_37 [2/2] 2.65ns
+:3  call fastcc void @bno055_uart_wait_tmr(i28 868) nounwind
+
+
+ <State 9>: 2.65ns
+ST_9: stg_38 [1/2] 2.65ns
+:3  call fastcc void @bno055_uart_wait_tmr(i28 868) nounwind
+
+ST_9: stg_39 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_9: stg_40 [1/1] 0.00ns
+:5  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

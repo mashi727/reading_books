@@ -1,0 +1,769 @@
+@I [HLS-0] Workspace D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1 opened at Fri May 27 18:05:37 +0100 2016
+@I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 1.676 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "import_lib C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7 "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/dds_compiler.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.691 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 1.707 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.707 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.707 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.728 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.729 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.729 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.729 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.729 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 1.729 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.729 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.729 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.729 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.729 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.053Total elapsed time: 1.745 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.745 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.745 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 1.760 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 1.776 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 1.791 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.031Total elapsed time: 1.791 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.036Total elapsed time: 1.827 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.017Total elapsed time: 1.845 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/dds_compiler.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.845 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.845 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.3Total elapsed time: 2.146 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.146 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.401Total elapsed time: 2.146 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.146 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.401Total elapsed time: 2.146 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.401Total elapsed time: 2.146 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 2.146 sec.
+@I [HLS-100] Command "import_lib C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7_fpv6 "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_hp.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.161 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.161 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_fpv.hlp "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 2.193 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.193 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.193 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.193 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.193 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 2.193 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 2.193 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7_hp.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 2.208 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.047Total elapsed time: 2.208 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7_fpv6.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 2.230 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 2.230 sec.
+@I [HLS-100] Command "set_part xc7a35ticsg324-1l "
+@I [HLS-100] Command "add_library xilinx/artix7/artix7:xc7a35ti:csg324:-1l "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.230 sec.
+@I [HLS-100] Command "license_isbetapart xc7a35ti "
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.031Total elapsed time: 2.277 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.277 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 5200}  {LUT 20800}     {FF 41600}  {DSP48E 90}     {BRAM 100}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.293 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.293 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.063Total elapsed time: 2.293 sec.
+@I [HLS-100] Command "add_library xilinx/artix7/artix7_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.293 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.015Total elapsed time: 2.308 sec.
+@I [HLS-10] Setting target device to 'xc7a35ticsg324-1l'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.078Total elapsed time: 2.308 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.308 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 5200}  {LUT 20800}     {FF 41600}  {DSP48E 90}     {BRAM 100}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.308 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.308 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.698Total elapsed time: 2.326 sec.
+@I [HLS-100] Command "set_part xc7a35ticsg324-1l -tool vivado "
+@I [HLS-100] Command "add_library xilinx/artix7/artix7:xc7a35ti:csg324:-1l "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.331 sec.
+@I [HLS-100] Command "license_isbetapart xc7a35ti "
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0Total elapsed time: 2.331 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.346 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 5200}  {LUT 20800}     {FF 41600}  {DSP48E 90}     {BRAM 100}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.346 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.346 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.016Total elapsed time: 2.346 sec.
+@I [HLS-100] Command "add_library xilinx/artix7/artix7_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.346 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0Total elapsed time: 2.346 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.035Total elapsed time: 2.362 sec.
+@I [HLS-100] Command "create_clock -period 10 -name default "
+@I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 2.362 sec.
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0Total elapsed time: 2.362 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Analyzing design file 'i2c_slave_core.c' ... 
+@0 [HLS-0] Analyzing design file 'i2c_slave_core.c' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado_HLS/2016.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot" -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  "i2c_slave_core.c"  -o "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.00.o"
+
+@I [HLS-100] Command "is_encrypted D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.00.o "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 3.165 sec.
+@I [HLS-0] Syntax Checker time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado_HLS/2016.1/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "i2c_slave_core.c"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot" -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  -o "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.0.c"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-100] Command "list_core -type functional_unit "
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0Total elapsed time: 3.867 sec.
+@I [HLS-0] Marker-Pragma convertor: D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.0.c D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.0.c.ap-line.c D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.0.c.ap-line.c.CXX 1
+@I [HLS-0] 
+Source processor: exec C:/Xilinx/Vivado_HLS/2016.1/tps/win64/jre/bin/java -Xmx512m -classpath   "C:/Xilinx/Vivado_HLS/2016.1/lib/classes/autopilot.sourceprocessor.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/com.ibm.icu_4.4.2.v20110208.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/jargs.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.0.c.ap-line.c"  -m "i2c_slave_core" -o "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.0.c.ap-cdt.c" -c --pp --directive D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/solution1.directive --source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core.c --error D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ca --gf --pd --p2d D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db --sd --scff D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/.systemc_flag --ad
+
+@I [HLS-0] Marker-Pragma convertor: D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pp.0.c.ap-cdt.c D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pragma.0.c D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pragma.0.c.ap-line.CXX 0
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 7.550 sec.
+@I [HLS-0] CDT processor time: 3 seconds per iteration
+@I [HLS-0] Pragma handling time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado_HLS/2016.1/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pragma.1.c"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot" -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  -o "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pragma.2.c"
+
+@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado_HLS/2016.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.pragma.2.c"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot" -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.g.bc"
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 9.186 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.bc"  -disable-opt  -LC:/Xilinx/Vivado_HLS/2016.1/win64/lib -lm_basic -o "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.g.bc"  -disable-opt  -LC:/Xilinx/Vivado_HLS/2016.1/win64/lib -lm_basic -o "D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 10.527 sec.
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top i2c_slave_core  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -globaldce -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.0.bc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:466).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:460).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:438).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:430).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:415).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:411).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:396).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:389).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:377).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:370).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:344).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:340).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:325).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:317).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:299).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:293).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:286).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:275).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:271).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:260).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:253).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:242).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:238).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:228).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:221).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:209).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:202).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:191).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:184).
+@I [XFORM-603] Inlining function 'read_i2c' into 'i2c_slave_core' (i2c_slave_core.c:179).
+@I [HLS-0] Std xform time: 0 seconds per iteration
+@I [HLS-100] Command "is_encrypted D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.1.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 11.191 sec.
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -simplifycfg -mem2reg -globaldce -resolve-double-ptr  -dce -deadargelim -dce -instcombine  -function-inline -globaldce -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify  -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.1.bc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.2.prechk.bc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.g.1.bc to D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls -tmp D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db -type-info  -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -resource-proc  -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine  -clib-intrinsic-prepare -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -attach-range  -gvn -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce  -auto-par -instcombine -dce  -array-transform-check  -array-reshape -instcombine -simplifycfg -dce  -ptrArgReplace -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -indvars -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -duplicate-dataflow-processes -globaldce  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline -globaldce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg  -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments  -loop-stream -instcombine -simplifycfg -dce -globaldce  -stream-intrinsic-preproc -dce  -check-ap-stream -loop-simplify -eliminate-keepreads  -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse  -check-dataflow-syntax  -legalize-stream-variable -legalize-global -legalize-global-1  -extract-subproc -dce -dead-channel-elimination  -canonicalize-gep -globaldce -dce -gvn -deadargelim  -scalar-propagation -deadargelim -globaldce -mem2reg  -check-dataflow-channels -function-stream -dce -globaldce  -prop-fifo-spec -internal-stream-gen  -canonicalize-gep -globaldce -dce -gvn -deadargelim   -mergereturn -indvars -loop-simplify -instcombine  -array-stream -instcombine -simplifycfg -dce  -bundle-memfifo-ops -deadargelim    -function-uniquify -directive-preproc -mem2reg -dse -dce  -group-axi-access    -licm -simplifycfg -dce -loop-delete  -norm-name  D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.1.bc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.1.tmp.bc -f
+@I [HLS-0] Presyn 1 time: 1 seconds per iteration
+@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -attach-range -dce  -pipe-mux-gen  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -globaldce -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -interface-preproc -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg -loop-simplify -auto-burst   -norm-name D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.1.tmp.bc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [XFORM-401] Performing if-conversion on hyperblock from (i2c_slave_core.c:450:4) to (i2c_slave_core.c:459:4) in function 'i2c_slave_core'... converting 3 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (i2c_slave_core.c:76:2) to (i2c_slave_core.c:410:3) in function 'i2c_slave_core'... converting 3 basic blocks.
+@I [HLS-0] Presyn 2 time: 0 seconds per iteration
+@I [HLS-100] Command "is_encrypted D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.2.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 13.787 sec.
+@I [HLS-0] build ssdm: transform -hls  -function-uniquify -auto-function-inline -globaldce  -ptrArgReplace -mem2reg -instcombine -dce  -reset-lda  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -global-constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -deadargelim -dce  -scalar-propagation -deadargelim -globaldce -mem2reg  -interface-preproc -interface-gen  -deadargelim -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -loop-simplify -phi-opt -bitop-raise  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -read-loop-dep -dce -bitwidth -norm-name -legalize    -cdfg-build  D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.2.bc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@W [XFORM-561] 'Loop-1' (i2c_slave_core.c:178:3) in function 'i2c_slave_core' is an infinite loop.
+@W [XFORM-562] Loop 'Loop-1.2' (i2c_slave_core.c:185) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks.
+@W [XFORM-562] Loop 'Loop-1.3' (i2c_slave_core.c:192) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks.
+@W [XFORM-562] Loop 'Loop-1.13' (i2c_slave_core.c:295) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks.
+@W [XFORM-562] Loop 'Loop-1.20.1.1' (i2c_slave_core.c:431) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks.
+@W [XFORM-562] Loop 'Loop-1.20.1.2' (i2c_slave_core.c:439) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks.
+@W [XFORM-562] Loop 'Loop-1.20' (i2c_slave_core.c:428) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks.
+@W [XFORM-562] Loop 'Loop-1.21.1.2' (i2c_slave_core.c:326) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks.
+@W [XFORM-562] Loop 'Loop-1.21.1' (i2c_slave_core.c:314) in function 'i2c_slave_core' has unknown bound because it has multiple exiting blocks.
+@I [HLS-0] Build ssdm time: 1 seconds per iteration
+@I [HLS-100] Command "is_encrypted D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.o.3.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.001Total elapsed time: 15.557 sec.
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 5.078Total elapsed time: 15.605 sec.
+@I [HLS-111] Elapsed time: 15.633 seconds; current memory usage: 98.7 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 13.258Total elapsed time: 15.620 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'i2c_slave_core' ...
+@0 [HLS-0] Synthesizing 'i2c_slave_core' ...
+@I [HLS-100] Command "ap_set_top_model i2c_slave_core "
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 15.652 sec.
+@I [HLS-100] Command "get_model_list i2c_slave_core -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 15.652 sec.
+@I [HLS-100] Command "preproc_iomode -model i2c_slave_core "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 15.652 sec.
+@I [HLS-100] Command "preproc_iomode -model i2c_slave_core_write_mem "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 15.652 sec.
+@I [HLS-100] Command "preproc_iomode -model i2c_slave_core_read_mem "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 15.652 sec.
+@I [HLS-100] Command "get_model_list i2c_slave_core -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-0] Model list for configure: i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core
+@I [HLS-0] Configuring Module : i2c_slave_core_read_mem ...
+@I [HLS-100] Command "set_default_model i2c_slave_core_read_mem "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-100] Command "apply_spec_resource_limit i2c_slave_core_read_mem "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-0] Configuring Module : i2c_slave_core_write_mem ...
+@I [HLS-100] Command "set_default_model i2c_slave_core_write_mem "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-100] Command "apply_spec_resource_limit i2c_slave_core_write_mem "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-0] Configuring Module : i2c_slave_core ...
+@I [HLS-100] Command "set_default_model i2c_slave_core "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-100] Command "apply_spec_resource_limit i2c_slave_core "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-0] Model list for preprocess: i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core
+@I [HLS-0] Preprocessing Module: i2c_slave_core_read_mem ...
+@I [HLS-100] Command "set_default_model i2c_slave_core_read_mem "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-100] Command "cdfg_preprocess -model i2c_slave_core_read_mem "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-100] Command "rtl_gen_preprocess i2c_slave_core_read_mem "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-0] Preprocessing Module: i2c_slave_core_write_mem ...
+@I [HLS-100] Command "set_default_model i2c_slave_core_write_mem "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-100] Command "cdfg_preprocess -model i2c_slave_core_write_mem "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-100] Command "rtl_gen_preprocess i2c_slave_core_write_mem "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-0] Preprocessing Module: i2c_slave_core ...
+@I [HLS-100] Command "set_default_model i2c_slave_core "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 15.667 sec.
+@I [HLS-100] Command "cdfg_preprocess -model i2c_slave_core "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.185Total elapsed time: 15.852 sec.
+@I [HLS-100] Command "rtl_gen_preprocess i2c_slave_core "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.016Total elapsed time: 15.868 sec.
+@I [HLS-0] Model list for synthesis: i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'i2c_slave_core_read_mem' 
+@0 [HLS-0] -- Scheduling module 'i2c_slave_core_read_mem' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model i2c_slave_core_read_mem "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 15.868 sec.
+@I [HLS-100] Command "schedule -model i2c_slave_core_read_mem "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.022Total elapsed time: 15.890 sec.
+@I [HLS-111] Elapsed time: 0.301 seconds; current memory usage: 101 MB.
+@I [HLS-100] Command "report -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.015Total elapsed time: 15.953 sec.
+@I [HLS-100] Command "db_write -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.016Total elapsed time: 15.968 sec.
+@I [HLS-0] Finish scheduling i2c_slave_core_read_mem.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'i2c_slave_core_read_mem' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'i2c_slave_core_read_mem' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model i2c_slave_core_read_mem "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 15.968 sec.
+@I [HLS-100] Command "bind -model i2c_slave_core_read_mem "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=i2c_slave_core_read_mem
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.021Total elapsed time: 15.989 sec.
+@I [HLS-111] Elapsed time: 0.085 seconds; current memory usage: 101 MB.
+@I [HLS-100] Command "report -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.031Total elapsed time: 16.37 sec.
+@I [HLS-100] Command "db_write -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.031Total elapsed time: 16.68 sec.
+@I [HLS-0] Finish binding i2c_slave_core_read_mem.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'i2c_slave_core_write_mem' 
+@0 [HLS-0] -- Scheduling module 'i2c_slave_core_write_mem' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model i2c_slave_core_write_mem "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 16.68 sec.
+@I [HLS-100] Command "schedule -model i2c_slave_core_write_mem "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.022Total elapsed time: 16.91 sec.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 101 MB.
+@I [HLS-100] Command "report -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.015Total elapsed time: 16.137 sec.
+@I [HLS-100] Command "db_write -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.032Total elapsed time: 16.169 sec.
+@I [HLS-0] Finish scheduling i2c_slave_core_write_mem.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'i2c_slave_core_write_mem' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'i2c_slave_core_write_mem' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model i2c_slave_core_write_mem "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 16.185 sec.
+@I [HLS-100] Command "bind -model i2c_slave_core_write_mem "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=i2c_slave_core_write_mem
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.004Total elapsed time: 16.191 sec.
+@I [HLS-111] Elapsed time: 0.116 seconds; current memory usage: 101 MB.
+@I [HLS-100] Command "report -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.016Total elapsed time: 16.238 sec.
+@I [HLS-100] Command "db_write -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.031Total elapsed time: 16.269 sec.
+@I [HLS-0] Finish binding i2c_slave_core_write_mem.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'i2c_slave_core' 
+@0 [HLS-0] -- Scheduling module 'i2c_slave_core' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model i2c_slave_core "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 16.289 sec.
+@I [HLS-100] Command "schedule -model i2c_slave_core "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.249Total elapsed time: 16.539 sec.
+@I [HLS-111] Elapsed time: 0.349 seconds; current memory usage: 106 MB.
+@I [HLS-100] Command "report -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.046Total elapsed time: 16.629 sec.
+@I [HLS-100] Command "db_write -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.257Total elapsed time: 16.887 sec.
+@I [HLS-0] Finish scheduling i2c_slave_core.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'i2c_slave_core' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'i2c_slave_core' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model i2c_slave_core "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.001Total elapsed time: 16.900 sec.
+@I [HLS-100] Command "bind -model i2c_slave_core "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=i2c_slave_core
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.072Total elapsed time: 16.974 sec.
+@I [HLS-111] Elapsed time: 0.438 seconds; current memory usage: 106 MB.
+@I [HLS-100] Command "report -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.12Total elapsed time: 17.132 sec.
+@I [HLS-100] Command "db_write -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.3Total elapsed time: 17.449 sec.
+@I [HLS-0] Finish binding i2c_slave_core.
+@I [HLS-100] Command "get_model_list i2c_slave_core -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 17.449 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess i2c_slave_core_read_mem "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 17.449 sec.
+@I [HLS-100] Command "rtl_gen_preprocess i2c_slave_core_write_mem "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 17.449 sec.
+@I [HLS-100] Command "rtl_gen_preprocess i2c_slave_core "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 17.449 sec.
+@I [HLS-0] Model list for RTL generation: i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'i2c_slave_core_read_mem' 
+@0 [HLS-0] -- Generating RTL for module 'i2c_slave_core_read_mem' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model i2c_slave_core_read_mem -vendor xilinx -mg_file D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'i2c_slave_core_read_mem'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.015Total elapsed time: 17.495 sec.
+@I [HLS-111] Elapsed time: 0.522 seconds; current memory usage: 105 MB.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 17.549 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core_read_mem -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/systemc/i2c_slave_core_read_mem -synmodules i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.015Total elapsed time: 17.564 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core_read_mem -style xilinx -f -lang vhdl -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/vhdl/i2c_slave_core_read_mem "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 17.564 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core_read_mem -style xilinx -f -lang vlog -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/verilog/i2c_slave_core_read_mem "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.016Total elapsed time: 17.580 sec.
+@I [HLS-100] Command "gen_tb_info i2c_slave_core_read_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem -p D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 17.580 sec.
+@I [HLS-100] Command "report -model i2c_slave_core_read_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/report/i2c_slave_core_read_mem_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.016Total elapsed time: 17.596 sec.
+@I [HLS-100] Command "report -model i2c_slave_core_read_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/report/i2c_slave_core_read_mem_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.015Total elapsed time: 17.611 sec.
+@I [HLS-100] Command "report -model i2c_slave_core_read_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.022Total elapsed time: 17.633 sec.
+@I [HLS-100] Command "db_write -model i2c_slave_core_read_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.032Total elapsed time: 17.665 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'i2c_slave_core_write_mem' 
+@0 [HLS-0] -- Generating RTL for module 'i2c_slave_core_write_mem' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model i2c_slave_core_write_mem -vendor xilinx -mg_file D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'i2c_slave_core_write_mem'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.038Total elapsed time: 17.749 sec.
+@I [HLS-111] Elapsed time: 0.247 seconds; current memory usage: 106 MB.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 17.796 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core_write_mem -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/systemc/i2c_slave_core_write_mem -synmodules i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 17.796 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core_write_mem -style xilinx -f -lang vhdl -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/vhdl/i2c_slave_core_write_mem "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 17.812 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core_write_mem -style xilinx -f -lang vlog -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/verilog/i2c_slave_core_write_mem "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 17.812 sec.
+@I [HLS-100] Command "gen_tb_info i2c_slave_core_write_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem -p D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.022Total elapsed time: 17.834 sec.
+@I [HLS-100] Command "report -model i2c_slave_core_write_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/report/i2c_slave_core_write_mem_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.015Total elapsed time: 17.850 sec.
+@I [HLS-100] Command "report -model i2c_slave_core_write_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/report/i2c_slave_core_write_mem_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 17.850 sec.
+@I [HLS-100] Command "report -model i2c_slave_core_write_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.032Total elapsed time: 17.881 sec.
+@I [HLS-100] Command "db_write -model i2c_slave_core_write_mem -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.053Total elapsed time: 17.934 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'i2c_slave_core' 
+@0 [HLS-0] -- Generating RTL for module 'i2c_slave_core' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model i2c_slave_core -vendor xilinx -mg_file D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/i2c_in' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/i2c_sda_out' to 'ap_none' (register).
+@W [RTGEN-101] Port 'i2c_sda_out' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/i2c_sda_oe' to 'ap_none' (register).
+@W [RTGEN-101] Port 'i2c_sda_oe' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/dev_addr_in' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/auto_inc_regad_in' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/mem_addr' to 'ap_none' (register).
+@W [RTGEN-101] Port 'mem_addr' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/mem_din' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/mem_dout' to 'ap_none' (register).
+@W [RTGEN-101] Port 'mem_dout' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/mem_wreq' to 'ap_none' (register).
+@W [RTGEN-101] Port 'mem_wreq' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/mem_wack' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/mem_rreq' to 'ap_none' (register).
+@W [RTGEN-101] Port 'mem_rreq' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+@I [RTGEN-500] Setting interface mode on port 'i2c_slave_core/mem_rack' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on function 'i2c_slave_core' to 'ap_ctrl_hs'.
+@W [RTGEN-101] Global scalar 'i2c_in' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'i2c_sda_out' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'i2c_sda_oe' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'dev_addr_in' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'auto_inc_regad_in' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'mem_addr' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'mem_din' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'mem_dout' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'mem_wreq' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'mem_wack' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'mem_rreq' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'mem_rack' will be exposed as RTL port.
+@W [RTGEN-101] Global scalar 'i2c_val' will not be exposed as RTL port.
+@I [RTGEN-100] Finished creating RTL model for 'i2c_slave_core'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.487Total elapsed time: 18.469 sec.
+@I [HLS-111] Elapsed time: 0.772 seconds; current memory usage: 105 MB.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 18.589 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/systemc/i2c_slave_core -synmodules i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.039Total elapsed time: 18.631 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core -istop -style xilinx -f -lang vhdl -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/vhdl/i2c_slave_core "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.182Total elapsed time: 18.815 sec.
+@I [HLS-100] Command "gen_rtl i2c_slave_core -istop -style xilinx -f -lang vlog -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/verilog/i2c_slave_core "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.123Total elapsed time: 18.940 sec.
+@I [HLS-100] Command "export_constraint_db -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.002Total elapsed time: 18.954 sec.
+@I [HLS-100] Command "report -model i2c_slave_core -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.119Total elapsed time: 19.76 sec.
+@I [HLS-100] Command "report -model i2c_slave_core -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.sdaccel.xml -verbose -f -sdaccel "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.144Total elapsed time: 19.225 sec.
+@I [HLS-100] Command "gen_tb_info i2c_slave_core -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core -p D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.022Total elapsed time: 19.251 sec.
+@I [HLS-100] Command "report -model i2c_slave_core -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/report/i2c_slave_core_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.099Total elapsed time: 19.352 sec.
+@I [HLS-100] Command "report -model i2c_slave_core -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/syn/report/i2c_slave_core_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.054Total elapsed time: 19.409 sec.
+@I [HLS-100] Command "report -model i2c_slave_core -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.206Total elapsed time: 19.617 sec.
+@I [HLS-100] Command "db_write -model i2c_slave_core -o D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.339Total elapsed time: 19.958 sec.
+@I [HLS-100] Command "sc_get_clocks i2c_slave_core "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 20.433 sec.
+@I [HLS-100] Command "sc_get_portdomain i2c_slave_core "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 20.449 sec.
+@I [HLS-0] Model list for RTL component generation: i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core
+@I [HLS-0] Handling components in module [i2c_slave_core_read_mem] ... 
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.464 sec.
+@I [HLS-0] Handling components in module [i2c_slave_core_write_mem] ... 
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.480 sec.
+@I [HLS-0] Handling components in module [i2c_slave_core] ... 
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.480 sec.
+@I [HLS-0] Append model i2c_slave_core_read_mem
+@I [HLS-0] Append model i2c_slave_core_write_mem
+@I [HLS-0] Append model i2c_slave_core
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: i2c_slave_core_read_mem i2c_slave_core_write_mem i2c_slave_core
+@I [HLS-0] To file: write model i2c_slave_core_read_mem
+@I [HLS-0] To file: write model i2c_slave_core_write_mem
+@I [HLS-0] To file: write model i2c_slave_core
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-0] RTL Generation done.
+@I [HLS-0] CAS Generation done.
+@I [HLS-0] CBC Generation done.
+@I [HLS-100] Command "export_ssdm D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.022Total elapsed time: 20.517 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.518 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 20.533 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 20.533 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.533 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.533 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.533 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 20.549 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.549 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.549 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.549 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 20.565 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 20.580 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.047Total elapsed time: 20.596 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.022Total elapsed time: 20.618 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.031Total elapsed time: 20.649 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/dds_compiler.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.649 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.649 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.316Total elapsed time: 20.965 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.965 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.416Total elapsed time: 20.965 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.965 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.416Total elapsed time: 20.965 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.416Total elapsed time: 20.965 sec.
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7_fpv6.gen "
+@I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 20.981 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 20.981 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.981 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 20.997 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.997 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.997 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_read_mem.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.997 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core_write_mem.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.997 sec.
+@I [HLS-100] Command "source D:/21_streamer_car5_artix7/fpga_arty/i2c_slave_core/solution1/.autopilot/db/i2c_slave_core.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 20.997 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [SYSC-301] Generating SystemC RTL for i2c_slave_core.
+@I [VHDL-304] Generating VHDL RTL for i2c_slave_core.
+@I [VLOG-307] Generating Verilog RTL for i2c_slave_core.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 5.399Total elapsed time: 21.19 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 18.657Total elapsed time: 21.19 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 19.428Total elapsed time: 21.19 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.031Total elapsed time: 21.50 sec.

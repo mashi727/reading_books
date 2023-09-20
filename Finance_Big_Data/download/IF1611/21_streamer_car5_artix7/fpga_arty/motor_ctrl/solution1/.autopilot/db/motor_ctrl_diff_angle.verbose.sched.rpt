@@ -1,0 +1,251 @@
+
+
+================================================================
+== Vivado HLS Report for 'motor_ctrl_diff_angle'
+================================================================
+* Date:           Fri May 27 23:00:19 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        motor_ctrl
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.29|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   50|   50|   50|   50|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 7
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+* FSM state operations: 
+
+ <State 1>: 8.29ns
+ST_1: value_read [1/1] 0.00ns
+:0  %value_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %value)
+
+ST_1: target_read [1/1] 0.00ns
+:1  %target_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %target)
+
+ST_1: tmp_cast3 [1/1] 0.00ns
+:2  %tmp_cast3 = zext i16 %value_read to i18
+
+ST_1: tmp_cast [1/1] 0.00ns
+:3  %tmp_cast = zext i16 %value_read to i17
+
+ST_1: tmp_cast_8 [1/1] 0.00ns
+:4  %tmp_cast_8 = zext i16 %target_read to i17
+
+ST_1: tmp_s [1/1] 1.91ns
+:5  %tmp_s = sub i17 %tmp_cast, %tmp_cast_8
+
+ST_1: tmp_36 [1/1] 1.74ns
+:7  %tmp_36 = add i17 -1, %tmp_cast_8
+
+ST_1: tmp_37 [1/1] 1.74ns
+:8  %tmp_37 = sub i17 %tmp_36, %tmp_cast
+
+ST_1: tmp_38 [1/1] 2.78ns
+:9  %tmp_38 = icmp sgt i17 %tmp_37, -18001
+
+ST_1: smax2 [1/1] 0.00ns (grouped into LUT with out node tmp1)
+:10  %smax2 = select i1 %tmp_38, i17 %tmp_37, i17 -18001
+
+ST_1: smax2_cast [1/1] 0.00ns (grouped into LUT with out node tmp1)
+:11  %smax2_cast = sext i17 %smax2 to i18
+
+ST_1: tmp_39 [1/1] 2.03ns
+:12  %tmp_39 = sub i17 36000, %tmp_cast_8
+
+ST_1: tmp1 [1/1] 2.03ns (out node of the LUT)
+:14  %tmp1 = add i18 %smax2_cast, %tmp_cast3
+
+ST_1: tmp_45 [1/1] 2.03ns
+:25  %tmp_45 = add i17 35999, %tmp_cast_8
+
+ST_1: tmp_64_cast [1/1] 0.00ns
+:26  %tmp_64_cast = zext i17 %tmp_45 to i18
+
+ST_1: tmp_46 [1/1] 2.03ns
+:27  %tmp_46 = sub i18 %tmp_64_cast, %tmp_cast3
+
+
+ <State 2>: 7.06ns
+ST_2: tmp_57_cast_cast [1/1] 0.00ns
+:13  %tmp_57_cast_cast = sext i17 %tmp_39 to i19
+
+ST_2: tmp1_cast_cast [1/1] 0.00ns
+:15  %tmp1_cast_cast = sext i18 %tmp1 to i19
+
+ST_2: tmp_40 [1/1] 2.03ns
+:16  %tmp_40 = add i19 %tmp1_cast_cast, %tmp_57_cast_cast
+
+ST_2: tmp_41 [23/23] 5.03ns
+:17  %tmp_41 = urem i19 %tmp_40, 36000
+
+
+ <State 3>: 7.06ns
+ST_3: tmp_41 [1/23] 5.03ns
+:17  %tmp_41 = urem i19 %tmp_40, 36000
+
+ST_3: tmp_42 [1/1] 2.03ns
+:18  %tmp_42 = sub i19 %tmp_40, %tmp_41
+
+
+ <State 4>: 6.86ns
+ST_4: tmp_53_cast [1/1] 0.00ns
+:6  %tmp_53_cast = sext i17 %tmp_s to i19
+
+ST_4: tmp_61_cast [1/1] 0.00ns (grouped into LUT with out node tmp2)
+:19  %tmp_61_cast = sext i19 %tmp_42 to i20
+
+ST_4: tmp_43 [1/1] 2.03ns
+:20  %tmp_43 = sub i19 %tmp_53_cast, %tmp_42
+
+ST_4: tmp_44 [1/1] 2.80ns
+:22  %tmp_44 = icmp sgt i19 %tmp_43, -18000
+
+ST_4: smax1 [1/1] 0.00ns (grouped into LUT with out node tmp2)
+:23  %smax1 = select i1 %tmp_44, i19 %tmp_43, i19 -18000
+
+ST_4: smax1_cast [1/1] 0.00ns (grouped into LUT with out node tmp2)
+:24  %smax1_cast = sext i19 %smax1 to i20
+
+ST_4: tmp2 [1/1] 2.03ns (out node of the LUT)
+:29  %tmp2 = add i20 %tmp_61_cast, %smax1_cast
+
+
+ <State 5>: 7.21ns
+ST_5: tmp_65_cast_cast [1/1] 0.00ns
+:28  %tmp_65_cast_cast = sext i18 %tmp_46 to i21
+
+ST_5: tmp2_cast_cast [1/1] 0.00ns
+:30  %tmp2_cast_cast = sext i20 %tmp2 to i21
+
+ST_5: tmp_47 [1/1] 2.03ns
+:31  %tmp_47 = add i21 %tmp2_cast_cast, %tmp_65_cast_cast
+
+ST_5: tmp_48 [25/25] 5.18ns
+:32  %tmp_48 = urem i21 %tmp_47, 36000
+
+
+ <State 6>: 7.21ns
+ST_6: tmp_62_cast [1/1] 0.00ns
+:21  %tmp_62_cast = sext i19 %tmp_43 to i20
+
+ST_6: tmp_48 [1/25] 5.18ns
+:32  %tmp_48 = urem i21 %tmp_47, 36000
+
+ST_6: tmp [1/1] 0.00ns
+:33  %tmp = trunc i21 %tmp_48 to i20
+
+ST_6: tmp_49 [1/1] 2.03ns
+:34  %tmp_49 = sub i20 %tmp_62_cast, %tmp
+
+
+ <State 7>: 2.15ns
+ST_7: tmp_69_cast [1/1] 0.00ns
+:35  %tmp_69_cast = sext i20 %tmp_49 to i21
+
+ST_7: retval [1/1] 2.15ns
+:36  %retval = add i21 %tmp_69_cast, %tmp_47
+
+ST_7: stg_47 [1/1] 0.00ns
+:37  ret i21 %retval
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,141 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'motor_ctrl_diff_angle'" level="0">
+<item name = "Date">Fri May 27 23:00:21 2016
+</item>
+<item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
+<item name = "Project">motor_ctrl</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a35ticsg324-1l</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.29, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">50, 50, 50, 50, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 292</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, 320, 379</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 2</column>
+<column name="Register">-, -, 195, -</column>
+<specialColumn name="Available">100, 90, 41600, 20800</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 1, 3</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="motor_ctrl_urem_19ns_17ns_19_23_seq_U12">motor_ctrl_urem_19ns_17ns_19_23_seq, 0, 0, 152, 180</column>
+<column name="motor_ctrl_urem_21ns_17ns_20_25_seq_U13">motor_ctrl_urem_21ns_17ns_20_25_seq, 0, 0, 168, 199</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_return">+, 0, 0, 21, 21, 21</column>
+<column name="grp_fu_120_p0">+, 0, 0, 19, 19, 19</column>
+<column name="grp_fu_178_p0">+, 0, 0, 21, 21, 21</column>
+<column name="tmp1_fu_86_p2">+, 0, 0, 18, 18, 18</column>
+<column name="tmp2_fu_160_p2">+, 0, 0, 20, 20, 20</column>
+<column name="tmp_36_fu_50_p2">+, 0, 0, 8, 2, 17</column>
+<column name="tmp_45_fu_92_p2">+, 0, 0, 17, 16, 17</column>
+<column name="tmp_37_fu_56_p2">-, 0, 0, 8, 17, 17</column>
+<column name="tmp_39_fu_80_p2">-, 0, 0, 17, 16, 17</column>
+<column name="tmp_42_fu_126_p2">-, 0, 0, 19, 19, 19</column>
+<column name="tmp_43_fu_137_p2">-, 0, 0, 19, 19, 19</column>
+<column name="tmp_46_fu_102_p2">-, 0, 0, 18, 18, 18</column>
+<column name="tmp_49_fu_191_p2">-, 0, 0, 20, 20, 20</column>
+<column name="tmp_s_fu_44_p2">-, 0, 0, 17, 17, 17</column>
+<column name="tmp_38_fu_62_p2">icmp, 0, 0, 6, 17, 16</column>
+<column name="tmp_44_fu_142_p2">icmp, 0, 0, 7, 19, 16</column>
+<column name="smax1_fu_148_p3">select, 0, 0, 19, 1, 19</column>
+<column name="smax2_fu_68_p3">select, 0, 0, 17, 1, 17</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">2, 8, 1, 8</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">7, 0, 7, 0</column>
+<column name="tmp1_reg_215">18, 0, 18, 0</column>
+<column name="tmp2_reg_242">20, 0, 20, 0</column>
+<column name="tmp_39_reg_210">17, 0, 17, 0</column>
+<column name="tmp_40_reg_225">19, 0, 19, 0</column>
+<column name="tmp_42_reg_231">19, 0, 19, 0</column>
+<column name="tmp_43_reg_237">19, 0, 19, 0</column>
+<column name="tmp_46_reg_220">18, 0, 18, 0</column>
+<column name="tmp_47_reg_247">21, 0, 21, 0</column>
+<column name="tmp_49_reg_253">20, 0, 20, 0</column>
+<column name="tmp_s_reg_205">17, 0, 17, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, motor_ctrl_diff_angle, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, motor_ctrl_diff_angle, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, motor_ctrl_diff_angle, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, motor_ctrl_diff_angle, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, motor_ctrl_diff_angle, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, motor_ctrl_diff_angle, return value</column>
+<column name="ap_return">out, 21, ap_ctrl_hs, motor_ctrl_diff_angle, return value</column>
+<column name="target">in, 16, ap_none, target, scalar</column>
+<column name="value_r">in, 16, ap_none, value_r, scalar</column>
+</table>
+</item>
+</section>
+</profile>

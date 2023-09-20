@@ -1,0 +1,128 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="wait_tmr" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="read_uart_rx" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uart_send_byte" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uart_receive_byte" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uart_write_reg" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uart_read_reg" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="uart_read_reg16" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="write_mem" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="read_mem" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="char2bin" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bin2char" label="">
+<pragma name="INLINE">
+<option name="OFF" positionalBoolean="1" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="TOP"/>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="dummy_tmr_out"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="uart_rx"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="uart_tx"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="mem_addr"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="mem_din"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="mem_dout"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="mem_wreq"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="mem_wack"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="register" positionalBoolean="register" value=""/>
+<option name="port" positionalBoolean="4" value="mem_rreq"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="bno055_uart" label="">
+<pragma name="INTERFACE">
+<option name="ap_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="mem_rack"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

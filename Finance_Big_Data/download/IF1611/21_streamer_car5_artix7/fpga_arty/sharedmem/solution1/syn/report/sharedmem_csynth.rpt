@@ -1,0 +1,233 @@
+
+
+================================================================
+== Vivado HLS Report for 'sharedmem'
+================================================================
+* Date:           Fri May 27 17:33:15 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        sharedmem
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      4.45|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  256|  256|         1|          -|          -|   256|    no    |
+        |- Loop 2     |    ?|    ?|         ?|          -|          -|  inf |    no    |
+        | + Loop 2.1  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.2  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.3  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.4  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.5  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.6  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.7  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.8  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT  |
++-----------------+---------+-------+-------+-------+
+|DSP              |        -|      -|      -|      -|
+|Expression       |        -|      -|      0|     13|
+|FIFO             |        -|      -|      -|      -|
+|Instance         |        -|      -|      -|      -|
+|Memory           |        1|      -|      0|      0|
+|Multiplexer      |        -|      -|      -|    122|
+|Register         |        -|      -|    162|      -|
++-----------------+---------+-------+-------+-------+
+|Total            |        1|      0|    162|    135|
++-----------------+---------+-------+-------+-------+
+|Available        |      100|     90|  41600|  20800|
++-----------------+---------+-------+-------+-------+
+|Utilization (%)  |        1|      0|   ~0  |   ~0  |
++-----------------+---------+-------+-------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-------+---------------+---------+---+----+------+-----+------+-------------+
+    | Memory|     Module    | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-------+---------------+---------+---+----+------+-----+------+-------------+
+    |mem_U  |sharedmem_mem  |        1|  0|   0|   256|    8|     1|         2048|
+    +-------+---------------+---------+---+----+------+-----+------+-------------+
+    |Total  |               |        1|  0|   0|   256|    8|     1|         2048|
+    +-------+---------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |addr_1_fu_518_p2    |     +    |      0|  0|   9|           9|           1|
+    |exitcond_fu_512_p2  |   icmp   |      0|  0|   4|           9|          10|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |Total               |          |      0|  0|  13|          18|          11|
+    +--------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |addr_reg_454      |   9|          2|    9|         18|
+    |ap_NS_fsm         |  78|         47|    1|         47|
+    |ch_reg_465        |   3|          5|    3|         15|
+    |mem_address0      |  16|         10|    8|         80|
+    |mem_d0            |   8|          6|    8|         48|
+    |r_ack0_1_data_in  |   1|          3|    1|          3|
+    |r_ack1_1_data_in  |   1|          3|    1|          3|
+    |r_ack2_1_data_in  |   1|          3|    1|          3|
+    |r_ack3_1_data_in  |   1|          3|    1|          3|
+    |w_ack0_1_data_in  |   1|          3|    1|          3|
+    |w_ack1_1_data_in  |   1|          3|    1|          3|
+    |w_ack2_1_data_in  |   1|          3|    1|          3|
+    |w_ack3_1_data_in  |   1|          3|    1|          3|
+    +------------------+----+-----------+-----+-----------+
+    |Total             | 122|         94|   37|        232|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------+----+----+-----+-----------+
+    |        Name       | FF | LUT| Bits| Const Bits|
+    +-------------------+----+----+-----+-----------+
+    |addr0_0_data_reg   |   8|   0|    8|          0|
+    |addr0_0_vld_reg    |   0|   0|    1|          1|
+    |addr1_0_data_reg   |   8|   0|    8|          0|
+    |addr1_0_vld_reg    |   0|   0|    1|          1|
+    |addr2_0_data_reg   |   8|   0|    8|          0|
+    |addr2_0_vld_reg    |   0|   0|    1|          1|
+    |addr3_0_data_reg   |   8|   0|    8|          0|
+    |addr3_0_vld_reg    |   0|   0|    1|          1|
+    |addr_reg_454       |   9|   0|    9|          0|
+    |ap_CS_fsm          |  46|   0|   46|          0|
+    |ch_reg_465         |   3|   0|    3|          0|
+    |din0_read_reg_624  |   8|   0|    8|          0|
+    |din1_read_reg_611  |   8|   0|    8|          0|
+    |din2_read_reg_598  |   8|   0|    8|          0|
+    |din3_read_reg_585  |   8|   0|    8|          0|
+    |dout0_1_data_reg   |   8|   0|    8|          0|
+    |dout0_1_vld_reg    |   0|   0|    1|          1|
+    |dout1_1_data_reg   |   8|   0|    8|          0|
+    |dout1_1_vld_reg    |   0|   0|    1|          1|
+    |dout2_1_data_reg   |   8|   0|    8|          0|
+    |dout2_1_vld_reg    |   0|   0|    1|          1|
+    |dout3_1_data_reg   |   8|   0|    8|          0|
+    |dout3_1_vld_reg    |   0|   0|    1|          1|
+    |r_ack0_1_data_reg  |   1|   0|    1|          0|
+    |r_ack0_1_vld_reg   |   0|   0|    1|          1|
+    |r_ack1_1_data_reg  |   1|   0|    1|          0|
+    |r_ack1_1_vld_reg   |   0|   0|    1|          1|
+    |r_ack2_1_data_reg  |   1|   0|    1|          0|
+    |r_ack2_1_vld_reg   |   0|   0|    1|          1|
+    |r_ack3_1_data_reg  |   1|   0|    1|          0|
+    |r_ack3_1_vld_reg   |   0|   0|    1|          1|
+    |w_ack0_1_data_reg  |   1|   0|    1|          0|
+    |w_ack0_1_vld_reg   |   0|   0|    1|          1|
+    |w_ack1_1_data_reg  |   1|   0|    1|          0|
+    |w_ack1_1_vld_reg   |   0|   0|    1|          1|
+    |w_ack2_1_data_reg  |   1|   0|    1|          0|
+    |w_ack2_1_vld_reg   |   0|   0|    1|          1|
+    |w_ack3_1_data_reg  |   1|   0|    1|          0|
+    |w_ack3_1_vld_reg   |   0|   0|    1|          1|
+    +-------------------+----+----+-----+-----------+
+    |Total              | 162|   0|  178|         16|
+    +-------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------+-----+-----+------------+--------------+--------------+
+| RTL Ports| Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------+-----+-----+------------+--------------+--------------+
+|ap_clk    |  in |    1| ap_ctrl_hs |   sharedmem  | return value |
+|ap_rst    |  in |    1| ap_ctrl_hs |   sharedmem  | return value |
+|ap_start  |  in |    1| ap_ctrl_hs |   sharedmem  | return value |
+|ap_done   | out |    1| ap_ctrl_hs |   sharedmem  | return value |
+|ap_idle   | out |    1| ap_ctrl_hs |   sharedmem  | return value |
+|ap_ready  | out |    1| ap_ctrl_hs |   sharedmem  | return value |
+|addr0     |  in |    8|   ap_none  |     addr0    |    pointer   |
+|din0      |  in |    8|   ap_none  |     din0     |    pointer   |
+|dout0_i   |  in |    8|   ap_none  |     dout0    |    pointer   |
+|dout0_o   | out |    8|   ap_none  |     dout0    |    pointer   |
+|r_req0    |  in |    1|   ap_none  |    r_req0    |    pointer   |
+|r_ack0_i  |  in |    1|   ap_none  |    r_ack0    |    pointer   |
+|r_ack0_o  | out |    1|   ap_none  |    r_ack0    |    pointer   |
+|w_req0    |  in |    1|   ap_none  |    w_req0    |    pointer   |
+|w_ack0_i  |  in |    1|   ap_none  |    w_ack0    |    pointer   |
+|w_ack0_o  | out |    1|   ap_none  |    w_ack0    |    pointer   |
+|addr1     |  in |    8|   ap_none  |     addr1    |    pointer   |
+|din1      |  in |    8|   ap_none  |     din1     |    pointer   |
+|dout1_i   |  in |    8|   ap_none  |     dout1    |    pointer   |
+|dout1_o   | out |    8|   ap_none  |     dout1    |    pointer   |
+|r_req1    |  in |    1|   ap_none  |    r_req1    |    pointer   |
+|r_ack1_i  |  in |    1|   ap_none  |    r_ack1    |    pointer   |
+|r_ack1_o  | out |    1|   ap_none  |    r_ack1    |    pointer   |
+|w_req1    |  in |    1|   ap_none  |    w_req1    |    pointer   |
+|w_ack1_i  |  in |    1|   ap_none  |    w_ack1    |    pointer   |
+|w_ack1_o  | out |    1|   ap_none  |    w_ack1    |    pointer   |
+|addr2     |  in |    8|   ap_none  |     addr2    |    pointer   |
+|din2      |  in |    8|   ap_none  |     din2     |    pointer   |
+|dout2_i   |  in |    8|   ap_none  |     dout2    |    pointer   |
+|dout2_o   | out |    8|   ap_none  |     dout2    |    pointer   |
+|r_req2    |  in |    1|   ap_none  |    r_req2    |    pointer   |
+|r_ack2_i  |  in |    1|   ap_none  |    r_ack2    |    pointer   |
+|r_ack2_o  | out |    1|   ap_none  |    r_ack2    |    pointer   |
+|w_req2    |  in |    1|   ap_none  |    w_req2    |    pointer   |
+|w_ack2_i  |  in |    1|   ap_none  |    w_ack2    |    pointer   |
+|w_ack2_o  | out |    1|   ap_none  |    w_ack2    |    pointer   |
+|addr3     |  in |    8|   ap_none  |     addr3    |    pointer   |
+|din3      |  in |    8|   ap_none  |     din3     |    pointer   |
+|dout3_i   |  in |    8|   ap_none  |     dout3    |    pointer   |
+|dout3_o   | out |    8|   ap_none  |     dout3    |    pointer   |
+|r_req3    |  in |    1|   ap_none  |    r_req3    |    pointer   |
+|r_ack3_i  |  in |    1|   ap_none  |    r_ack3    |    pointer   |
+|r_ack3_o  | out |    1|   ap_none  |    r_ack3    |    pointer   |
+|w_req3    |  in |    1|   ap_none  |    w_req3    |    pointer   |
+|w_ack3_i  |  in |    1|   ap_none  |    w_ack3    |    pointer   |
+|w_ack3_o  | out |    1|   ap_none  |    w_ack3    |    pointer   |
++----------+-----+-----+------------+--------------+--------------+
+

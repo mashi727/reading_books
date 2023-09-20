@@ -1,0 +1,677 @@
+
+
+================================================================
+== Vivado HLS Report for 'bno055_uart'
+================================================================
+* Date:           Fri May 27 17:23:04 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        bno055_uart
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.18|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         ?|          -|          -|  inf |    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 0
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 43
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	30  / true
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: dummy_tmr_out_load [2/2] 0.00ns
+:1  %dummy_tmr_out_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @dummy_tmr_out) nounwind
+
+ST_1: uart_rx_load [1/1] 0.00ns
+:3  %uart_rx_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @uart_rx) nounwind
+
+ST_1: uart_tx_load [2/2] 0.00ns
+:5  %uart_tx_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @uart_tx) nounwind
+
+ST_1: mem_addr_load [2/2] 0.00ns
+:7  %mem_addr_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_addr) nounwind
+
+ST_1: mem_din_load [1/1] 0.00ns
+:9  %mem_din_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_din) nounwind
+
+ST_1: mem_dout_load [2/2] 0.00ns
+:11  %mem_dout_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_dout) nounwind
+
+ST_1: mem_wreq_load [2/2] 0.00ns
+:13  %mem_wreq_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_wreq) nounwind
+
+ST_1: mem_wack_load [1/1] 0.00ns
+:15  %mem_wack_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_wack) nounwind
+
+ST_1: mem_rreq_load [2/2] 0.00ns
+:17  %mem_rreq_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_rreq) nounwind
+
+ST_1: mem_rack_load [1/1] 0.00ns
+:19  %mem_rack_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_rack) nounwind
+
+
+ <State 2>: 0.00ns
+ST_2: dummy_tmr_out_load [1/2] 0.00ns
+:1  %dummy_tmr_out_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @dummy_tmr_out) nounwind
+
+ST_2: uart_tx_load [1/2] 0.00ns
+:5  %uart_tx_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @uart_tx) nounwind
+
+ST_2: mem_addr_load [1/2] 0.00ns
+:7  %mem_addr_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_addr) nounwind
+
+ST_2: mem_dout_load [1/2] 0.00ns
+:11  %mem_dout_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_dout) nounwind
+
+ST_2: mem_wreq_load [1/2] 0.00ns
+:13  %mem_wreq_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_wreq) nounwind
+
+ST_2: mem_rreq_load [1/2] 0.00ns
+:17  %mem_rreq_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_rreq) nounwind
+
+ST_2: stg_60 [1/1] 0.00ns
+:23  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_2: stg_61 [2/2] 0.00ns
+:24  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @uart_tx, i1 true) nounwind
+
+
+ <State 3>: 0.00ns
+ST_3: stg_62 [1/2] 0.00ns
+:24  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @uart_tx, i1 true) nounwind
+
+
+ <State 4>: 1.28ns
+ST_4: stg_63 [2/2] 1.28ns
+:21  call fastcc void @bno055_uart_write_mem(i8 zeroext 21, i8 zeroext 0)
+
+ST_4: stg_64 [2/2] 1.28ns
+:26  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 7, i8 zeroext 0) nounwind
+
+
+ <State 5>: 0.00ns
+ST_5: stg_65 [1/2] 0.00ns
+:21  call fastcc void @bno055_uart_write_mem(i8 zeroext 21, i8 zeroext 0)
+
+ST_5: stg_66 [1/2] 0.00ns
+:26  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 7, i8 zeroext 0) nounwind
+
+
+ <State 6>: 1.28ns
+ST_6: stg_67 [2/2] 1.28ns
+:22  call fastcc void @bno055_uart_write_mem(i8 zeroext 22, i8 zeroext 0)
+
+ST_6: stg_68 [2/2] 1.28ns
+:28  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 63, i8 zeroext -64) nounwind
+
+
+ <State 7>: 0.00ns
+ST_7: stg_69 [1/2] 0.00ns
+:22  call fastcc void @bno055_uart_write_mem(i8 zeroext 22, i8 zeroext 0)
+
+ST_7: stg_70 [1/2] 0.00ns
+:28  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 63, i8 zeroext -64) nounwind
+
+
+ <State 8>: 2.65ns
+ST_8: stg_71 [2/2] 2.65ns
+:30  call fastcc void @bno055_uart_wait_tmr(i28 100000000) nounwind
+
+
+ <State 9>: 2.65ns
+ST_9: stg_72 [1/2] 2.65ns
+:30  call fastcc void @bno055_uart_wait_tmr(i28 100000000) nounwind
+
+
+ <State 10>: 1.28ns
+ST_10: stg_73 [2/2] 1.28ns
+:32  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 7, i8 zeroext 0) nounwind
+
+
+ <State 11>: 0.00ns
+ST_11: stg_74 [1/2] 0.00ns
+:32  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 7, i8 zeroext 0) nounwind
+
+
+ <State 12>: 1.04ns
+ST_12: dt [2/2] 1.04ns
+:34  %dt = call fastcc zeroext i8 @bno055_uart_uart_read_reg(i8 zeroext 62)
+
+
+ <State 13>: 1.57ns
+ST_13: dt [1/2] 1.57ns
+:34  %dt = call fastcc zeroext i8 @bno055_uart_uart_read_reg(i8 zeroext 62)
+
+ST_13: tmp [1/1] 0.00ns
+:36  %tmp = call i6 @_ssdm_op_PartSelect.i6.i8.i32.i32(i8 %dt, i32 2, i32 7)
+
+
+ <State 14>: 1.28ns
+ST_14: tmp_s [1/1] 0.00ns
+:37  %tmp_s = call i8 @_ssdm_op_BitConcatenate.i8.i6.i2(i6 %tmp, i2 0)
+
+ST_14: stg_79 [2/2] 1.28ns
+:38  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 62, i8 zeroext %tmp_s) nounwind
+
+
+ <State 15>: 0.00ns
+ST_15: stg_80 [1/2] 0.00ns
+:38  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 62, i8 zeroext %tmp_s) nounwind
+
+
+ <State 16>: 2.65ns
+ST_16: stg_81 [1/1] 0.00ns
+:25  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_16: stg_82 [2/2] 2.65ns
+:40  call fastcc void @bno055_uart_wait_tmr(i28 10000000) nounwind
+
+
+ <State 17>: 2.65ns
+ST_17: stg_83 [1/1] 0.00ns
+:27  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_17: stg_84 [1/2] 2.65ns
+:40  call fastcc void @bno055_uart_wait_tmr(i28 10000000) nounwind
+
+
+ <State 18>: 1.04ns
+ST_18: stg_85 [1/1] 0.00ns
+:29  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_18: dt_1 [2/2] 1.04ns
+:42  %dt_1 = call fastcc zeroext i8 @bno055_uart_uart_read_reg(i8 zeroext 61)
+
+
+ <State 19>: 1.57ns
+ST_19: stg_87 [1/1] 0.00ns
+:31  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_19: dt_1 [1/2] 1.57ns
+:42  %dt_1 = call fastcc zeroext i8 @bno055_uart_uart_read_reg(i8 zeroext 61)
+
+ST_19: tmp_9 [1/1] 0.00ns
+:44  %tmp_9 = call i4 @_ssdm_op_PartSelect.i4.i8.i32.i32(i8 %dt_1, i32 4, i32 7)
+
+
+ <State 20>: 1.28ns
+ST_20: stg_90 [1/1] 0.00ns
+:33  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_20: tmp_3 [1/1] 0.00ns
+:45  %tmp_3 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_9, i4 0)
+
+ST_20: tmp_4 [1/1] 0.00ns
+:46  %tmp_4 = or i8 %tmp_3, 12
+
+ST_20: stg_93 [2/2] 1.28ns
+:47  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 61, i8 zeroext %tmp_4) nounwind
+
+
+ <State 21>: 0.00ns
+ST_21: stg_94 [1/1] 0.00ns
+:35  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_21: stg_95 [1/2] 0.00ns
+:47  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 61, i8 zeroext %tmp_4) nounwind
+
+
+ <State 22>: 2.65ns
+ST_22: stg_96 [1/1] 0.00ns
+:39  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_22: stg_97 [2/2] 2.65ns
+:49  call fastcc void @bno055_uart_wait_tmr(i28 100000000) nounwind
+
+
+ <State 23>: 2.65ns
+ST_23: stg_98 [1/1] 0.00ns
+:41  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_23: stg_99 [1/2] 2.65ns
+:49  call fastcc void @bno055_uart_wait_tmr(i28 100000000) nounwind
+
+
+ <State 24>: 1.04ns
+ST_24: stg_100 [1/1] 0.00ns
+:43  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_24: dt_2 [2/2] 1.04ns
+:51  %dt_2 = call fastcc zeroext i8 @bno055_uart_uart_read_reg(i8 zeroext 59)
+
+
+ <State 25>: 1.57ns
+ST_25: stg_102 [1/1] 0.00ns
+:48  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_25: dt_2 [1/2] 1.57ns
+:51  %dt_2 = call fastcc zeroext i8 @bno055_uart_uart_read_reg(i8 zeroext 59)
+
+
+ <State 26>: 1.28ns
+ST_26: stg_104 [1/1] 0.00ns
+:50  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_26: tmp_5 [1/1] 0.00ns
+:53  %tmp_5 = or i8 %dt_2, -128
+
+ST_26: stg_106 [2/2] 1.28ns
+:54  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 59, i8 zeroext %tmp_5) nounwind
+
+
+ <State 27>: 0.00ns
+ST_27: stg_107 [1/1] 0.00ns
+:52  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_27: stg_108 [1/2] 0.00ns
+:54  call fastcc void @bno055_uart_uart_write_reg(i7 zeroext 59, i8 zeroext %tmp_5) nounwind
+
+
+ <State 28>: 2.65ns
+ST_28: stg_109 [1/1] 0.00ns
+:55  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_28: stg_110 [2/2] 2.65ns
+:56  call fastcc void @bno055_uart_wait_tmr(i28 10000000) nounwind
+
+
+ <State 29>: 2.65ns
+ST_29: stg_111 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecTopModule()
+
+ST_29: stg_112 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecInterface(i1* @dummy_tmr_out, [8 x i8]* @p_str6, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_113 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecInterface(i1* @uart_rx, [8 x i8]* @p_str6, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_114 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecInterface(i1* @uart_tx, [8 x i8]* @p_str6, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_115 [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecInterface(i8* @mem_addr, [8 x i8]* @p_str6, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_116 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecInterface(i8* @mem_din, [8 x i8]* @p_str6, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_117 [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecInterface(i8* @mem_dout, [8 x i8]* @p_str6, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_118 [1/1] 0.00ns
+:14  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_wreq, [8 x i8]* @p_str6, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_119 [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_wack, [8 x i8]* @p_str6, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_120 [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_rreq, [8 x i8]* @p_str6, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_121 [1/1] 0.00ns
+:20  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_rack, [8 x i8]* @p_str6, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_29: stg_122 [1/2] 2.65ns
+:56  call fastcc void @bno055_uart_wait_tmr(i28 10000000) nounwind
+
+ST_29: stg_123 [1/1] 0.00ns
+:57  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_29: stg_124 [1/1] 0.00ns
+:58  br label %1
+
+
+ <State 30>: 1.04ns
+ST_30: dt_3 [2/2] 1.04ns
+:0  %dt_3 = call fastcc zeroext i8 @bno055_uart_uart_read_reg(i8 zeroext 0)
+
+
+ <State 31>: 1.57ns
+ST_31: dt_3 [1/2] 1.57ns
+:0  %dt_3 = call fastcc zeroext i8 @bno055_uart_uart_read_reg(i8 zeroext 0)
+
+ST_31: tmp_7 [1/1] 0.00ns
+:2  %tmp_7 = call i4 @_ssdm_op_PartSelect.i4.i8.i32.i32(i8 %dt_3, i32 4, i32 7)
+
+ST_31: tmp_10 [1/1] 0.00ns
+:6  %tmp_10 = trunc i8 %dt_3 to i4
+
+
+ <State 32>: 4.72ns
+ST_32: tmp_8 [1/1] 3.44ns
+:3  %tmp_8 = call fastcc zeroext i7 @bno055_uart_bin2char(i4 zeroext %tmp_7) nounwind
+
+ST_32: p_trunc_ext [1/1] 0.00ns
+:4  %p_trunc_ext = zext i7 %tmp_8 to i8
+
+ST_32: stg_131 [2/2] 1.28ns
+:5  call fastcc void @bno055_uart_write_mem(i8 zeroext 0, i8 zeroext %p_trunc_ext)
+
+ST_32: e_tmp [2/2] 0.00ns
+:11  %e_tmp = call fastcc zeroext i16 @bno055_uart_uart_read_reg16()
+
+
+ <State 33>: 1.57ns
+ST_33: stg_133 [1/2] 0.00ns
+:5  call fastcc void @bno055_uart_write_mem(i8 zeroext 0, i8 zeroext %p_trunc_ext)
+
+ST_33: e_tmp [1/2] 1.57ns
+:11  %e_tmp = call fastcc zeroext i16 @bno055_uart_uart_read_reg16()
+
+ST_33: tmp_11 [1/1] 0.00ns
+:13  %tmp_11 = trunc i16 %e_tmp to i8
+
+ST_33: e_tmp_1 [1/1] 0.00ns
+:14  %e_tmp_1 = call i8 @_ssdm_op_PartSelect.i8.i16.i32.i32(i16 %e_tmp, i32 8, i32 15)
+
+
+ <State 34>: 4.72ns
+ST_34: tmp_1 [1/1] 3.44ns
+:7  %tmp_1 = call fastcc zeroext i7 @bno055_uart_bin2char(i4 zeroext %tmp_10) nounwind
+
+ST_34: p_trunc2_ext [1/1] 0.00ns
+:8  %p_trunc2_ext = zext i7 %tmp_1 to i8
+
+ST_34: stg_139 [2/2] 1.28ns
+:9  call fastcc void @bno055_uart_write_mem(i8 zeroext 1, i8 zeroext %p_trunc2_ext)
+
+ST_34: stg_140 [2/2] 2.65ns
+:27  call fastcc void @bno055_uart_wait_tmr(i28 1000000) nounwind
+
+
+ <State 35>: 2.65ns
+ST_35: stg_141 [1/2] 0.00ns
+:9  call fastcc void @bno055_uart_write_mem(i8 zeroext 1, i8 zeroext %p_trunc2_ext)
+
+ST_35: stg_142 [1/2] 2.65ns
+:27  call fastcc void @bno055_uart_wait_tmr(i28 1000000) nounwind
+
+
+ <State 36>: 1.28ns
+ST_36: stg_143 [2/2] 1.28ns
+:19  call fastcc void @bno055_uart_write_mem(i8 zeroext -123, i8 zeroext 0)
+
+
+ <State 37>: 7.18ns
+ST_37: stg_144 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_37: e [1/1] 0.00ns
+:15  %e = call i16 @_ssdm_op_BitConcatenate.i16.i8.i8(i8 %tmp_11, i8 %e_tmp_1)
+
+ST_37: e_cast [1/1] 0.00ns
+:16  %e_cast = zext i16 %e to i20
+
+ST_37: e_1 [1/1] 7.18ns
+:17  %e_1 = mul i20 100, %e_cast
+
+ST_37: stg_148 [1/2] 0.00ns
+:19  call fastcc void @bno055_uart_write_mem(i8 zeroext -123, i8 zeroext 0)
+
+ST_37: tmp_2 [1/1] 0.00ns
+:20  %tmp_2 = call i8 @_ssdm_op_PartSelect.i8.i20.i32.i32(i20 %e_1, i32 12, i32 19)
+
+ST_37: tmp_6 [1/1] 0.00ns
+:22  %tmp_6 = call i8 @_ssdm_op_PartSelect.i8.i20.i32.i32(i20 %e_1, i32 4, i32 11)
+
+
+ <State 38>: 1.28ns
+ST_38: stg_151 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_38: stg_152 [2/2] 1.28ns
+:21  call fastcc void @bno055_uart_write_mem(i8 zeroext -125, i8 zeroext %tmp_2)
+
+
+ <State 39>: 0.00ns
+ST_39: stg_153 [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_39: stg_154 [1/2] 0.00ns
+:21  call fastcc void @bno055_uart_write_mem(i8 zeroext -125, i8 zeroext %tmp_2)
+
+
+ <State 40>: 1.28ns
+ST_40: stg_155 [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_40: stg_156 [2/2] 1.28ns
+:23  call fastcc void @bno055_uart_write_mem(i8 zeroext -124, i8 zeroext %tmp_6)
+
+
+ <State 41>: 0.00ns
+ST_41: stg_157 [1/2] 0.00ns
+:23  call fastcc void @bno055_uart_write_mem(i8 zeroext -124, i8 zeroext %tmp_6)
+
+ST_41: stg_158 [1/1] 0.00ns
+:25  call void (...)* @_ssdm_op_Wait(i32 1)
+
+
+ <State 42>: 1.28ns
+ST_42: stg_159 [2/2] 1.28ns
+:24  call fastcc void @bno055_uart_write_mem(i8 zeroext -123, i8 zeroext 1)
+
+ST_42: stg_160 [1/1] 0.00ns
+:26  call void (...)* @_ssdm_op_Wait(i32 1)
+
+
+ <State 43>: 0.00ns
+ST_43: stg_161 [1/2] 0.00ns
+:24  call fastcc void @bno055_uart_write_mem(i8 zeroext -123, i8 zeroext 1)
+
+ST_43: stg_162 [1/1] 0.00ns
+:28  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_43: stg_163 [1/1] 0.00ns
+:29  br label %1
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

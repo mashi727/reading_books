@@ -1,0 +1,512 @@
+
+
+================================================================
+== Vivado HLS Report for 'i2c_slave_core_read_mem'
+================================================================
+* Date:           Fri May 27 18:05:51 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        i2c_slave_core
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      1.04|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         1|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 6
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	4  / (!mem_rack_read)
+	5  / (mem_rack_read)
+5 --> 
+	6  / true
+6 --> 
+* FSM state operations: 
+
+ <State 1>: 1.04ns
+ST_1: addr_read [1/1] 1.04ns
+:0  %addr_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %addr) nounwind
+
+
+ <State 2>: 0.00ns
+ST_2: stg_8 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_2: stg_9 [1/1] 0.00ns
+:2  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+ST_2: stg_10 [1/1] 0.00ns
+:3  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_rreq, i1 true) nounwind
+
+
+ <State 3>: 0.00ns
+ST_3: stg_11 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_3: stg_12 [1/1] 0.00ns
+:5  br label %._crit_edge
+
+
+ <State 4>: 1.04ns
+ST_4: stg_13 [1/1] 0.00ns
+._crit_edge:0  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+ST_4: stg_14 [1/1] 0.00ns
+._crit_edge:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_rreq, i1 true) nounwind
+
+ST_4: dt [1/1] 1.04ns
+._crit_edge:2  %dt = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_din) nounwind
+
+ST_4: mem_rack_read [1/1] 1.04ns
+._crit_edge:3  %mem_rack_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_rack) nounwind
+
+ST_4: stg_17 [1/1] 0.00ns
+._crit_edge:4  br i1 %mem_rack_read, label %1, label %._crit_edge
+
+
+ <State 5>: 0.00ns
+ST_5: stg_18 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: stg_19 [1/1] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+ST_5: stg_20 [1/1] 0.00ns
+:2  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_rreq, i1 false) nounwind
+
+
+ <State 6>: 0.00ns
+ST_6: stg_21 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_6: stg_22 [1/1] 0.00ns
+:4  ret i8 %dt
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is clock enabled: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ addr]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ mem_addr]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; linkage=0; visibility=0; IO mode=ap_vld:ce=0
+Port [ mem_rreq]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; linkage=0; visibility=0; IO mode=ap_vld:ce=0
+Port [ mem_din]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; linkage=15; visibility=0; IO mode=ap_none:ce=0
+Port [ mem_rack]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; linkage=15; visibility=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+addr_read     (read ) [ 0011110]
+stg_8         (wait ) [ 0000000]
+stg_9         (write) [ 0000000]
+stg_10        (write) [ 0000000]
+stg_11        (wait ) [ 0000000]
+stg_12        (br   ) [ 0000000]
+stg_13        (write) [ 0000000]
+stg_14        (write) [ 0000000]
+dt            (read ) [ 0000011]
+mem_rack_read (read ) [ 0000100]
+stg_17        (br   ) [ 0000000]
+stg_18        (wait ) [ 0000000]
+stg_19        (write) [ 0000000]
+stg_20        (write) [ 0000000]
+stg_21        (wait ) [ 0000000]
+stg_22        (ret  ) [ 0000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="addr">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="addr"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="mem_addr">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mem_addr"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="mem_rreq">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mem_rreq"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="mem_din">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mem_din"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="mem_rack">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mem_rack"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i8"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Wait"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_none.volatile.i8P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_none.volatile.i1P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_none.volatile.i8P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_none.volatile.i1P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1004" name="addr_read_read_fu_28">
+<pin_list>
+<pin id="29" dir="0" index="0" bw="8" slack="0"/>
+<pin id="30" dir="0" index="1" bw="8" slack="0"/>
+<pin id="31" dir="1" index="2" bw="8" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="addr_read/1 "/>
+</bind>
+</comp>
+
+<comp id="34" class="1004" name="grp_write_fu_34">
+<pin_list>
+<pin id="35" dir="0" index="0" bw="0" slack="0"/>
+<pin id="36" dir="0" index="1" bw="8" slack="0"/>
+<pin id="37" dir="0" index="2" bw="8" slack="1"/>
+<pin id="38" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="stg_9/2 stg_13/4 stg_19/5 "/>
+</bind>
+</comp>
+
+<comp id="41" class="1004" name="grp_write_fu_41">
+<pin_list>
+<pin id="42" dir="0" index="0" bw="0" slack="0"/>
+<pin id="43" dir="0" index="1" bw="1" slack="0"/>
+<pin id="44" dir="0" index="2" bw="1" slack="0"/>
+<pin id="45" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="stg_10/2 stg_14/4 stg_20/5 "/>
+</bind>
+</comp>
+
+<comp id="49" class="1004" name="dt_read_fu_49">
+<pin_list>
+<pin id="50" dir="0" index="0" bw="8" slack="0"/>
+<pin id="51" dir="0" index="1" bw="8" slack="0"/>
+<pin id="52" dir="1" index="2" bw="8" slack="2"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="dt/4 "/>
+</bind>
+</comp>
+
+<comp id="55" class="1004" name="mem_rack_read_read_fu_55">
+<pin_list>
+<pin id="56" dir="0" index="0" bw="1" slack="0"/>
+<pin id="57" dir="0" index="1" bw="1" slack="0"/>
+<pin id="58" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="mem_rack_read/4 "/>
+</bind>
+</comp>
+
+<comp id="62" class="1005" name="addr_read_reg_62">
+<pin_list>
+<pin id="63" dir="0" index="0" bw="8" slack="1"/>
+<pin id="64" dir="1" index="1" bw="8" slack="1"/>
+</pin_list>
+<bind>
+<opset="addr_read "/>
+</bind>
+</comp>
+
+<comp id="67" class="1005" name="dt_reg_67">
+<pin_list>
+<pin id="68" dir="0" index="0" bw="8" slack="2"/>
+<pin id="69" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="dt "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="32"><net_src comp="10" pin="0"/><net_sink comp="28" pin=0"/></net>
+
+<net id="33"><net_src comp="0" pin="0"/><net_sink comp="28" pin=1"/></net>
+
+<net id="39"><net_src comp="16" pin="0"/><net_sink comp="34" pin=0"/></net>
+
+<net id="40"><net_src comp="2" pin="0"/><net_sink comp="34" pin=1"/></net>
+
+<net id="46"><net_src comp="18" pin="0"/><net_sink comp="41" pin=0"/></net>
+
+<net id="47"><net_src comp="4" pin="0"/><net_sink comp="41" pin=1"/></net>
+
+<net id="48"><net_src comp="20" pin="0"/><net_sink comp="41" pin=2"/></net>
+
+<net id="53"><net_src comp="22" pin="0"/><net_sink comp="49" pin=0"/></net>
+
+<net id="54"><net_src comp="6" pin="0"/><net_sink comp="49" pin=1"/></net>
+
+<net id="59"><net_src comp="24" pin="0"/><net_sink comp="55" pin=0"/></net>
+
+<net id="60"><net_src comp="8" pin="0"/><net_sink comp="55" pin=1"/></net>
+
+<net id="61"><net_src comp="26" pin="0"/><net_sink comp="41" pin=2"/></net>
+
+<net id="65"><net_src comp="28" pin="2"/><net_sink comp="62" pin=0"/></net>
+
+<net id="66"><net_src comp="62" pin="1"/><net_sink comp="34" pin=2"/></net>
+
+<net id="70"><net_src comp="49" pin="2"/><net_sink comp="67" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: mem_addr | {2 4 5 }
+	Port: mem_rreq | {2 4 5 }
+ - Input state : 
+	Port: i2c_slave_core_read_mem : addr | {1 }
+	Port: i2c_slave_core_read_mem : mem_din | {4 }
+	Port: i2c_slave_core_read_mem : mem_rack | {4 }
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------|
+| Operation|      Functional Unit     |
+|----------|--------------------------|
+|          |   addr_read_read_fu_28   |
+|   read   |       dt_read_fu_49      |
+|          | mem_rack_read_read_fu_55 |
+|----------|--------------------------|
+|   write  |      grp_write_fu_34     |
+|          |      grp_write_fu_41     |
+|----------|--------------------------|
+|   Total  |                          |
+|----------|--------------------------|
+
+Memories:
+N/A
+
+* Register list:
++----------------+--------+
+|                |   FF   |
++----------------+--------+
+|addr_read_reg_62|    8   |
+|    dt_reg_67   |    8   |
++----------------+--------+
+|      Total     |   16   |
++----------------+--------+
+
+* Multiplexer (MUX) list: 
+|-----------------|------|------|------|--------||---------|
+|       Comp      |  Pin | Size |  BW  | S x BW ||  Delay  |
+|-----------------|------|------|------|--------||---------|
+| grp_write_fu_41 |  p2  |   2  |   1  |    2   |
+|-----------------|------|------|------|--------||---------|
+|      Total      |      |      |      |    2   ||  1.571  |
+|-----------------|------|------|------|--------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+
+|           |  Delay |   FF   |
++-----------+--------+--------+
+|  Function |    -   |    -   |
+|   Memory  |    -   |    -   |
+|Multiplexer|    1   |    -   |
+|  Register |    -   |   16   |
++-----------+--------+--------+
+|   Total   |    1   |   16   |
++-----------+--------+--------+

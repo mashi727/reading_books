@@ -1,0 +1,189 @@
+
+
+================================================================
+== Vivado HLS Report for 'i2c_slave_core_write_mem'
+================================================================
+* Date:           Fri May 27 18:05:51 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        i2c_slave_core
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      0.00|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         1|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 6
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	4  / (!mem_wack_read)
+	5  / (mem_wack_read)
+5 --> 
+	6  / true
+6 --> 
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: data_read [1/1] 0.00ns
+:0  %data_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %data) nounwind
+
+ST_1: addr_read [1/1] 0.00ns
+:1  %addr_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %addr) nounwind
+
+
+ <State 2>: 0.00ns
+ST_2: stg_9 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_2: stg_10 [1/1] 0.00ns
+:3  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+ST_2: stg_11 [1/1] 0.00ns
+:4  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_dout, i8 %data_read) nounwind
+
+ST_2: stg_12 [1/1] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_wreq, i1 false) nounwind
+
+
+ <State 3>: 0.00ns
+ST_3: stg_13 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_3: stg_14 [1/1] 0.00ns
+:7  br label %._crit_edge
+
+
+ <State 4>: 0.00ns
+ST_4: stg_15 [1/1] 0.00ns
+._crit_edge:0  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+ST_4: stg_16 [1/1] 0.00ns
+._crit_edge:1  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_dout, i8 %data_read) nounwind
+
+ST_4: stg_17 [1/1] 0.00ns
+._crit_edge:2  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_wreq, i1 true) nounwind
+
+ST_4: mem_wack_read [1/1] 0.00ns
+._crit_edge:3  %mem_wack_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_wack) nounwind
+
+ST_4: stg_19 [1/1] 0.00ns
+._crit_edge:4  br i1 %mem_wack_read, label %1, label %._crit_edge
+
+
+ <State 5>: 0.00ns
+ST_5: stg_20 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: stg_21 [1/1] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_addr, i8 %addr_read) nounwind
+
+ST_5: stg_22 [1/1] 0.00ns
+:2  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @mem_dout, i8 %data_read) nounwind
+
+ST_5: stg_23 [1/1] 0.00ns
+:3  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @mem_wreq, i1 false) nounwind
+
+
+ <State 6>: 0.00ns
+ST_6: stg_24 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_6: stg_25 [1/1] 0.00ns
+:5  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

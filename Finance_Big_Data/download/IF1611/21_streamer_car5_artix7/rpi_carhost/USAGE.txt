@@ -1,0 +1,17 @@
+------------------------------------------------------
+Making executable binary:
+
+cmake CMakeLists.txt
+make
+sudo cp libinput_raspicam_opencv.so /var/opt/mjpg-streamer/input_raspicam_opencv.so
+sudo cp www/* /var/opt/mjpg-streamer/www/
+
+------------------------------------------------------
+Executing program:
+
+On RPI
+sudo /var/opt/mjpg-streamer/mjpg_streamer -i "/var/opt/mjpg-streamer/input_raspicam_opencv.so -fps 2 -x 640 -y 480 -websocket_port 9001" -o "/var/opt/mjpg-streamer/output_http.so -w /var/opt/mjpg-streamer/www -p 8080"
+
+On PC (Google Crome)
+http://IP_ADDR:8080/stream_websockets_button.html?9001
+------------------------------------------------------

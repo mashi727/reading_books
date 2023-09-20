@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdl_testbench_sample/project_1/project_1.sim/sim_1/synth/timing/testbbench_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_circuit
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/hdl_testbench_sample/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbbench

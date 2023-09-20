@@ -1,0 +1,1250 @@
+
+
+================================================================
+== Vivado HLS Report for 'motor_ctrl'
+================================================================
+* Date:           Fri May 27 23:00:19 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        motor_ctrl
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.29|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         ?|          -|          -|    32|    no    |
+        |- Loop 2     |    ?|    ?|         ?|          -|          -|  inf |    no    |
+        | + Loop 2.1  |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 0
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 64
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / (!exitcond)
+	11  / (exitcond)
+10 --> 
+	9  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	15  / (tmp_1)
+	17  / (!tmp_1)
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / (!tmp_26)
+	47  / (tmp_26)
+45 --> 
+	46  / true
+46 --> 
+	48  / true
+47 --> 
+	46  / true
+48 --> 
+	49  / (!tmp_27)
+	50  / (tmp_27)
+49 --> 
+	51  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	11  / true
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: mtr_pwm_cnt [1/1] 0.00ns
+:0  %mtr_pwm_cnt = alloca i32, align 4
+
+ST_1: dummy_tmr_out_load [2/2] 0.00ns
+:2  %dummy_tmr_out_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @dummy_tmr_out) nounwind
+
+ST_1: l_dir_load [2/2] 0.00ns
+:4  %l_dir_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @l_dir) nounwind
+
+ST_1: l_pwm_load [2/2] 0.00ns
+:6  %l_pwm_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @l_pwm) nounwind
+
+ST_1: r_dir_load [2/2] 0.00ns
+:8  %r_dir_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_dir) nounwind
+
+ST_1: r_pwm_load [2/2] 0.00ns
+:10  %r_pwm_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_pwm) nounwind
+
+ST_1: mem_addr_load [2/2] 0.00ns
+:12  %mem_addr_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_addr) nounwind
+
+ST_1: mem_dout_load [2/2] 0.00ns
+:16  %mem_dout_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_dout) nounwind
+
+ST_1: mem_wreq_load [2/2] 0.00ns
+:18  %mem_wreq_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_wreq) nounwind
+
+ST_1: mem_rreq_load [2/2] 0.00ns
+:22  %mem_rreq_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_rreq) nounwind
+
+
+ <State 2>: 0.00ns
+ST_2: dummy_tmr_out_load [1/2] 0.00ns
+:2  %dummy_tmr_out_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @dummy_tmr_out) nounwind
+
+ST_2: l_dir_load [1/2] 0.00ns
+:4  %l_dir_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @l_dir) nounwind
+
+ST_2: l_pwm_load [1/2] 0.00ns
+:6  %l_pwm_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @l_pwm) nounwind
+
+ST_2: r_dir_load [1/2] 0.00ns
+:8  %r_dir_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_dir) nounwind
+
+ST_2: r_pwm_load [1/2] 0.00ns
+:10  %r_pwm_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_pwm) nounwind
+
+ST_2: mem_addr_load [1/2] 0.00ns
+:12  %mem_addr_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_addr) nounwind
+
+ST_2: mem_dout_load [1/2] 0.00ns
+:16  %mem_dout_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_dout) nounwind
+
+ST_2: mem_wreq_load [1/2] 0.00ns
+:18  %mem_wreq_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_wreq) nounwind
+
+ST_2: mem_wack_load [1/1] 0.00ns
+:20  %mem_wack_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_wack) nounwind
+
+ST_2: mem_rreq_load [1/2] 0.00ns
+:22  %mem_rreq_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_rreq) nounwind
+
+
+ <State 3>: 1.87ns
+ST_3: stg_85 [2/2] 1.87ns
+:33  call fastcc void @motor_ctrl_write_mem(i8 zeroext -128, i8 zeroext 0)
+
+
+ <State 4>: 0.00ns
+ST_4: stg_86 [1/2] 0.00ns
+:33  call fastcc void @motor_ctrl_write_mem(i8 zeroext -128, i8 zeroext 0)
+
+
+ <State 5>: 1.87ns
+ST_5: mem_din_load [1/1] 0.00ns
+:14  %mem_din_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @mem_din) nounwind
+
+ST_5: mem_rack_load [1/1] 0.00ns
+:24  %mem_rack_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @mem_rack) nounwind
+
+ST_5: stg_89 [2/2] 1.87ns
+:34  call fastcc void @motor_ctrl_write_mem(i8 zeroext -123, i8 zeroext 0)
+
+
+ <State 6>: 1.57ns
+ST_6: stg_90 [1/1] 0.00ns
+:26  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_6: stg_91 [2/2] 0.00ns
+:27  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_dir, i1 false) nounwind
+
+ST_6: stg_92 [2/2] 0.00ns
+:28  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_pwm, i1 false) nounwind
+
+ST_6: stg_93 [2/2] 0.00ns
+:29  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_dir, i1 false) nounwind
+
+ST_6: stg_94 [2/2] 0.00ns
+:30  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_pwm, i1 false) nounwind
+
+ST_6: stg_95 [1/1] 1.57ns
+:31  store volatile i32 0, i32* %mtr_pwm_cnt, align 4
+
+ST_6: stg_96 [1/2] 0.00ns
+:34  call fastcc void @motor_ctrl_write_mem(i8 zeroext -123, i8 zeroext 0)
+
+
+ <State 7>: 1.87ns
+ST_7: stg_97 [1/2] 0.00ns
+:27  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_dir, i1 false) nounwind
+
+ST_7: stg_98 [1/2] 0.00ns
+:28  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_pwm, i1 false) nounwind
+
+ST_7: stg_99 [1/2] 0.00ns
+:29  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_dir, i1 false) nounwind
+
+ST_7: stg_100 [1/2] 0.00ns
+:30  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_pwm, i1 false) nounwind
+
+ST_7: stg_101 [1/1] 0.00ns
+:32  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_7: stg_102 [2/2] 1.87ns
+:35  call fastcc void @motor_ctrl_write_mem(i8 zeroext -122, i8 zeroext 0)
+
+
+ <State 8>: 1.57ns
+ST_8: stg_103 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecTopModule()
+
+ST_8: stg_104 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecInterface(i1* @dummy_tmr_out, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_105 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecInterface(i1* @l_dir, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_106 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecInterface(i1* @l_pwm, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_107 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecInterface(i1* @r_dir, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_108 [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecInterface(i1* @r_pwm, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_109 [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecInterface(i8* @mem_addr, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_110 [1/1] 0.00ns
+:15  call void (...)* @_ssdm_op_SpecInterface(i8* @mem_din, [8 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_111 [1/1] 0.00ns
+:17  call void (...)* @_ssdm_op_SpecInterface(i8* @mem_dout, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_112 [1/1] 0.00ns
+:19  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_wreq, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_113 [1/1] 0.00ns
+:21  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_wack, [8 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_114 [1/1] 0.00ns
+:23  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_rreq, [8 x i8]* @p_str1, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_115 [1/1] 0.00ns
+:25  call void (...)* @_ssdm_op_SpecInterface(i1* @mem_rack, [8 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_8: stg_116 [1/2] 0.00ns
+:35  call fastcc void @motor_ctrl_write_mem(i8 zeroext -122, i8 zeroext 0)
+
+ST_8: stg_117 [1/1] 0.00ns
+:36  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_8: stg_118 [1/1] 1.57ns
+:37  br label %1
+
+
+ <State 9>: 3.97ns
+ST_9: i [1/1] 0.00ns
+:0  %i = phi i6 [ 0, %0 ], [ %i_1, %2 ]
+
+ST_9: i_cast [1/1] 0.00ns
+:1  %i_cast = zext i6 %i to i8
+
+ST_9: exitcond [1/1] 2.40ns
+:2  %exitcond = icmp eq i6 %i, -32
+
+ST_9: empty [1/1] 0.00ns
+:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind
+
+ST_9: i_1 [1/1] 1.67ns
+:4  %i_1 = add i6 %i, 1
+
+ST_9: stg_124 [1/1] 1.57ns
+:5  br i1 %exitcond, label %.preheader, label %2
+
+ST_9: stg_125 [2/2] 1.87ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext %i_cast, i8 zeroext 32)
+
+
+ <State 10>: 0.00ns
+ST_10: stg_126 [1/2] 0.00ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext %i_cast, i8 zeroext 32)
+
+ST_10: stg_127 [1/1] 0.00ns
+:1  br label %1
+
+
+ <State 11>: 1.28ns
+ST_11: eh [2/2] 1.28ns
+.preheader:3  %eh = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -127)
+
+
+ <State 12>: 0.00ns
+ST_12: eh [1/2] 0.00ns
+.preheader:3  %eh = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -127)
+
+
+ <State 13>: 1.28ns
+ST_13: el [2/2] 1.28ns
+.preheader:4  %el = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -126)
+
+
+ <State 14>: 0.00ns
+ST_14: chR_dir [1/1] 0.00ns
+.preheader:0  %chR_dir = phi i1 [ %chR_dir_5, %._crit_edge11 ], [ false, %1 ]
+
+ST_14: chL_dir [1/1] 0.00ns
+.preheader:1  %chL_dir = phi i1 [ %chL_dir_5, %._crit_edge11 ], [ false, %1 ]
+
+ST_14: loop_begin [1/1] 0.00ns
+.preheader:2  %loop_begin = call i32 (...)* @_ssdm_op_SpecLoopBegin() nounwind
+
+ST_14: el [1/2] 0.00ns
+.preheader:4  %el = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -126)
+
+ST_14: et [1/1] 0.00ns
+.preheader:5  %et = call i16 @_ssdm_op_BitConcatenate.i16.i8.i8(i8 %eh, i8 %el)
+
+ST_14: stg_136 [1/1] 0.00ns
+.preheader:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_14: stg_137 [1/1] 0.00ns
+.preheader:7  br label %._crit_edge
+
+
+ <State 15>: 1.28ns
+ST_15: tmp_s [2/2] 1.28ns
+._crit_edge:0  %tmp_s = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -123)
+
+
+ <State 16>: 2.47ns
+ST_16: tmp_s [1/2] 0.00ns
+._crit_edge:0  %tmp_s = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -123)
+
+ST_16: tmp_1 [1/1] 2.47ns
+._crit_edge:1  %tmp_1 = icmp eq i8 %tmp_s, 0
+
+ST_16: stg_141 [1/1] 0.00ns
+._crit_edge:2  br i1 %tmp_1, label %._crit_edge, label %3
+
+
+ <State 17>: 1.28ns
+ST_17: eh_1 [2/2] 1.28ns
+:1  %eh_1 = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -125)
+
+
+ <State 18>: 0.00ns
+ST_18: eh_1 [1/2] 0.00ns
+:1  %eh_1 = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -125)
+
+ST_18: tmp_3 [1/1] 0.00ns
+:5  %tmp_3 = call i4 @_ssdm_op_PartSelect.i4.i8.i32.i32(i8 %eh_1, i32 4, i32 7)
+
+ST_18: tmp_2 [1/1] 0.00ns
+:9  %tmp_2 = trunc i8 %eh_1 to i4
+
+
+ <State 19>: 1.28ns
+ST_19: el_1 [2/2] 1.28ns
+:2  %el_1 = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -124)
+
+
+ <State 20>: 0.00ns
+ST_20: el_1 [1/2] 0.00ns
+:2  %el_1 = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -124)
+
+ST_20: tmp_8 [1/1] 0.00ns
+:13  %tmp_8 = call i4 @_ssdm_op_PartSelect.i4.i8.i32.i32(i8 %el_1, i32 4, i32 7)
+
+ST_20: tmp_5 [1/1] 0.00ns
+:17  %tmp_5 = trunc i8 %el_1 to i4
+
+
+ <State 21>: 8.29ns
+ST_21: e [1/1] 0.00ns
+:3  %e = call i16 @_ssdm_op_BitConcatenate.i16.i8.i8(i8 %eh_1, i8 %el_1)
+
+ST_21: tmp_4 [1/1] 3.88ns
+:6  %tmp_4 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_3) nounwind
+
+ST_21: p_trunc_ext [1/1] 0.00ns
+:7  %p_trunc_ext = zext i7 %tmp_4 to i8
+
+ST_21: stg_153 [2/2] 1.87ns
+:8  call fastcc void @motor_ctrl_write_mem(i8 zeroext 3, i8 zeroext %p_trunc_ext)
+
+ST_21: diff_agl [2/2] 8.29ns
+:37  %diff_agl = call fastcc i21 @motor_ctrl_diff_angle(i16 zeroext %et, i16 zeroext %e) nounwind
+
+
+ <State 22>: 2.15ns
+ST_22: stg_155 [1/2] 0.00ns
+:8  call fastcc void @motor_ctrl_write_mem(i8 zeroext 3, i8 zeroext %p_trunc_ext)
+
+ST_22: diff_agl [1/2] 2.15ns
+:37  %diff_agl = call fastcc i21 @motor_ctrl_diff_angle(i16 zeroext %et, i16 zeroext %e) nounwind
+
+ST_22: tmp_18 [1/1] 0.00ns
+:38  %tmp_18 = call i4 @_ssdm_op_PartSelect.i4.i21.i32.i32(i21 %diff_agl, i32 12, i32 15)
+
+ST_22: tmp_20 [1/1] 0.00ns
+:42  %tmp_20 = call i4 @_ssdm_op_PartSelect.i4.i21.i32.i32(i21 %diff_agl, i32 8, i32 11)
+
+ST_22: tmp_22 [1/1] 0.00ns
+:46  %tmp_22 = call i4 @_ssdm_op_PartSelect.i4.i21.i32.i32(i21 %diff_agl, i32 4, i32 7)
+
+ST_22: tmp_24 [1/1] 0.00ns
+:50  %tmp_24 = trunc i21 %diff_agl to i4
+
+
+ <State 23>: 5.75ns
+ST_23: tmp_6 [1/1] 3.88ns
+:10  %tmp_6 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_2) nounwind
+
+ST_23: p_trunc115_ext [1/1] 0.00ns
+:11  %p_trunc115_ext = zext i7 %tmp_6 to i8
+
+ST_23: stg_163 [2/2] 1.87ns
+:12  call fastcc void @motor_ctrl_write_mem(i8 zeroext 4, i8 zeroext %p_trunc115_ext)
+
+
+ <State 24>: 0.00ns
+ST_24: stg_164 [1/2] 0.00ns
+:12  call fastcc void @motor_ctrl_write_mem(i8 zeroext 4, i8 zeroext %p_trunc115_ext)
+
+
+ <State 25>: 5.75ns
+ST_25: tmp_9 [1/1] 3.88ns
+:14  %tmp_9 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_8) nounwind
+
+ST_25: p_trunc116_ext [1/1] 0.00ns
+:15  %p_trunc116_ext = zext i7 %tmp_9 to i8
+
+ST_25: stg_167 [2/2] 1.87ns
+:16  call fastcc void @motor_ctrl_write_mem(i8 zeroext 5, i8 zeroext %p_trunc116_ext)
+
+
+ <State 26>: 0.00ns
+ST_26: stg_168 [1/2] 0.00ns
+:16  call fastcc void @motor_ctrl_write_mem(i8 zeroext 5, i8 zeroext %p_trunc116_ext)
+
+
+ <State 27>: 5.75ns
+ST_27: tmp_7 [1/1] 3.88ns
+:18  %tmp_7 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_5) nounwind
+
+ST_27: p_trunc117_ext [1/1] 0.00ns
+:19  %p_trunc117_ext = zext i7 %tmp_7 to i8
+
+ST_27: stg_171 [2/2] 1.87ns
+:20  call fastcc void @motor_ctrl_write_mem(i8 zeroext 6, i8 zeroext %p_trunc117_ext)
+
+
+ <State 28>: 0.00ns
+ST_28: stg_172 [1/2] 0.00ns
+:20  call fastcc void @motor_ctrl_write_mem(i8 zeroext 6, i8 zeroext %p_trunc117_ext)
+
+
+ <State 29>: 5.75ns
+ST_29: tmp_10 [1/1] 0.00ns
+:21  %tmp_10 = call i4 @_ssdm_op_PartSelect.i4.i8.i32.i32(i8 %eh, i32 4, i32 7)
+
+ST_29: tmp_11 [1/1] 3.88ns
+:22  %tmp_11 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_10) nounwind
+
+ST_29: p_trunc118_ext [1/1] 0.00ns
+:23  %p_trunc118_ext = zext i7 %tmp_11 to i8
+
+ST_29: stg_176 [2/2] 1.87ns
+:24  call fastcc void @motor_ctrl_write_mem(i8 zeroext 8, i8 zeroext %p_trunc118_ext)
+
+ST_29: tmp_12 [1/1] 0.00ns
+:25  %tmp_12 = trunc i8 %eh to i4
+
+
+ <State 30>: 0.00ns
+ST_30: stg_178 [1/2] 0.00ns
+:24  call fastcc void @motor_ctrl_write_mem(i8 zeroext 8, i8 zeroext %p_trunc118_ext)
+
+
+ <State 31>: 5.75ns
+ST_31: tmp_13 [1/1] 3.88ns
+:26  %tmp_13 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_12) nounwind
+
+ST_31: p_trunc119_ext [1/1] 0.00ns
+:27  %p_trunc119_ext = zext i7 %tmp_13 to i8
+
+ST_31: stg_181 [2/2] 1.87ns
+:28  call fastcc void @motor_ctrl_write_mem(i8 zeroext 9, i8 zeroext %p_trunc119_ext)
+
+
+ <State 32>: 0.00ns
+ST_32: stg_182 [1/2] 0.00ns
+:28  call fastcc void @motor_ctrl_write_mem(i8 zeroext 9, i8 zeroext %p_trunc119_ext)
+
+
+ <State 33>: 5.75ns
+ST_33: tmp_14 [1/1] 0.00ns
+:29  %tmp_14 = call i4 @_ssdm_op_PartSelect.i4.i8.i32.i32(i8 %el, i32 4, i32 7)
+
+ST_33: tmp_15 [1/1] 3.88ns
+:30  %tmp_15 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_14) nounwind
+
+ST_33: p_trunc120_ext [1/1] 0.00ns
+:31  %p_trunc120_ext = zext i7 %tmp_15 to i8
+
+ST_33: stg_186 [2/2] 1.87ns
+:32  call fastcc void @motor_ctrl_write_mem(i8 zeroext 10, i8 zeroext %p_trunc120_ext)
+
+ST_33: tmp_16 [1/1] 0.00ns
+:33  %tmp_16 = trunc i8 %el to i4
+
+
+ <State 34>: 0.00ns
+ST_34: stg_188 [1/2] 0.00ns
+:32  call fastcc void @motor_ctrl_write_mem(i8 zeroext 10, i8 zeroext %p_trunc120_ext)
+
+
+ <State 35>: 5.75ns
+ST_35: tmp_17 [1/1] 3.88ns
+:34  %tmp_17 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_16) nounwind
+
+ST_35: p_trunc121_ext [1/1] 0.00ns
+:35  %p_trunc121_ext = zext i7 %tmp_17 to i8
+
+ST_35: stg_191 [2/2] 1.87ns
+:36  call fastcc void @motor_ctrl_write_mem(i8 zeroext 11, i8 zeroext %p_trunc121_ext)
+
+
+ <State 36>: 0.00ns
+ST_36: stg_192 [1/2] 0.00ns
+:36  call fastcc void @motor_ctrl_write_mem(i8 zeroext 11, i8 zeroext %p_trunc121_ext)
+
+
+ <State 37>: 5.75ns
+ST_37: tmp_19 [1/1] 3.88ns
+:39  %tmp_19 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_18) nounwind
+
+ST_37: p_trunc122_ext [1/1] 0.00ns
+:40  %p_trunc122_ext = zext i7 %tmp_19 to i8
+
+ST_37: stg_195 [2/2] 1.87ns
+:41  call fastcc void @motor_ctrl_write_mem(i8 zeroext 16, i8 zeroext %p_trunc122_ext)
+
+
+ <State 38>: 0.00ns
+ST_38: stg_196 [1/2] 0.00ns
+:41  call fastcc void @motor_ctrl_write_mem(i8 zeroext 16, i8 zeroext %p_trunc122_ext)
+
+
+ <State 39>: 5.75ns
+ST_39: tmp_21 [1/1] 3.88ns
+:43  %tmp_21 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_20) nounwind
+
+ST_39: p_trunc123_ext [1/1] 0.00ns
+:44  %p_trunc123_ext = zext i7 %tmp_21 to i8
+
+ST_39: stg_199 [2/2] 1.87ns
+:45  call fastcc void @motor_ctrl_write_mem(i8 zeroext 17, i8 zeroext %p_trunc123_ext)
+
+
+ <State 40>: 0.00ns
+ST_40: stg_200 [1/2] 0.00ns
+:45  call fastcc void @motor_ctrl_write_mem(i8 zeroext 17, i8 zeroext %p_trunc123_ext)
+
+
+ <State 41>: 5.75ns
+ST_41: tmp_23 [1/1] 3.88ns
+:47  %tmp_23 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_22) nounwind
+
+ST_41: p_trunc124_ext [1/1] 0.00ns
+:48  %p_trunc124_ext = zext i7 %tmp_23 to i8
+
+ST_41: stg_203 [2/2] 1.87ns
+:49  call fastcc void @motor_ctrl_write_mem(i8 zeroext 18, i8 zeroext %p_trunc124_ext)
+
+
+ <State 42>: 0.00ns
+ST_42: stg_204 [1/2] 0.00ns
+:49  call fastcc void @motor_ctrl_write_mem(i8 zeroext 18, i8 zeroext %p_trunc124_ext)
+
+
+ <State 43>: 5.75ns
+ST_43: stg_205 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_43: tmp_25 [1/1] 3.88ns
+:51  %tmp_25 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %tmp_24) nounwind
+
+ST_43: p_trunc125_ext [1/1] 0.00ns
+:52  %p_trunc125_ext = zext i7 %tmp_25 to i8
+
+ST_43: stg_208 [2/2] 1.87ns
+:53  call fastcc void @motor_ctrl_write_mem(i8 zeroext 19, i8 zeroext %p_trunc125_ext)
+
+
+ <State 44>: 2.82ns
+ST_44: stg_209 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_44: stg_210 [1/2] 0.00ns
+:53  call fastcc void @motor_ctrl_write_mem(i8 zeroext 19, i8 zeroext %p_trunc125_ext)
+
+ST_44: tmp_26 [1/1] 2.82ns
+:54  %tmp_26 = icmp slt i21 %diff_agl, -249
+
+ST_44: stg_212 [1/1] 0.00ns
+:55  br i1 %tmp_26, label %4, label %5
+
+
+ <State 45>: 1.87ns
+ST_45: stg_213 [2/2] 1.87ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 21, i8 zeroext 45)
+
+
+ <State 46>: 2.82ns
+ST_46: stg_214 [1/2] 0.00ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 21, i8 zeroext 45)
+
+ST_46: stg_215 [1/1] 1.57ns
+:1  br label %6
+
+ST_46: stg_216 [1/2] 0.00ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 21, i8 zeroext 76)
+
+ST_46: stg_217 [1/1] 1.57ns
+:1  br label %6
+
+ST_46: tmp_27 [1/1] 2.82ns
+:1  %tmp_27 = icmp sgt i21 %diff_agl, 249
+
+
+ <State 47>: 1.87ns
+ST_47: stg_219 [2/2] 1.87ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 21, i8 zeroext 76)
+
+
+ <State 48>: 1.87ns
+ST_48: too_left [1/1] 0.00ns
+:0  %too_left = phi i1 [ true, %4 ], [ false, %5 ]
+
+ST_48: stg_221 [1/1] 0.00ns
+:2  br i1 %tmp_27, label %7, label %8
+
+ST_48: stg_222 [2/2] 1.87ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 22, i8 zeroext 45)
+
+ST_48: stg_223 [2/2] 1.87ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 22, i8 zeroext 82)
+
+
+ <State 49>: 1.57ns
+ST_49: stg_224 [1/2] 0.00ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 22, i8 zeroext 45)
+
+ST_49: stg_225 [1/1] 1.57ns
+:1  br label %_ifconv
+
+
+ <State 50>: 1.57ns
+ST_50: stg_226 [1/2] 0.00ns
+:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 22, i8 zeroext 82)
+
+ST_50: stg_227 [1/1] 1.57ns
+:1  br label %_ifconv
+
+
+ <State 51>: 1.28ns
+ST_51: mode [2/2] 1.28ns
+_ifconv:1  %mode = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -128)
+
+
+ <State 52>: 7.42ns
+ST_52: too_right [1/1] 0.00ns
+_ifconv:0  %too_right = phi i1 [ true, %7 ], [ false, %8 ]
+
+ST_52: mode [1/2] 0.00ns
+_ifconv:1  %mode = call fastcc zeroext i8 @motor_ctrl_read_mem(i8 zeroext -128)
+
+ST_52: tmp_36 [1/1] 0.00ns
+_ifconv:2  %tmp_36 = call i5 @_ssdm_op_PartSelect.i5.i8.i32.i32(i8 %mode, i32 3, i32 7)
+
+ST_52: zext_cast [1/1] 0.00ns
+_ifconv:3  %zext_cast = zext i5 %tmp_36 to i12
+
+ST_52: mul [1/1] 7.18ns
+_ifconv:4  %mul = mul i12 43, %zext_cast
+
+ST_52: chR_pwm_cast [1/1] 0.00ns
+_ifconv:5  %chR_pwm_cast = call i4 @_ssdm_op_PartSelect.i4.i12.i32.i32(i12 %mul, i32 7, i32 10)
+
+ST_52: tmp_37 [1/1] 0.00ns
+_ifconv:6  %tmp_37 = trunc i8 %mode to i3
+
+ST_52: brmerge [1/1] 1.37ns
+_ifconv:7  %brmerge = or i1 %too_right, %too_left
+
+ST_52: not_too_right_s [1/1] 1.37ns
+_ifconv:11  %not_too_right_s = xor i1 %too_right, true
+
+ST_52: sel_tmp [1/1] 1.94ns
+_ifconv:13  %sel_tmp = icmp eq i3 %tmp_37, 1
+
+ST_52: sel_tmp2 [1/1] 1.37ns
+_ifconv:14  %sel_tmp2 = and i1 %sel_tmp, %not_too_right_s
+
+ST_52: sel_tmp4 [1/1] 1.94ns
+_ifconv:16  %sel_tmp4 = icmp eq i3 %tmp_37, 3
+
+ST_52: sel_tmp6 [1/1] 1.37ns
+_ifconv:17  %sel_tmp6 = and i1 %sel_tmp4, %not_too_right_s
+
+ST_52: sel_tmp8 [1/1] 1.94ns
+_ifconv:19  %sel_tmp8 = icmp eq i3 %tmp_37, -3
+
+ST_52: sel_tmp9 [1/1] 1.37ns
+_ifconv:20  %sel_tmp9 = and i1 %sel_tmp8, %brmerge
+
+ST_52: sel_tmp5 [1/1] 1.94ns
+_ifconv:22  %sel_tmp5 = icmp eq i3 %tmp_37, -1
+
+ST_52: sel_tmp10 [1/1] 1.37ns
+_ifconv:23  %sel_tmp10 = and i1 %sel_tmp5, %brmerge
+
+ST_52: sel_tmp12 [1/1] 1.37ns
+_ifconv:25  %sel_tmp12 = and i1 %sel_tmp, %too_right
+
+ST_52: sel_tmp13 [1/1] 1.37ns
+_ifconv:26  %sel_tmp13 = and i1 %sel_tmp4, %too_right
+
+ST_52: sel_tmp16 [1/1] 1.37ns
+_ifconv:30  %sel_tmp16 = xor i1 %brmerge, true
+
+ST_52: sel_tmp17 [1/1] 1.37ns
+_ifconv:31  %sel_tmp17 = and i1 %sel_tmp8, %sel_tmp16
+
+ST_52: sel_tmp18 [1/1] 1.37ns
+_ifconv:32  %sel_tmp18 = and i1 %sel_tmp5, %sel_tmp16
+
+ST_52: tmp_28 [1/1] 1.37ns
+_ifconv:33  %tmp_28 = or i1 %sel_tmp18, %sel_tmp17
+
+ST_52: sel_tmp56_not [1/1] 1.94ns
+_ifconv:42  %sel_tmp56_not = icmp ne i3 %tmp_37, 1
+
+ST_52: not_sel_tmp [1/1] 1.37ns
+_ifconv:43  %not_sel_tmp = or i1 %too_right, %sel_tmp56_not
+
+ST_52: sel_tmp25 [1/1] 0.00ns (grouped into LUT with out node sel_tmp27)
+_ifconv:44  %sel_tmp25 = and i1 %chR_dir, %not_sel_tmp
+
+ST_52: sel_tmp26 [1/1] 0.00ns (grouped into LUT with out node sel_tmp27)
+_ifconv:45  %sel_tmp26 = or i1 %sel_tmp6, %sel_tmp25
+
+ST_52: sel_tmp27 [1/1] 1.37ns (out node of the LUT)
+_ifconv:46  %sel_tmp27 = select i1 %sel_tmp9, i1 %not_too_right_s, i1 %sel_tmp26
+
+ST_52: sel_tmp28 [1/1] 0.00ns (grouped into LUT with out node sel_tmp30)
+_ifconv:47  %sel_tmp28 = select i1 %sel_tmp10, i1 %not_too_right_s, i1 %sel_tmp27
+
+ST_52: not_sel_tmp1 [1/1] 1.37ns
+_ifconv:48  %not_sel_tmp1 = xor i1 %sel_tmp12, true
+
+ST_52: sel_tmp29 [1/1] 0.00ns (grouped into LUT with out node sel_tmp30)
+_ifconv:49  %sel_tmp29 = and i1 %sel_tmp28, %not_sel_tmp1
+
+ST_52: sel_tmp30 [1/1] 1.37ns (out node of the LUT)
+_ifconv:50  %sel_tmp30 = or i1 %sel_tmp13, %sel_tmp29
+
+ST_52: sel_tmp31 [1/1] 0.00ns (grouped into LUT with out node chR_dir_5)
+_ifconv:51  %sel_tmp31 = select i1 %sel_tmp17, i1 %chR_dir, i1 %sel_tmp30
+
+ST_52: chR_dir_5 [1/1] 1.37ns (out node of the LUT)
+_ifconv:52  %chR_dir_5 = select i1 %sel_tmp18, i1 %chR_dir, i1 %sel_tmp31
+
+ST_52: sel_tmp32 [1/1] 0.00ns (grouped into LUT with out node sel_tmp34)
+_ifconv:53  %sel_tmp32 = and i1 %chL_dir, %not_sel_tmp
+
+ST_52: sel_tmp33 [1/1] 0.00ns (grouped into LUT with out node sel_tmp34)
+_ifconv:54  %sel_tmp33 = or i1 %sel_tmp6, %sel_tmp32
+
+ST_52: sel_tmp34 [1/1] 1.37ns (out node of the LUT)
+_ifconv:55  %sel_tmp34 = select i1 %sel_tmp9, i1 %too_right, i1 %sel_tmp33
+
+ST_52: sel_tmp35 [1/1] 0.00ns (grouped into LUT with out node sel_tmp37)
+_ifconv:56  %sel_tmp35 = select i1 %sel_tmp10, i1 %too_right, i1 %sel_tmp34
+
+ST_52: sel_tmp36 [1/1] 0.00ns (grouped into LUT with out node sel_tmp37)
+_ifconv:57  %sel_tmp36 = and i1 %sel_tmp35, %not_sel_tmp1
+
+ST_52: sel_tmp37 [1/1] 1.37ns (out node of the LUT)
+_ifconv:58  %sel_tmp37 = or i1 %sel_tmp13, %sel_tmp36
+
+ST_52: sel_tmp38 [1/1] 0.00ns (grouped into LUT with out node chL_dir_5)
+_ifconv:59  %sel_tmp38 = select i1 %sel_tmp17, i1 %chL_dir, i1 %sel_tmp37
+
+ST_52: chL_dir_5 [1/1] 1.37ns (out node of the LUT)
+_ifconv:60  %chL_dir_5 = select i1 %sel_tmp18, i1 %chL_dir, i1 %sel_tmp38
+
+ST_52: stg_271 [1/1] 0.00ns
+_ifconv:61  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_52: stg_272 [2/2] 0.00ns
+_ifconv:62  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_dir, i1 %chR_dir_5) nounwind
+
+
+ <State 53>: 7.04ns
+ST_53: p_s [1/1] 1.37ns
+_ifconv:8  %p_s = select i1 %too_left, i4 0, i4 %chR_pwm_cast
+
+ST_53: p_1 [1/1] 1.37ns
+_ifconv:9  %p_1 = select i1 %too_left, i4 -6, i4 %chR_pwm_cast
+
+ST_53: chL_pwm_4 [1/1] 0.00ns (grouped into LUT with out node sel_tmp21)
+_ifconv:10  %chL_pwm_4 = select i1 %too_right, i4 0, i4 -6
+
+ST_53: chR_pwm_6 [1/1] 0.00ns (grouped into LUT with out node chR_pwm_8)
+_ifconv:12  %chR_pwm_6 = select i1 %too_right, i4 -6, i4 0
+
+ST_53: sel_tmp3 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1)
+_ifconv:15  %sel_tmp3 = select i1 %sel_tmp2, i4 %p_s, i4 0
+
+ST_53: sel_tmp7 [1/1] 0.00ns (grouped into LUT with out node sel_tmp1)
+_ifconv:18  %sel_tmp7 = select i1 %sel_tmp6, i4 %p_1, i4 %sel_tmp3
+
+ST_53: sel_tmp1 [1/1] 1.37ns (out node of the LUT)
+_ifconv:21  %sel_tmp1 = select i1 %sel_tmp9, i4 -6, i4 %sel_tmp7
+
+ST_53: sel_tmp11 [1/1] 0.00ns (grouped into LUT with out node chR_pwm_8)
+_ifconv:24  %sel_tmp11 = select i1 %sel_tmp10, i4 %chR_pwm_6, i4 %sel_tmp1
+
+ST_53: sel_tmp14 [1/1] 0.00ns (grouped into LUT with out node chR_pwm_8)
+_ifconv:27  %sel_tmp14 = select i1 %sel_tmp13, i4 0, i4 -6
+
+ST_53: tmp [1/1] 1.37ns
+_ifconv:28  %tmp = or i1 %sel_tmp13, %sel_tmp12
+
+ST_53: sel_tmp15 [1/1] 0.00ns (grouped into LUT with out node chR_pwm_8)
+_ifconv:29  %sel_tmp15 = select i1 %tmp, i4 %sel_tmp14, i4 %sel_tmp11
+
+ST_53: chR_pwm_8 [1/1] 1.37ns (out node of the LUT)
+_ifconv:34  %chR_pwm_8 = select i1 %tmp_28, i4 0, i4 %sel_tmp15
+
+ST_53: sel_tmp19 [1/1] 0.00ns (grouped into LUT with out node sel_tmp21)
+_ifconv:35  %sel_tmp19 = select i1 %sel_tmp2, i4 %p_1, i4 0
+
+ST_53: sel_tmp20 [1/1] 0.00ns (grouped into LUT with out node sel_tmp21)
+_ifconv:36  %sel_tmp20 = select i1 %sel_tmp6, i4 %p_s, i4 %sel_tmp19
+
+ST_53: sel_tmp21 [1/1] 1.37ns (out node of the LUT)
+_ifconv:37  %sel_tmp21 = select i1 %sel_tmp9, i4 %chL_pwm_4, i4 %sel_tmp20
+
+ST_53: sel_tmp22 [1/1] 0.00ns (grouped into LUT with out node chL_pwm_8)
+_ifconv:38  %sel_tmp22 = select i1 %sel_tmp10, i4 -6, i4 %sel_tmp21
+
+ST_53: sel_tmp23 [1/1] 0.00ns (grouped into LUT with out node chL_pwm_8)
+_ifconv:39  %sel_tmp23 = select i1 %sel_tmp13, i4 -6, i4 0
+
+ST_53: sel_tmp24 [1/1] 0.00ns (grouped into LUT with out node chL_pwm_8)
+_ifconv:40  %sel_tmp24 = select i1 %tmp, i4 %sel_tmp23, i4 %sel_tmp22
+
+ST_53: chL_pwm_8 [1/1] 1.37ns (out node of the LUT)
+_ifconv:41  %chL_pwm_8 = select i1 %tmp_28, i4 0, i4 %sel_tmp24
+
+ST_53: stg_292 [1/2] 0.00ns
+_ifconv:62  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_dir, i1 %chR_dir_5) nounwind
+
+ST_53: mtr_pwm_cnt_load [1/1] 0.00ns
+_ifconv:63  %mtr_pwm_cnt_load = load volatile i32* %mtr_pwm_cnt, align 4
+
+ST_53: tmp_29 [1/1] 0.00ns
+_ifconv:64  %tmp_29 = zext i4 %chR_pwm_8 to i32
+
+ST_53: tmp_30 [1/1] 2.93ns
+_ifconv:65  %tmp_30 = icmp slt i32 %mtr_pwm_cnt_load, %tmp_29
+
+ST_53: stg_296 [1/1] 0.00ns
+_ifconv:66  br i1 %tmp_30, label %9, label %10
+
+ST_53: stg_297 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_pwm, i1 false) nounwind
+
+ST_53: stg_298 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_pwm, i1 true) nounwind
+
+
+ <State 54>: 0.00ns
+ST_54: stg_299 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_pwm, i1 false) nounwind
+
+ST_54: stg_300 [1/1] 0.00ns
+:1  br label %11
+
+ST_54: stg_301 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_pwm, i1 true) nounwind
+
+ST_54: stg_302 [1/1] 0.00ns
+:1  br label %11
+
+ST_54: stg_303 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_dir, i1 %chL_dir_5) nounwind
+
+
+ <State 55>: 2.93ns
+ST_55: stg_304 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_dir, i1 %chL_dir_5) nounwind
+
+ST_55: mtr_pwm_cnt_load_1 [1/1] 0.00ns
+:1  %mtr_pwm_cnt_load_1 = load volatile i32* %mtr_pwm_cnt, align 4
+
+ST_55: tmp_31 [1/1] 0.00ns
+:2  %tmp_31 = zext i4 %chL_pwm_8 to i32
+
+ST_55: tmp_32 [1/1] 2.93ns
+:3  %tmp_32 = icmp slt i32 %mtr_pwm_cnt_load_1, %tmp_31
+
+ST_55: stg_308 [1/1] 0.00ns
+:4  br i1 %tmp_32, label %12, label %13
+
+ST_55: stg_309 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_pwm, i1 false) nounwind
+
+ST_55: stg_310 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_pwm, i1 true) nounwind
+
+
+ <State 56>: 3.96ns
+ST_56: stg_311 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_pwm, i1 false) nounwind
+
+ST_56: stg_312 [1/1] 0.00ns
+:1  br label %14
+
+ST_56: stg_313 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @l_pwm, i1 true) nounwind
+
+ST_56: stg_314 [1/1] 0.00ns
+:1  br label %14
+
+ST_56: stg_315 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_56: mtr_pwm_cnt_load_2 [1/1] 0.00ns
+:1  %mtr_pwm_cnt_load_2 = load volatile i32* %mtr_pwm_cnt, align 4
+
+ST_56: mtr_pwm_cnt_1 [1/1] 2.39ns
+:2  %mtr_pwm_cnt_1 = add nsw i32 %mtr_pwm_cnt_load_2, 1
+
+ST_56: stg_318 [1/1] 1.57ns
+:3  store volatile i32 %mtr_pwm_cnt_1, i32* %mtr_pwm_cnt, align 4
+
+
+ <State 57>: 2.93ns
+ST_57: mtr_pwm_cnt_load_3 [1/1] 0.00ns
+:4  %mtr_pwm_cnt_load_3 = load volatile i32* %mtr_pwm_cnt, align 4
+
+ST_57: tmp_33 [1/1] 2.93ns
+:5  %tmp_33 = icmp sgt i32 %mtr_pwm_cnt_load_3, 9
+
+ST_57: stg_321 [1/1] 0.00ns
+:6  br i1 %tmp_33, label %15, label %._crit_edge11
+
+ST_57: stg_322 [1/1] 1.57ns
+:0  store volatile i32 0, i32* %mtr_pwm_cnt, align 4
+
+ST_57: stg_323 [1/1] 0.00ns
+:1  br label %._crit_edge11
+
+ST_57: stg_324 [2/2] 1.87ns
+._crit_edge11:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 24, i8 zeroext 48)
+
+ST_57: stg_325 [2/2] 1.37ns
+._crit_edge11:8  call fastcc void @motor_ctrl_wait_tmr()
+
+
+ <State 58>: 1.37ns
+ST_58: stg_326 [1/2] 0.00ns
+._crit_edge11:0  call fastcc void @motor_ctrl_write_mem(i8 zeroext 24, i8 zeroext 48)
+
+ST_58: stg_327 [1/2] 1.37ns
+._crit_edge11:8  call fastcc void @motor_ctrl_wait_tmr()
+
+
+ <State 59>: 5.75ns
+ST_59: tmp_34 [1/1] 3.88ns
+._crit_edge11:1  %tmp_34 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %chL_pwm_8) nounwind
+
+ST_59: p_trunc127_ext [1/1] 0.00ns
+._crit_edge11:2  %p_trunc127_ext = zext i7 %tmp_34 to i8
+
+ST_59: stg_330 [2/2] 1.87ns
+._crit_edge11:3  call fastcc void @motor_ctrl_write_mem(i8 zeroext 25, i8 zeroext %p_trunc127_ext)
+
+
+ <State 60>: 0.00ns
+ST_60: stg_331 [1/2] 0.00ns
+._crit_edge11:3  call fastcc void @motor_ctrl_write_mem(i8 zeroext 25, i8 zeroext %p_trunc127_ext)
+
+
+ <State 61>: 1.87ns
+ST_61: stg_332 [2/2] 1.87ns
+._crit_edge11:4  call fastcc void @motor_ctrl_write_mem(i8 zeroext 27, i8 zeroext 48)
+
+
+ <State 62>: 0.00ns
+ST_62: stg_333 [1/2] 0.00ns
+._crit_edge11:4  call fastcc void @motor_ctrl_write_mem(i8 zeroext 27, i8 zeroext 48)
+
+
+ <State 63>: 5.75ns
+ST_63: tmp_35 [1/1] 3.88ns
+._crit_edge11:5  %tmp_35 = call fastcc zeroext i7 @motor_ctrl_bin2char(i4 zeroext %chR_pwm_8) nounwind
+
+ST_63: p_trunc129_ext [1/1] 0.00ns
+._crit_edge11:6  %p_trunc129_ext = zext i7 %tmp_35 to i8
+
+ST_63: stg_336 [2/2] 1.87ns
+._crit_edge11:7  call fastcc void @motor_ctrl_write_mem(i8 zeroext 28, i8 zeroext %p_trunc129_ext)
+
+
+ <State 64>: 0.00ns
+ST_64: stg_337 [1/2] 0.00ns
+._crit_edge11:7  call fastcc void @motor_ctrl_write_mem(i8 zeroext 28, i8 zeroext %p_trunc129_ext)
+
+ST_64: stg_338 [1/1] 0.00ns
+._crit_edge11:9  br label %.preheader
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

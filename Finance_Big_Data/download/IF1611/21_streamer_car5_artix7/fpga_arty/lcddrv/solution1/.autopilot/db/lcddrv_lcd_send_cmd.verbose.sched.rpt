@@ -1,0 +1,228 @@
+
+
+================================================================
+== Vivado HLS Report for 'lcddrv_lcd_send_cmd'
+================================================================
+* Date:           Fri May 27 17:26:41 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        lcddrv
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.86|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+----------+------+----------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |  min |    max   |  min |    max   |   Type  |
+    +------+----------+------+----------+---------+
+    |  4016|  40000016|  4016|  40000016|   none  |
+    +------+----------+------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 9
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+* FSM state operations: 
+
+ <State 1>: 1.48ns
+ST_1: wd_read [1/1] 1.48ns
+:0  %wd_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %wd) nounwind
+
+ST_1: mode_read [1/1] 1.48ns
+:1  %mode_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %mode) nounwind
+
+
+ <State 2>: 2.65ns
+ST_2: stg_12 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_2: stg_13 [1/1] 0.00ns
+:3  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @en, i1 false) nounwind
+
+ST_2: stg_14 [2/2] 2.65ns
+:5  call fastcc void @lcddrv_wait_tmr(i25 1000) nounwind
+
+
+ <State 3>: 2.65ns
+ST_3: stg_15 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_3: stg_16 [1/2] 2.65ns
+:5  call fastcc void @lcddrv_wait_tmr(i25 1000) nounwind
+
+
+ <State 4>: 2.65ns
+ST_4: stg_17 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_4: stg_18 [1/1] 0.00ns
+:7  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @en, i1 false) nounwind
+
+ST_4: stg_19 [1/1] 0.00ns
+:8  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @rs, i1 %mode_read) nounwind
+
+ST_4: stg_20 [1/1] 0.00ns
+:9  call void @_ssdm_op_Write.ap_none.volatile.i4P(i4* @data, i4 %wd_read) nounwind
+
+ST_4: stg_21 [2/2] 2.65ns
+:11  call fastcc void @lcddrv_wait_tmr(i25 1000) nounwind
+
+
+ <State 5>: 2.65ns
+ST_5: stg_22 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: stg_23 [1/2] 2.65ns
+:11  call fastcc void @lcddrv_wait_tmr(i25 1000) nounwind
+
+
+ <State 6>: 2.65ns
+ST_6: stg_24 [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_6: stg_25 [1/1] 0.00ns
+:13  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @en, i1 true) nounwind
+
+ST_6: stg_26 [1/1] 0.00ns
+:14  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @rs, i1 %mode_read) nounwind
+
+ST_6: stg_27 [1/1] 0.00ns
+:15  call void @_ssdm_op_Write.ap_none.volatile.i4P(i4* @data, i4 %wd_read) nounwind
+
+ST_6: stg_28 [2/2] 2.65ns
+:17  call fastcc void @lcddrv_wait_tmr(i25 1000) nounwind
+
+
+ <State 7>: 2.65ns
+ST_7: stg_29 [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_7: stg_30 [1/2] 2.65ns
+:17  call fastcc void @lcddrv_wait_tmr(i25 1000) nounwind
+
+
+ <State 8>: 2.65ns
+ST_8: stg_31 [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_8: stg_32 [1/1] 0.00ns
+:19  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @en, i1 false) nounwind
+
+ST_8: stg_33 [1/1] 0.00ns
+:20  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @rs, i1 %mode_read) nounwind
+
+ST_8: stg_34 [1/1] 0.00ns
+:21  call void @_ssdm_op_Write.ap_none.volatile.i4P(i4* @data, i4 %wd_read) nounwind
+
+ST_8: stg_35 [2/2] 2.65ns
+:23  call fastcc void @lcddrv_wait_tmr(i25 1000) nounwind
+
+
+ <State 9>: 2.65ns
+ST_9: stg_36 [1/1] 0.00ns
+:22  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_9: stg_37 [1/2] 2.65ns
+:23  call fastcc void @lcddrv_wait_tmr(i25 1000) nounwind
+
+ST_9: stg_38 [1/1] 0.00ns
+:24  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

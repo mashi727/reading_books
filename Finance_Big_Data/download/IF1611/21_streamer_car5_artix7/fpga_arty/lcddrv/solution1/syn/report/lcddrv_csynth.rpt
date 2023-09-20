@@ -1,0 +1,205 @@
+
+
+================================================================
+== Vivado HLS Report for 'lcddrv'
+================================================================
+* Date:           Fri May 27 17:26:44 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        lcddrv
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.86|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------+---------------------+-------+-----------+-------+-----------+---------+
+        |                                |                     |      Latency      |      Interval     | Pipeline|
+        |            Instance            |        Module       |  min  |    max    |  min  |    max    |   Type  |
+        +--------------------------------+---------------------+-------+-----------+-------+-----------+---------+
+        |grp_lcddrv_init_lcd_fu_167      |lcddrv_init_lcd      |  56247|  560000247|  56247|  560000247|   none  |
+        |grp_lcddrv_lcd_send_cmd_fu_179  |lcddrv_lcd_send_cmd  |   4016|   40000016|   4016|   40000016|   none  |
+        |grp_lcddrv_wait_tmr_fu_198      |lcddrv_wait_tmr      |   1002|   10000002|   1002|   10000002|   none  |
+        |grp_lcddrv_read_mem_fu_206      |lcddrv_read_mem      |      ?|          ?|      ?|          ?|   none  |
+        +--------------------------------+---------------------+-------+-----------+-------+-----------+---------+
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         ?|          -|          -|  inf |    no    |
+        | + Loop 1.1  |    ?|    ?|         ?|          -|          -|    16|    no    |
+        | + Loop 1.2  |    ?|    ?|         ?|          -|          -|    16|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT  |
++-----------------+---------+-------+-------+-------+
+|DSP              |        -|      -|      -|      -|
+|Expression       |        -|      -|      0|     17|
+|FIFO             |        -|      -|      -|      -|
+|Instance         |        -|      -|    184|    366|
+|Memory           |        -|      -|      -|      -|
+|Multiplexer      |        -|      -|      -|     52|
+|Register         |        -|      -|     79|      -|
++-----------------+---------+-------+-------+-------+
+|Total            |        0|      0|    263|    435|
++-----------------+---------+-------+-------+-------+
+|Available        |      100|     90|  41600|  20800|
++-----------------+---------+-------+-------+-------+
+|Utilization (%)  |        0|      0|   ~0  |      2|
++-----------------+---------+-------+-------+-------+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------+---------------------+---------+-------+-----+-----+
+    |            Instance            |        Module       | BRAM_18K| DSP48E|  FF | LUT |
+    +--------------------------------+---------------------+---------+-------+-----+-----+
+    |grp_lcddrv_init_lcd_fu_167      |lcddrv_init_lcd      |        0|      0|  106|  235|
+    |grp_lcddrv_lcd_send_cmd_fu_179  |lcddrv_lcd_send_cmd  |        0|      0|   37|   68|
+    |grp_lcddrv_read_mem_fu_206      |lcddrv_read_mem      |        0|      0|   14|    2|
+    |grp_lcddrv_wait_tmr_fu_198      |lcddrv_wait_tmr      |        0|      0|   27|   61|
+    +--------------------------------+---------------------+---------+-------+-----+-----+
+    |Total                           |                     |        0|      0|  184|  366|
+    +--------------------------------+---------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |pos_2_fu_242_p2      |     +    |      0|  0|   5|           5|           1|
+    |pos_3_fu_263_p2      |     +    |      0|  0|   6|           1|           6|
+    |exitcond1_fu_236_p2  |   icmp   |      0|  0|   3|           5|           6|
+    |exitcond_fu_252_p2   |   icmp   |      0|  0|   3|           6|           7|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0|  17|          17|          20|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------+----+-----------+-----+-----------+
+    |                 Name                | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                            |  18|         23|    1|         23|
+    |data_1_data_in                       |   4|          3|    4|         12|
+    |data_1_vld_in                        |   1|          3|    1|          3|
+    |dummy_tmr_out_1_data_in              |   1|          4|    1|          4|
+    |dummy_tmr_out_1_vld_in               |   1|          4|    1|          4|
+    |en_1_data_in                         |   1|          3|    1|          3|
+    |en_1_vld_in                          |   1|          3|    1|          3|
+    |grp_lcddrv_lcd_send_cmd_fu_179_mode  |   1|          3|    1|          3|
+    |grp_lcddrv_lcd_send_cmd_fu_179_wd    |   4|          7|    4|         28|
+    |grp_lcddrv_read_mem_fu_206_addr      |   5|          3|    5|         15|
+    |mem_addr_1_vld_in                    |   1|          2|    1|          2|
+    |mem_req_1_vld_in                     |   1|          2|    1|          2|
+    |pos_1_reg_156                        |   6|          2|    6|         12|
+    |pos_reg_144                          |   5|          2|    5|         10|
+    |rs_1_data_in                         |   1|          3|    1|          3|
+    |rs_1_vld_in                          |   1|          3|    1|          3|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |Total                                |  52|         70|   35|        130|
+    +-------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------+----+----+-----+-----------+
+    |                      Name                      | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                       |  22|   0|   22|          0|
+    |ap_reg_grp_lcddrv_init_lcd_fu_167_ap_start      |   1|   0|    1|          0|
+    |ap_reg_grp_lcddrv_lcd_send_cmd_fu_179_ap_start  |   1|   0|    1|          0|
+    |ap_reg_grp_lcddrv_read_mem_fu_206_ap_start      |   1|   0|    1|          0|
+    |ap_reg_grp_lcddrv_wait_tmr_fu_198_ap_start      |   1|   0|    1|          0|
+    |data_1_data_reg                                 |   4|   0|    4|          0|
+    |data_1_vld_reg                                  |   0|   0|    1|          1|
+    |dummy_tmr_out_0_data_reg                        |   1|   0|    1|          0|
+    |dummy_tmr_out_0_vld_reg                         |   0|   0|    1|          1|
+    |dummy_tmr_out_1_data_reg                        |   1|   0|    1|          0|
+    |dummy_tmr_out_1_vld_reg                         |   0|   0|    1|          1|
+    |en_1_data_reg                                   |   1|   0|    1|          0|
+    |en_1_vld_reg                                    |   0|   0|    1|          1|
+    |mem_addr_1_data_reg                             |   5|   0|    5|          0|
+    |mem_addr_1_vld_reg                              |   0|   0|    1|          1|
+    |mem_req_1_data_reg                              |   1|   0|    1|          0|
+    |mem_req_1_vld_reg                               |   0|   0|    1|          1|
+    |pos_1_reg_156                                   |   6|   0|    6|          0|
+    |pos_2_reg_276                                   |   5|   0|    5|          0|
+    |pos_3_reg_294                                   |   6|   0|    6|          0|
+    |pos_reg_144                                     |   5|   0|    5|          0|
+    |reg_231                                         |   4|   0|    4|          0|
+    |rs_1_data_reg                                   |   1|   0|    1|          0|
+    |rs_1_vld_reg                                    |   0|   0|    1|          1|
+    |tmp_2_reg_281                                   |   4|   0|    4|          0|
+    |tmp_3_reg_289                                   |   5|   0|    5|          0|
+    |tmp_4_reg_299                                   |   4|   0|    4|          0|
+    +------------------------------------------------+----+----+-----+-----------+
+    |Total                                           |  79|   0|   86|          7|
+    +------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+---------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  | Source Object |    C Type    |
++-----------------+-----+-----+------------+---------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs |     lcddrv    | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs |     lcddrv    | return value |
+|ap_start         |  in |    1| ap_ctrl_hs |     lcddrv    | return value |
+|ap_done          | out |    1| ap_ctrl_hs |     lcddrv    | return value |
+|ap_idle          | out |    1| ap_ctrl_hs |     lcddrv    | return value |
+|ap_ready         | out |    1| ap_ctrl_hs |     lcddrv    | return value |
+|dummy_tmr_out_i  |  in |    1|   ap_none  | dummy_tmr_out |    pointer   |
+|dummy_tmr_out_o  | out |    1|   ap_none  | dummy_tmr_out |    pointer   |
+|rs_i             |  in |    1|   ap_none  |       rs      |    pointer   |
+|rs_o             | out |    1|   ap_none  |       rs      |    pointer   |
+|en_i             |  in |    1|   ap_none  |       en      |    pointer   |
+|en_o             | out |    1|   ap_none  |       en      |    pointer   |
+|data_i           |  in |    4|   ap_none  |      data     |    pointer   |
+|data_o           | out |    4|   ap_none  |      data     |    pointer   |
+|ind              |  in |    1|   ap_none  |      ind      |    pointer   |
+|mem_addr_i       |  in |    5|   ap_none  |    mem_addr   |    pointer   |
+|mem_addr_o       | out |    5|   ap_none  |    mem_addr   |    pointer   |
+|mem_din          |  in |    8|   ap_none  |    mem_din    |    pointer   |
+|mem_req_i        |  in |    1|   ap_none  |    mem_req    |    pointer   |
+|mem_req_o        | out |    1|   ap_none  |    mem_req    |    pointer   |
+|mem_ack          |  in |    1|   ap_none  |    mem_ack    |    pointer   |
++-----------------+-----+-----+------------+---------------+--------------+
+

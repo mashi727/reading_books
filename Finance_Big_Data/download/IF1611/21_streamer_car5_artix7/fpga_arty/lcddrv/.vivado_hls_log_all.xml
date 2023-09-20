@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_ack' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.676+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_req' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.651+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_din' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.631+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'mem_addr' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.612+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'ind' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.586+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'data' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.564+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'en' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.547+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'rs' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.529+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'dummy_tmr_out' will be exposed as RTL port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.499+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_req' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.479+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'mem_addr' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.417+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'data' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.395+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'en' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.363+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'rs' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.348+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dummy_tmr_out' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:44.332+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] 'Loop-1' (lcddrv.c:185:8) in function 'lcddrv' is an infinite loop." projectName="lcddrv" solutionName="solution1" date="2016-05-27T17:26:41.471+0100" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

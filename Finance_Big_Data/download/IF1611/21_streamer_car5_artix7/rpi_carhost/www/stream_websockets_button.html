@@ -1,0 +1,270 @@
+<html>
+<head>
+	<title>MJPG-Streamer - Websockets</title>
+	<meta charset="utf-8">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		var websocket;
+		var timer;
+		timer	= 0;
+
+		$(function() {
+			var host = location.hostname;
+			var port = location.search.substring(1);
+			host = "ws://" + host + ":" + port;
+			window.WebSocket = window.WebSocket || window.MozWebSocket;
+
+			setInterval("keepalive()", 1000);
+
+
+			websocket = new WebSocket(host, 'dumb-increment-protocol');
+
+			websocket.onopen = function () {
+				$('#text_1').css('color', 'green');
+			};
+
+			websocket.onerror = function () {
+				websocket.close();
+			};
+
+			websocket.onclose = function () {
+				$('#text_1').css('color', 'red');
+			};
+
+			websocket.onmessage = function (message) {
+			//	$('#message_1').append($('<p>', { text: message.data }));
+			};
+
+
+			$('#button_c').mousedown(function(p0) {
+				if (websocket.readyState == 1) {
+					$('#button_c').css('background', 'url(center_orange.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_c').css('background-size', 'contain');
+				}
+			});
+
+			$('#button_c').mouseup(function(p0) {
+				if (websocket.readyState == 1) {
+					do {
+						;
+					} while (websocket.bufferedAmount != 0);
+					websocket.send('c');
+					$('#button_c').css('background', 'url(center_blue.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_c').css('background-size', 'contain');
+				}
+			});
+
+
+			$('#button_l').mousedown(function(p0) {
+				if (websocket.readyState == 1) {
+					$('#button_l').css('background', 'url(left_orange.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_l').css('background-size', 'contain');
+				}
+			});
+
+			$('#button_l').mouseup(function(p0) {
+				if (websocket.readyState == 1) {
+					do {
+						;
+					} while (websocket.bufferedAmount != 0);
+					websocket.send('l');
+					$('#button_l').css('background', 'url(left_blue.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_l').css('background-size', 'contain');
+				}
+			});
+
+
+			$('#button_r').mousedown(function(p0) {
+				if (websocket.readyState == 1) {
+					$('#button_r').css('background', 'url(right_orange.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_r').css('background-size', 'contain');
+				}
+			});
+
+			$('#button_r').mouseup(function(p0) {
+				if (websocket.readyState == 1) {
+					do {
+						;
+					} while (websocket.bufferedAmount != 0);
+					websocket.send('r');
+					$('#button_r').css('background', 'url(right_blue.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_r').css('background-size', 'contain');
+				}
+			});
+
+
+			$('#button_u').mousedown(function(p0) {
+				if (websocket.readyState == 1) {
+					$('#button_u').css('background', 'url(up_orange.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_u').css('background-size', 'contain');
+				}
+			});
+
+			$('#button_u').mouseup(function(p0) {
+				if (websocket.readyState == 1) {
+					do {
+						;
+					} while (websocket.bufferedAmount != 0);
+					websocket.send('u');
+					$('#button_u').css('background', 'url(up_blue.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_u').css('background-size', 'contain');
+				}
+			});
+
+
+			$('#button_d').mousedown(function(p0) {
+				if (websocket.readyState == 1) {
+					$('#button_d').css('background', 'url(down_orange.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_d').css('background-size', 'contain');
+				}
+			});
+
+			$('#button_d').mouseup(function(p0) {
+				if (websocket.readyState == 1) {
+					do {
+						;
+					} while (websocket.bufferedAmount != 0);
+					websocket.send('d');
+					$('#button_d').css('background', 'url(down_blue.jpg)', 'no-repeat', 'left', 'top');
+					$('#button_d').css('background-size', 'contain');
+				}
+			});
+
+
+			$('#camera_img').mousedown(function(p0) {
+				if (websocket.readyState == 1) {
+					// get abs coordinate of upper left corner of image
+					var elm  = document.getElementById("camera_img");
+					var rec  = elm.getBoundingClientRect();
+					var posX = rec.left;
+					var posY = rec.top;
+					var delm = document.documentElement;
+					var dbdy = document.body;
+					var scrX = delm.scrollLeft || dbdy.scrollLeft;
+					var scrY = delm.scrollTop  || dbdy.scrollTop;
+					var imgX = posX + scrX;
+					var imgY = posY + scrY;
+					// get abs coordinate of clicked position
+					// get relative coordinate of clicked position
+					var clickX = parseInt(((p0.pageX - imgX) * 100) / 640);
+					var clickY = parseInt(((p0.pageY - imgY) * 100) / 480);
+				//	var msg = 'i' + imgX + ':' + p0.pageX + ',' + imgY + ':' + p0.pageY;
+					var msg = 'i' + clickX + ',' + clickY;
+
+					do {
+						;
+					} while (websocket.bufferedAmount != 0);
+					websocket.send(msg);
+
+				//	$('#camera_img').css('border-width', '3px');
+				}
+			});
+
+			$('#camera_img').mouseup(function(p0) {
+				if (websocket.readyState == 1) {
+					do {
+						;
+					} while (websocket.bufferedAmount != 0);
+					websocket.send('o');
+				//	$('#camera_img').css('border-width', '1px');
+				}
+			});
+
+		});
+
+		function keepalive() {
+			if (websocket.readyState == 1) {
+				timer	= timer + 1;
+				if (timer >= 20) {
+					timer	= 0;
+					do {
+						;
+					} while (websocket.bufferedAmount != 0);
+					websocket.send('!');	// KEEP ALIVE MARK
+				}
+			}
+			else {
+				timer	= 0;
+				if (websocket.readyState == 3) {	// retry to open
+					location.reload(true);
+				}
+			}
+		}
+	</script>
+
+	<style type="text/css"> <!--
+		#button_c {
+			vertical-align:middle;
+			holizontal-align:middle;
+			width:20px; height:20px; border:0px;
+			background:url(center_blue.jpg) no-repeat left top;
+			background-size:contain;
+		}
+
+		#button_l {
+			width:36px; height:24px; border:0px;
+			background:url(left_blue.jpg) no-repeat left top;
+			background-size:contain;
+		}
+
+		#button_r {
+			width:36px; height:24px; border:0px;
+			background:url(right_blue.jpg) no-repeat left top;
+			background-size:contain;
+		}
+
+		#button_u {
+			width:24px; height:36px; border:0px;
+			background:url(up_blue.jpg) no-repeat left top;
+			background-size:contain;
+		}
+
+		#button_d {
+			width:24px; height:36px; border:0px;
+			background:url(down_blue.jpg) no-repeat left top;
+			background-size:contain;
+		}
+
+		#camera_img {
+			width:640px; height:480px; border:1px #0000FF solid;
+			no-repeat left top;
+			background-size:contain;
+		}
+
+	--> </style>
+</head>
+<body>
+	<h3 id="text_1">Command connection</h1>
+
+	<table id="disp_area0">
+	<tr>
+		<th>
+			<img id="camera_img" src="/?action=stream" width="640" height="480" />
+		</th>
+		<th>
+			<table id="button_area0">
+				<tr>
+					<th></th>
+					<th><div id="button_u"/></th>
+					<th></th>
+				</tr>
+					<th><div id="button_l"/></th>
+					<th><div id="button_c"/></div></th>
+					<th><div id="button_r"/></th>
+				<tr>
+				</tr>
+				<tr>
+					<th></th>
+					<th><div id="button_d"/></th>
+					<th></th>
+				</tr>
+			</table>
+		</th>
+	</tr>
+	</table>
+
+	<div id="message_1"></div>
+</body>
+</html>

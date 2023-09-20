@@ -1,0 +1,211 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'sharedmem'" level="0">
+<item name = "Date">Fri May 27 17:33:15 2016
+</item>
+<item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
+<item name = "Project">sharedmem</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a35ticsg324-1l</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 4.45, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">256, 256, 1, -, -, 256, no</column>
+<column name="- Loop 2">?, ?, ?, -, -, inf, no</column>
+<column name=" + Loop 2.1">?, ?, 2, -, -, ?, no</column>
+<column name=" + Loop 2.2">?, ?, 2, -, -, ?, no</column>
+<column name=" + Loop 2.3">?, ?, 2, -, -, ?, no</column>
+<column name=" + Loop 2.4">?, ?, 2, -, -, ?, no</column>
+<column name=" + Loop 2.5">?, ?, 2, -, -, ?, no</column>
+<column name=" + Loop 2.6">?, ?, 2, -, -, ?, no</column>
+<column name=" + Loop 2.7">?, ?, 2, -, -, ?, no</column>
+<column name=" + Loop 2.8">?, ?, 2, -, -, ?, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 13</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, -, -</column>
+<column name="Memory">1, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 122</column>
+<column name="Register">-, -, 162, -</column>
+<specialColumn name="Available">100, 90, 41600, 20800</specialColumn>
+<specialColumn name="Utilization (%)">1, 0, ~0, ~0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="mem_U">sharedmem_mem, 1, 0, 0, 256, 8, 1, 2048</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="addr_1_fu_518_p2">+, 0, 0, 9, 9, 1</column>
+<column name="exitcond_fu_512_p2">icmp, 0, 0, 4, 9, 10</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="addr_reg_454">9, 2, 9, 18</column>
+<column name="ap_NS_fsm">78, 47, 1, 47</column>
+<column name="ch_reg_465">3, 5, 3, 15</column>
+<column name="mem_address0">16, 10, 8, 80</column>
+<column name="mem_d0">8, 6, 8, 48</column>
+<column name="r_ack0_1_data_in">1, 3, 1, 3</column>
+<column name="r_ack1_1_data_in">1, 3, 1, 3</column>
+<column name="r_ack2_1_data_in">1, 3, 1, 3</column>
+<column name="r_ack3_1_data_in">1, 3, 1, 3</column>
+<column name="w_ack0_1_data_in">1, 3, 1, 3</column>
+<column name="w_ack1_1_data_in">1, 3, 1, 3</column>
+<column name="w_ack2_1_data_in">1, 3, 1, 3</column>
+<column name="w_ack3_1_data_in">1, 3, 1, 3</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="addr0_0_data_reg">8, 0, 8, 0</column>
+<column name="addr0_0_vld_reg">0, 0, 1, 1</column>
+<column name="addr1_0_data_reg">8, 0, 8, 0</column>
+<column name="addr1_0_vld_reg">0, 0, 1, 1</column>
+<column name="addr2_0_data_reg">8, 0, 8, 0</column>
+<column name="addr2_0_vld_reg">0, 0, 1, 1</column>
+<column name="addr3_0_data_reg">8, 0, 8, 0</column>
+<column name="addr3_0_vld_reg">0, 0, 1, 1</column>
+<column name="addr_reg_454">9, 0, 9, 0</column>
+<column name="ap_CS_fsm">46, 0, 46, 0</column>
+<column name="ch_reg_465">3, 0, 3, 0</column>
+<column name="din0_read_reg_624">8, 0, 8, 0</column>
+<column name="din1_read_reg_611">8, 0, 8, 0</column>
+<column name="din2_read_reg_598">8, 0, 8, 0</column>
+<column name="din3_read_reg_585">8, 0, 8, 0</column>
+<column name="dout0_1_data_reg">8, 0, 8, 0</column>
+<column name="dout0_1_vld_reg">0, 0, 1, 1</column>
+<column name="dout1_1_data_reg">8, 0, 8, 0</column>
+<column name="dout1_1_vld_reg">0, 0, 1, 1</column>
+<column name="dout2_1_data_reg">8, 0, 8, 0</column>
+<column name="dout2_1_vld_reg">0, 0, 1, 1</column>
+<column name="dout3_1_data_reg">8, 0, 8, 0</column>
+<column name="dout3_1_vld_reg">0, 0, 1, 1</column>
+<column name="r_ack0_1_data_reg">1, 0, 1, 0</column>
+<column name="r_ack0_1_vld_reg">0, 0, 1, 1</column>
+<column name="r_ack1_1_data_reg">1, 0, 1, 0</column>
+<column name="r_ack1_1_vld_reg">0, 0, 1, 1</column>
+<column name="r_ack2_1_data_reg">1, 0, 1, 0</column>
+<column name="r_ack2_1_vld_reg">0, 0, 1, 1</column>
+<column name="r_ack3_1_data_reg">1, 0, 1, 0</column>
+<column name="r_ack3_1_vld_reg">0, 0, 1, 1</column>
+<column name="w_ack0_1_data_reg">1, 0, 1, 0</column>
+<column name="w_ack0_1_vld_reg">0, 0, 1, 1</column>
+<column name="w_ack1_1_data_reg">1, 0, 1, 0</column>
+<column name="w_ack1_1_vld_reg">0, 0, 1, 1</column>
+<column name="w_ack2_1_data_reg">1, 0, 1, 0</column>
+<column name="w_ack2_1_vld_reg">0, 0, 1, 1</column>
+<column name="w_ack3_1_data_reg">1, 0, 1, 0</column>
+<column name="w_ack3_1_vld_reg">0, 0, 1, 1</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, sharedmem, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, sharedmem, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, sharedmem, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, sharedmem, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, sharedmem, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, sharedmem, return value</column>
+<column name="addr0">in, 8, ap_none, addr0, pointer</column>
+<column name="din0">in, 8, ap_none, din0, pointer</column>
+<column name="dout0_i">in, 8, ap_none, dout0, pointer</column>
+<column name="dout0_o">out, 8, ap_none, dout0, pointer</column>
+<column name="r_req0">in, 1, ap_none, r_req0, pointer</column>
+<column name="r_ack0_i">in, 1, ap_none, r_ack0, pointer</column>
+<column name="r_ack0_o">out, 1, ap_none, r_ack0, pointer</column>
+<column name="w_req0">in, 1, ap_none, w_req0, pointer</column>
+<column name="w_ack0_i">in, 1, ap_none, w_ack0, pointer</column>
+<column name="w_ack0_o">out, 1, ap_none, w_ack0, pointer</column>
+<column name="addr1">in, 8, ap_none, addr1, pointer</column>
+<column name="din1">in, 8, ap_none, din1, pointer</column>
+<column name="dout1_i">in, 8, ap_none, dout1, pointer</column>
+<column name="dout1_o">out, 8, ap_none, dout1, pointer</column>
+<column name="r_req1">in, 1, ap_none, r_req1, pointer</column>
+<column name="r_ack1_i">in, 1, ap_none, r_ack1, pointer</column>
+<column name="r_ack1_o">out, 1, ap_none, r_ack1, pointer</column>
+<column name="w_req1">in, 1, ap_none, w_req1, pointer</column>
+<column name="w_ack1_i">in, 1, ap_none, w_ack1, pointer</column>
+<column name="w_ack1_o">out, 1, ap_none, w_ack1, pointer</column>
+<column name="addr2">in, 8, ap_none, addr2, pointer</column>
+<column name="din2">in, 8, ap_none, din2, pointer</column>
+<column name="dout2_i">in, 8, ap_none, dout2, pointer</column>
+<column name="dout2_o">out, 8, ap_none, dout2, pointer</column>
+<column name="r_req2">in, 1, ap_none, r_req2, pointer</column>
+<column name="r_ack2_i">in, 1, ap_none, r_ack2, pointer</column>
+<column name="r_ack2_o">out, 1, ap_none, r_ack2, pointer</column>
+<column name="w_req2">in, 1, ap_none, w_req2, pointer</column>
+<column name="w_ack2_i">in, 1, ap_none, w_ack2, pointer</column>
+<column name="w_ack2_o">out, 1, ap_none, w_ack2, pointer</column>
+<column name="addr3">in, 8, ap_none, addr3, pointer</column>
+<column name="din3">in, 8, ap_none, din3, pointer</column>
+<column name="dout3_i">in, 8, ap_none, dout3, pointer</column>
+<column name="dout3_o">out, 8, ap_none, dout3, pointer</column>
+<column name="r_req3">in, 1, ap_none, r_req3, pointer</column>
+<column name="r_ack3_i">in, 1, ap_none, r_ack3, pointer</column>
+<column name="r_ack3_o">out, 1, ap_none, r_ack3, pointer</column>
+<column name="w_req3">in, 1, ap_none, w_req3, pointer</column>
+<column name="w_ack3_i">in, 1, ap_none, w_ack3, pointer</column>
+<column name="w_ack3_o">out, 1, ap_none, w_ack3, pointer</column>
+</table>
+</item>
+</section>
+</profile>

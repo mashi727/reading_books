@@ -1,0 +1,1353 @@
+
+
+================================================================
+== Vivado HLS Report for 'sharedmem'
+================================================================
+* Date:           Fri May 27 17:33:13 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        sharedmem
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      4.45|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  256|  256|         1|          -|          -|   256|    no    |
+        |- Loop 2     |    ?|    ?|         ?|          -|          -|  inf |    no    |
+        | + Loop 2.1  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.2  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.3  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.4  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.5  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.6  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.7  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        | + Loop 2.8  |    ?|    ?|         2|          -|          -|     ?|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 0
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 46
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / (exitcond)
+	4  / (!exitcond)
+5 --> 
+	46  / (ch != 0 & ch != 1 & ch != 2 & ch != 3 & ch != 4)
+	10  / (ch == 4 & r_req3_read)
+	6  / (ch == 4 & !r_req3_read & w_req3_read)
+	9  / (ch == 4 & !r_req3_read & !w_req3_read)
+	20  / (ch == 3 & r_req2_read)
+	16  / (ch == 3 & !r_req2_read & w_req2_read)
+	19  / (ch == 3 & !r_req2_read & !w_req2_read)
+	30  / (ch == 2 & r_req1_read)
+	26  / (ch == 2 & !r_req1_read & w_req1_read)
+	29  / (ch == 2 & !r_req1_read & !w_req1_read)
+	40  / (ch == 1 & r_req0_read_1)
+	36  / (ch == 1 & !r_req0_read_1 & w_req0_read_1)
+	39  / (ch == 1 & !r_req0_read_1 & !w_req0_read_1)
+	5  / (ch == 0)
+6 --> 
+	7  / true
+7 --> 
+	8  / (w_req3_read_1)
+	9  / (!w_req3_read_1)
+8 --> 
+	7  / true
+9 --> 
+	15  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / (r_req3_read_1)
+	15  / (!r_req3_read_1)
+14 --> 
+	13  / true
+15 --> 
+	5  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / (w_req2_read_1)
+	19  / (!w_req2_read_1)
+18 --> 
+	17  / true
+19 --> 
+	25  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / (r_req2_read_1)
+	25  / (!r_req2_read_1)
+24 --> 
+	23  / true
+25 --> 
+	5  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / (w_req1_read_2)
+	29  / (!w_req1_read_2)
+28 --> 
+	27  / true
+29 --> 
+	35  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / (r_req1_read_2)
+	35  / (!r_req1_read_2)
+34 --> 
+	33  / true
+35 --> 
+	5  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / (w_req0_read_2)
+	39  / (!w_req0_read_2)
+38 --> 
+	37  / true
+39 --> 
+	45  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / (r_req0_read_2)
+	45  / (!r_req0_read_2)
+44 --> 
+	43  / true
+45 --> 
+	5  / true
+46 --> 
+	5  / true
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: mem [1/1] 0.00ns
+:0  %mem = alloca [256 x i8], align 16
+
+ST_1: addr0_load [2/2] 0.00ns
+:2  %addr0_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr0) nounwind
+
+ST_1: din0_load [1/1] 0.00ns
+:4  %din0_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @din0) nounwind
+
+ST_1: dout0_load [2/2] 0.00ns
+:6  %dout0_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @dout0) nounwind
+
+ST_1: r_req0_load [1/1] 0.00ns
+:8  %r_req0_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req0) nounwind
+
+ST_1: r_ack0_load [2/2] 0.00ns
+:10  %r_ack0_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_ack0) nounwind
+
+ST_1: w_req0_load [1/1] 0.00ns
+:12  %w_req0_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req0) nounwind
+
+ST_1: w_ack0_load [2/2] 0.00ns
+:14  %w_ack0_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_ack0) nounwind
+
+ST_1: addr1_load [2/2] 0.00ns
+:16  %addr1_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr1) nounwind
+
+ST_1: din1_load [1/1] 0.00ns
+:18  %din1_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @din1) nounwind
+
+ST_1: dout1_load [2/2] 0.00ns
+:20  %dout1_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @dout1) nounwind
+
+ST_1: r_req1_load [1/1] 0.00ns
+:22  %r_req1_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req1) nounwind
+
+ST_1: r_ack1_load [2/2] 0.00ns
+:24  %r_ack1_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_ack1) nounwind
+
+ST_1: w_req1_load [1/1] 0.00ns
+:26  %w_req1_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req1) nounwind
+
+ST_1: w_ack1_load [2/2] 0.00ns
+:28  %w_ack1_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_ack1) nounwind
+
+ST_1: addr2_load [2/2] 0.00ns
+:30  %addr2_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr2) nounwind
+
+ST_1: din2_load [1/1] 0.00ns
+:32  %din2_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @din2) nounwind
+
+ST_1: dout2_load [2/2] 0.00ns
+:34  %dout2_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @dout2) nounwind
+
+ST_1: r_req2_load [1/1] 0.00ns
+:36  %r_req2_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req2) nounwind
+
+ST_1: r_ack2_load [2/2] 0.00ns
+:38  %r_ack2_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_ack2) nounwind
+
+ST_1: w_req2_load [1/1] 0.00ns
+:40  %w_req2_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req2) nounwind
+
+ST_1: w_ack2_load [2/2] 0.00ns
+:42  %w_ack2_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_ack2) nounwind
+
+ST_1: addr3_load [2/2] 0.00ns
+:44  %addr3_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr3) nounwind
+
+ST_1: din3_load [1/1] 0.00ns
+:46  %din3_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @din3) nounwind
+
+ST_1: dout3_load [2/2] 0.00ns
+:48  %dout3_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @dout3) nounwind
+
+ST_1: r_req3_load [1/1] 0.00ns
+:50  %r_req3_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req3) nounwind
+
+ST_1: r_ack3_load [2/2] 0.00ns
+:52  %r_ack3_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_ack3) nounwind
+
+ST_1: w_req3_load [1/1] 0.00ns
+:54  %w_req3_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req3) nounwind
+
+ST_1: w_ack3_load [2/2] 0.00ns
+:56  %w_ack3_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_ack3) nounwind
+
+
+ <State 2>: 0.00ns
+ST_2: addr0_load [1/2] 0.00ns
+:2  %addr0_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr0) nounwind
+
+ST_2: dout0_load [1/2] 0.00ns
+:6  %dout0_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @dout0) nounwind
+
+ST_2: r_ack0_load [1/2] 0.00ns
+:10  %r_ack0_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_ack0) nounwind
+
+ST_2: w_ack0_load [1/2] 0.00ns
+:14  %w_ack0_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_ack0) nounwind
+
+ST_2: addr1_load [1/2] 0.00ns
+:16  %addr1_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr1) nounwind
+
+ST_2: dout1_load [1/2] 0.00ns
+:20  %dout1_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @dout1) nounwind
+
+ST_2: r_ack1_load [1/2] 0.00ns
+:24  %r_ack1_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_ack1) nounwind
+
+ST_2: w_ack1_load [1/2] 0.00ns
+:28  %w_ack1_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_ack1) nounwind
+
+ST_2: addr2_load [1/2] 0.00ns
+:30  %addr2_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr2) nounwind
+
+ST_2: dout2_load [1/2] 0.00ns
+:34  %dout2_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @dout2) nounwind
+
+ST_2: r_ack2_load [1/2] 0.00ns
+:38  %r_ack2_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_ack2) nounwind
+
+ST_2: w_ack2_load [1/2] 0.00ns
+:42  %w_ack2_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_ack2) nounwind
+
+ST_2: addr3_load [1/2] 0.00ns
+:44  %addr3_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr3) nounwind
+
+ST_2: dout3_load [1/2] 0.00ns
+:48  %dout3_load = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @dout3) nounwind
+
+ST_2: r_ack3_load [1/2] 0.00ns
+:52  %r_ack3_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_ack3) nounwind
+
+ST_2: w_ack3_load [1/2] 0.00ns
+:56  %w_ack3_load = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_ack3) nounwind
+
+ST_2: stg_92 [1/1] 0.00ns
+:58  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_2: stg_93 [2/2] 0.00ns
+:59  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack0, i1 false) nounwind
+
+ST_2: stg_94 [2/2] 0.00ns
+:60  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack0, i1 false) nounwind
+
+ST_2: stg_95 [2/2] 0.00ns
+:61  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack1, i1 false) nounwind
+
+ST_2: stg_96 [2/2] 0.00ns
+:62  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack1, i1 false) nounwind
+
+ST_2: stg_97 [2/2] 0.00ns
+:63  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack2, i1 false) nounwind
+
+ST_2: stg_98 [2/2] 0.00ns
+:64  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack2, i1 false) nounwind
+
+ST_2: stg_99 [2/2] 0.00ns
+:65  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack3, i1 false) nounwind
+
+ST_2: stg_100 [2/2] 0.00ns
+:66  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack3, i1 false) nounwind
+
+
+ <State 3>: 1.57ns
+ST_3: stg_101 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecTopModule()
+
+ST_3: stg_102 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecInterface(i8* @addr0, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_103 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecInterface(i8* @din0, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_104 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecInterface(i8* @dout0, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_105 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecInterface(i1* @r_req0, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_106 [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecInterface(i1* @r_ack0, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_107 [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecInterface(i1* @w_req0, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_108 [1/1] 0.00ns
+:15  call void (...)* @_ssdm_op_SpecInterface(i1* @w_ack0, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_109 [1/1] 0.00ns
+:17  call void (...)* @_ssdm_op_SpecInterface(i8* @addr1, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_110 [1/1] 0.00ns
+:19  call void (...)* @_ssdm_op_SpecInterface(i8* @din1, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_111 [1/1] 0.00ns
+:21  call void (...)* @_ssdm_op_SpecInterface(i8* @dout1, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_112 [1/1] 0.00ns
+:23  call void (...)* @_ssdm_op_SpecInterface(i1* @r_req1, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_113 [1/1] 0.00ns
+:25  call void (...)* @_ssdm_op_SpecInterface(i1* @r_ack1, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_114 [1/1] 0.00ns
+:27  call void (...)* @_ssdm_op_SpecInterface(i1* @w_req1, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_115 [1/1] 0.00ns
+:29  call void (...)* @_ssdm_op_SpecInterface(i1* @w_ack1, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_116 [1/1] 0.00ns
+:31  call void (...)* @_ssdm_op_SpecInterface(i8* @addr2, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_117 [1/1] 0.00ns
+:33  call void (...)* @_ssdm_op_SpecInterface(i8* @din2, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_118 [1/1] 0.00ns
+:35  call void (...)* @_ssdm_op_SpecInterface(i8* @dout2, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_119 [1/1] 0.00ns
+:37  call void (...)* @_ssdm_op_SpecInterface(i1* @r_req2, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_120 [1/1] 0.00ns
+:39  call void (...)* @_ssdm_op_SpecInterface(i1* @r_ack2, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_121 [1/1] 0.00ns
+:41  call void (...)* @_ssdm_op_SpecInterface(i1* @w_req2, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_122 [1/1] 0.00ns
+:43  call void (...)* @_ssdm_op_SpecInterface(i1* @w_ack2, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_123 [1/1] 0.00ns
+:45  call void (...)* @_ssdm_op_SpecInterface(i8* @addr3, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_124 [1/1] 0.00ns
+:47  call void (...)* @_ssdm_op_SpecInterface(i8* @din3, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_125 [1/1] 0.00ns
+:49  call void (...)* @_ssdm_op_SpecInterface(i8* @dout3, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_126 [1/1] 0.00ns
+:51  call void (...)* @_ssdm_op_SpecInterface(i1* @r_req3, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_127 [1/1] 0.00ns
+:53  call void (...)* @_ssdm_op_SpecInterface(i1* @r_ack3, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_128 [1/1] 0.00ns
+:55  call void (...)* @_ssdm_op_SpecInterface(i1* @w_req3, [8 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_129 [1/1] 0.00ns
+:57  call void (...)* @_ssdm_op_SpecInterface(i1* @w_ack3, [8 x i8]* @p_str, i32 1, i32 1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_3: stg_130 [1/2] 0.00ns
+:59  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack0, i1 false) nounwind
+
+ST_3: stg_131 [1/2] 0.00ns
+:60  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack0, i1 false) nounwind
+
+ST_3: stg_132 [1/2] 0.00ns
+:61  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack1, i1 false) nounwind
+
+ST_3: stg_133 [1/2] 0.00ns
+:62  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack1, i1 false) nounwind
+
+ST_3: stg_134 [1/2] 0.00ns
+:63  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack2, i1 false) nounwind
+
+ST_3: stg_135 [1/2] 0.00ns
+:64  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack2, i1 false) nounwind
+
+ST_3: stg_136 [1/2] 0.00ns
+:65  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack3, i1 false) nounwind
+
+ST_3: stg_137 [1/2] 0.00ns
+:66  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack3, i1 false) nounwind
+
+ST_3: stg_138 [1/1] 0.00ns
+:67  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_3: stg_139 [1/1] 1.57ns
+:68  br label %1
+
+
+ <State 4>: 4.45ns
+ST_4: addr [1/1] 0.00ns
+:0  %addr = phi i9 [ 0, %0 ], [ %addr_1, %2 ]
+
+ST_4: exitcond [1/1] 2.51ns
+:1  %exitcond = icmp eq i9 %addr, -256
+
+ST_4: empty [1/1] 0.00ns
+:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256) nounwind
+
+ST_4: addr_1 [1/1] 1.79ns
+:3  %addr_1 = add i9 %addr, 1
+
+ST_4: stg_144 [1/1] 1.94ns
+:4  br i1 %exitcond, label %.preheader, label %2
+
+ST_4: tmp_s [1/1] 0.00ns
+:0  %tmp_s = zext i9 %addr to i64
+
+ST_4: mem_addr [1/1] 0.00ns
+:1  %mem_addr = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_s
+
+ST_4: stg_147 [1/1] 2.71ns
+:2  store i8 0, i8* %mem_addr, align 1
+
+ST_4: stg_148 [1/1] 0.00ns
+:3  br label %1
+
+
+ <State 5>: 2.33ns
+ST_5: ch [1/1] 0.00ns
+.preheader:0  %ch = phi i3 [ 0, %1 ], [ 0, %55 ], [ 0, %54 ], [ 0, %43 ], [ 0, %32 ], [ 0, %21 ], [ 1, %._crit_edge ], [ 2, %._crit_edge2 ], [ 3, %._crit_edge4 ], [ -4, %._crit_edge6 ], [ 0, %10 ]
+
+ST_5: loop_begin [1/1] 0.00ns
+.preheader:1  %loop_begin = call i32 (...)* @_ssdm_op_SpecLoopBegin() nounwind
+
+ST_5: stg_151 [1/1] 2.33ns
+.preheader:2  switch i3 %ch, label %55 [
+    i3 0, label %3
+    i3 1, label %11
+    i3 2, label %22
+    i3 3, label %33
+    i3 -4, label %44
+  ]
+
+ST_5: r_req3_read [1/1] 0.00ns
+:0  %r_req3_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req3) nounwind
+
+ST_5: stg_153 [1/1] 0.00ns
+:1  br i1 %r_req3_read, label %45, label %49
+
+ST_5: w_req3_read [1/1] 0.00ns
+:0  %w_req3_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req3) nounwind
+
+ST_5: stg_155 [1/1] 0.00ns
+:1  br i1 %w_req3_read, label %50, label %._crit_edge11
+
+ST_5: stg_156 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: din3_read [1/1] 0.00ns
+:1  %din3_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @din3) nounwind
+
+ST_5: addr3_read_1 [2/2] 0.00ns
+:2  %addr3_read_1 = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr3) nounwind
+
+ST_5: stg_159 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: addr3_read [2/2] 0.00ns
+:1  %addr3_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr3) nounwind
+
+ST_5: r_req2_read [1/1] 0.00ns
+:0  %r_req2_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req2) nounwind
+
+ST_5: stg_162 [1/1] 0.00ns
+:1  br i1 %r_req2_read, label %34, label %38
+
+ST_5: w_req2_read [1/1] 0.00ns
+:0  %w_req2_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req2) nounwind
+
+ST_5: stg_164 [1/1] 0.00ns
+:1  br i1 %w_req2_read, label %39, label %._crit_edge10
+
+ST_5: stg_165 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: din2_read [1/1] 0.00ns
+:1  %din2_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @din2) nounwind
+
+ST_5: addr2_read_1 [2/2] 0.00ns
+:2  %addr2_read_1 = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr2) nounwind
+
+ST_5: stg_168 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: addr2_read [2/2] 0.00ns
+:1  %addr2_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr2) nounwind
+
+ST_5: r_req1_read [1/1] 0.00ns
+:0  %r_req1_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req1) nounwind
+
+ST_5: stg_171 [1/1] 0.00ns
+:1  br i1 %r_req1_read, label %23, label %27
+
+ST_5: w_req1_read [1/1] 0.00ns
+:0  %w_req1_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req1) nounwind
+
+ST_5: stg_173 [1/1] 0.00ns
+:1  br i1 %w_req1_read, label %28, label %._crit_edge9
+
+ST_5: stg_174 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: din1_read [1/1] 0.00ns
+:1  %din1_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @din1) nounwind
+
+ST_5: addr1_read_1 [2/2] 0.00ns
+:2  %addr1_read_1 = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr1) nounwind
+
+ST_5: stg_177 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: addr1_read [2/2] 0.00ns
+:1  %addr1_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr1) nounwind
+
+ST_5: r_req0_read_1 [1/1] 0.00ns
+:0  %r_req0_read_1 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req0) nounwind
+
+ST_5: stg_180 [1/1] 0.00ns
+:1  br i1 %r_req0_read_1, label %12, label %16
+
+ST_5: w_req0_read_1 [1/1] 0.00ns
+:0  %w_req0_read_1 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req0) nounwind
+
+ST_5: stg_182 [1/1] 0.00ns
+:1  br i1 %w_req0_read_1, label %17, label %._crit_edge8
+
+ST_5: stg_183 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: din0_read [1/1] 0.00ns
+:1  %din0_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @din0) nounwind
+
+ST_5: addr0_read_1 [2/2] 0.00ns
+:2  %addr0_read_1 = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr0) nounwind
+
+ST_5: stg_186 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: addr0_read [2/2] 0.00ns
+:1  %addr0_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr0) nounwind
+
+ST_5: r_req0_read [1/1] 0.00ns
+:0  %r_req0_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req0) nounwind
+
+ST_5: stg_189 [1/1] 0.00ns
+:1  br i1 %r_req0_read, label %._crit_edge, label %4
+
+ST_5: w_req0_read [1/1] 0.00ns
+:0  %w_req0_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req0) nounwind
+
+ST_5: stg_191 [1/1] 0.00ns
+:1  br i1 %w_req0_read, label %._crit_edge, label %5
+
+ST_5: r_req1_read_1 [1/1] 0.00ns
+:0  %r_req1_read_1 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req1) nounwind
+
+ST_5: stg_193 [1/1] 0.00ns
+:1  br i1 %r_req1_read_1, label %._crit_edge2, label %6
+
+ST_5: w_req1_read_1 [1/1] 0.00ns
+:0  %w_req1_read_1 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req1) nounwind
+
+ST_5: stg_195 [1/1] 0.00ns
+:1  br i1 %w_req1_read_1, label %._crit_edge2, label %7
+
+ST_5: r_req2_read_2 [1/1] 0.00ns
+:0  %r_req2_read_2 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req2) nounwind
+
+ST_5: stg_197 [1/1] 0.00ns
+:1  br i1 %r_req2_read_2, label %._crit_edge4, label %8
+
+ST_5: w_req2_read_2 [1/1] 0.00ns
+:0  %w_req2_read_2 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req2) nounwind
+
+ST_5: stg_199 [1/1] 0.00ns
+:1  br i1 %w_req2_read_2, label %._crit_edge4, label %9
+
+ST_5: r_req3_read_2 [1/1] 0.00ns
+:0  %r_req3_read_2 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req3) nounwind
+
+ST_5: stg_201 [1/1] 0.00ns
+:1  br i1 %r_req3_read_2, label %._crit_edge6, label %10
+
+ST_5: w_req3_read_2 [1/1] 0.00ns
+:0  %w_req3_read_2 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req3) nounwind
+
+ST_5: stg_203 [1/1] 0.00ns
+:1  br i1 %w_req3_read_2, label %._crit_edge6, label %.preheader
+
+ST_5: stg_204 [1/1] 0.00ns
+._crit_edge6:0  br label %.preheader
+
+ST_5: stg_205 [1/1] 0.00ns
+._crit_edge4:0  br label %.preheader
+
+ST_5: stg_206 [1/1] 0.00ns
+._crit_edge2:0  br label %.preheader
+
+ST_5: stg_207 [1/1] 0.00ns
+._crit_edge:0  br label %.preheader
+
+ST_5: stg_208 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_5: stg_209 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack0, i1 false) nounwind
+
+ST_5: stg_210 [2/2] 0.00ns
+:2  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack0, i1 false) nounwind
+
+ST_5: stg_211 [2/2] 0.00ns
+:3  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack1, i1 false) nounwind
+
+ST_5: stg_212 [2/2] 0.00ns
+:4  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack1, i1 false) nounwind
+
+ST_5: stg_213 [2/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack2, i1 false) nounwind
+
+ST_5: stg_214 [2/2] 0.00ns
+:6  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack2, i1 false) nounwind
+
+ST_5: stg_215 [2/2] 0.00ns
+:7  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack3, i1 false) nounwind
+
+ST_5: stg_216 [2/2] 0.00ns
+:8  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack3, i1 false) nounwind
+
+
+ <State 6>: 2.71ns
+ST_6: addr3_read_1 [1/2] 0.00ns
+:2  %addr3_read_1 = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr3) nounwind
+
+ST_6: tmp_9 [1/1] 0.00ns
+:3  %tmp_9 = zext i8 %addr3_read_1 to i64
+
+ST_6: mem_addr_8 [1/1] 0.00ns
+:4  %mem_addr_8 = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_9
+
+ST_6: stg_220 [1/1] 2.71ns
+:5  store i8 %din3_read, i8* %mem_addr_8, align 1
+
+ST_6: stg_221 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_6: stg_222 [1/1] 0.00ns
+:7  br label %51
+
+
+ <State 7>: 0.00ns
+ST_7: w_req3_read_1 [1/1] 0.00ns
+:0  %w_req3_read_1 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req3) nounwind
+
+ST_7: stg_224 [1/1] 0.00ns
+:1  br i1 %w_req3_read_1, label %52, label %53
+
+ST_7: stg_225 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack3, i1 true) nounwind
+
+ST_7: stg_226 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_7: stg_227 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack3, i1 false) nounwind
+
+
+ <State 8>: 0.00ns
+ST_8: stg_228 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack3, i1 true) nounwind
+
+ST_8: stg_229 [1/1] 0.00ns
+:1  br label %51
+
+
+ <State 9>: 0.00ns
+ST_9: stg_230 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack3, i1 false) nounwind
+
+ST_9: stg_231 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_9: stg_232 [1/1] 0.00ns
+:3  br label %._crit_edge11
+
+ST_9: stg_233 [1/1] 0.00ns
+._crit_edge11:0  br label %54
+
+
+ <State 10>: 2.71ns
+ST_10: addr3_read [1/2] 0.00ns
+:1  %addr3_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr3) nounwind
+
+ST_10: tmp_5 [1/1] 0.00ns
+:2  %tmp_5 = zext i8 %addr3_read to i64
+
+ST_10: mem_addr_4 [1/1] 0.00ns
+:3  %mem_addr_4 = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_5
+
+ST_10: mem_load_3 [2/2] 2.71ns
+:4  %mem_load_3 = load i8* %mem_addr_4, align 1
+
+
+ <State 11>: 2.71ns
+ST_11: mem_load_3 [1/2] 2.71ns
+:4  %mem_load_3 = load i8* %mem_addr_4, align 1
+
+ST_11: stg_239 [2/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @dout3, i8 %mem_load_3) nounwind
+
+
+ <State 12>: 0.00ns
+ST_12: stg_240 [1/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @dout3, i8 %mem_load_3) nounwind
+
+ST_12: stg_241 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_12: stg_242 [1/1] 0.00ns
+:7  br label %46
+
+
+ <State 13>: 0.00ns
+ST_13: r_req3_read_1 [1/1] 0.00ns
+:0  %r_req3_read_1 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req3) nounwind
+
+ST_13: stg_244 [1/1] 0.00ns
+:1  br i1 %r_req3_read_1, label %47, label %48
+
+ST_13: stg_245 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack3, i1 true) nounwind
+
+ST_13: stg_246 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_13: stg_247 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack3, i1 false) nounwind
+
+
+ <State 14>: 0.00ns
+ST_14: stg_248 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack3, i1 true) nounwind
+
+ST_14: stg_249 [1/1] 0.00ns
+:1  br label %46
+
+
+ <State 15>: 0.00ns
+ST_15: stg_250 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack3, i1 false) nounwind
+
+ST_15: stg_251 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_15: stg_252 [1/1] 0.00ns
+:3  br label %54
+
+ST_15: stg_253 [1/1] 0.00ns
+:0  br label %.preheader
+
+
+ <State 16>: 2.71ns
+ST_16: addr2_read_1 [1/2] 0.00ns
+:2  %addr2_read_1 = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr2) nounwind
+
+ST_16: tmp_8 [1/1] 0.00ns
+:3  %tmp_8 = zext i8 %addr2_read_1 to i64
+
+ST_16: mem_addr_7 [1/1] 0.00ns
+:4  %mem_addr_7 = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_8
+
+ST_16: stg_257 [1/1] 2.71ns
+:5  store i8 %din2_read, i8* %mem_addr_7, align 1
+
+ST_16: stg_258 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_16: stg_259 [1/1] 0.00ns
+:7  br label %40
+
+
+ <State 17>: 0.00ns
+ST_17: w_req2_read_1 [1/1] 0.00ns
+:0  %w_req2_read_1 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req2) nounwind
+
+ST_17: stg_261 [1/1] 0.00ns
+:1  br i1 %w_req2_read_1, label %41, label %42
+
+ST_17: stg_262 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack2, i1 true) nounwind
+
+ST_17: stg_263 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_17: stg_264 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack2, i1 false) nounwind
+
+
+ <State 18>: 0.00ns
+ST_18: stg_265 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack2, i1 true) nounwind
+
+ST_18: stg_266 [1/1] 0.00ns
+:1  br label %40
+
+
+ <State 19>: 0.00ns
+ST_19: stg_267 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack2, i1 false) nounwind
+
+ST_19: stg_268 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_19: stg_269 [1/1] 0.00ns
+:3  br label %._crit_edge10
+
+ST_19: stg_270 [1/1] 0.00ns
+._crit_edge10:0  br label %43
+
+
+ <State 20>: 2.71ns
+ST_20: addr2_read [1/2] 0.00ns
+:1  %addr2_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr2) nounwind
+
+ST_20: tmp_4 [1/1] 0.00ns
+:2  %tmp_4 = zext i8 %addr2_read to i64
+
+ST_20: mem_addr_3 [1/1] 0.00ns
+:3  %mem_addr_3 = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_4
+
+ST_20: mem_load_2 [2/2] 2.71ns
+:4  %mem_load_2 = load i8* %mem_addr_3, align 1
+
+
+ <State 21>: 2.71ns
+ST_21: mem_load_2 [1/2] 2.71ns
+:4  %mem_load_2 = load i8* %mem_addr_3, align 1
+
+ST_21: stg_276 [2/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @dout2, i8 %mem_load_2) nounwind
+
+
+ <State 22>: 0.00ns
+ST_22: stg_277 [1/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @dout2, i8 %mem_load_2) nounwind
+
+ST_22: stg_278 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_22: stg_279 [1/1] 0.00ns
+:7  br label %35
+
+
+ <State 23>: 0.00ns
+ST_23: r_req2_read_1 [1/1] 0.00ns
+:0  %r_req2_read_1 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req2) nounwind
+
+ST_23: stg_281 [1/1] 0.00ns
+:1  br i1 %r_req2_read_1, label %36, label %37
+
+ST_23: stg_282 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack2, i1 true) nounwind
+
+ST_23: stg_283 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_23: stg_284 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack2, i1 false) nounwind
+
+
+ <State 24>: 0.00ns
+ST_24: stg_285 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack2, i1 true) nounwind
+
+ST_24: stg_286 [1/1] 0.00ns
+:1  br label %35
+
+
+ <State 25>: 0.00ns
+ST_25: stg_287 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack2, i1 false) nounwind
+
+ST_25: stg_288 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_25: stg_289 [1/1] 0.00ns
+:3  br label %43
+
+ST_25: stg_290 [1/1] 0.00ns
+:0  br label %.preheader
+
+
+ <State 26>: 2.71ns
+ST_26: addr1_read_1 [1/2] 0.00ns
+:2  %addr1_read_1 = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr1) nounwind
+
+ST_26: tmp_7 [1/1] 0.00ns
+:3  %tmp_7 = zext i8 %addr1_read_1 to i64
+
+ST_26: mem_addr_6 [1/1] 0.00ns
+:4  %mem_addr_6 = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_7
+
+ST_26: stg_294 [1/1] 2.71ns
+:5  store i8 %din1_read, i8* %mem_addr_6, align 1
+
+ST_26: stg_295 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_26: stg_296 [1/1] 0.00ns
+:7  br label %29
+
+
+ <State 27>: 0.00ns
+ST_27: w_req1_read_2 [1/1] 0.00ns
+:0  %w_req1_read_2 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req1) nounwind
+
+ST_27: stg_298 [1/1] 0.00ns
+:1  br i1 %w_req1_read_2, label %30, label %31
+
+ST_27: stg_299 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack1, i1 true) nounwind
+
+ST_27: stg_300 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_27: stg_301 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack1, i1 false) nounwind
+
+
+ <State 28>: 0.00ns
+ST_28: stg_302 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack1, i1 true) nounwind
+
+ST_28: stg_303 [1/1] 0.00ns
+:1  br label %29
+
+
+ <State 29>: 0.00ns
+ST_29: stg_304 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack1, i1 false) nounwind
+
+ST_29: stg_305 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_29: stg_306 [1/1] 0.00ns
+:3  br label %._crit_edge9
+
+ST_29: stg_307 [1/1] 0.00ns
+._crit_edge9:0  br label %32
+
+
+ <State 30>: 2.71ns
+ST_30: addr1_read [1/2] 0.00ns
+:1  %addr1_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr1) nounwind
+
+ST_30: tmp_3 [1/1] 0.00ns
+:2  %tmp_3 = zext i8 %addr1_read to i64
+
+ST_30: mem_addr_2 [1/1] 0.00ns
+:3  %mem_addr_2 = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_3
+
+ST_30: mem_load_1 [2/2] 2.71ns
+:4  %mem_load_1 = load i8* %mem_addr_2, align 1
+
+
+ <State 31>: 2.71ns
+ST_31: mem_load_1 [1/2] 2.71ns
+:4  %mem_load_1 = load i8* %mem_addr_2, align 1
+
+ST_31: stg_313 [2/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @dout1, i8 %mem_load_1) nounwind
+
+
+ <State 32>: 0.00ns
+ST_32: stg_314 [1/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @dout1, i8 %mem_load_1) nounwind
+
+ST_32: stg_315 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_32: stg_316 [1/1] 0.00ns
+:7  br label %24
+
+
+ <State 33>: 0.00ns
+ST_33: r_req1_read_2 [1/1] 0.00ns
+:0  %r_req1_read_2 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req1) nounwind
+
+ST_33: stg_318 [1/1] 0.00ns
+:1  br i1 %r_req1_read_2, label %25, label %26
+
+ST_33: stg_319 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack1, i1 true) nounwind
+
+ST_33: stg_320 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_33: stg_321 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack1, i1 false) nounwind
+
+
+ <State 34>: 0.00ns
+ST_34: stg_322 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack1, i1 true) nounwind
+
+ST_34: stg_323 [1/1] 0.00ns
+:1  br label %24
+
+
+ <State 35>: 0.00ns
+ST_35: stg_324 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack1, i1 false) nounwind
+
+ST_35: stg_325 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_35: stg_326 [1/1] 0.00ns
+:3  br label %32
+
+ST_35: stg_327 [1/1] 0.00ns
+:0  br label %.preheader
+
+
+ <State 36>: 2.71ns
+ST_36: addr0_read_1 [1/2] 0.00ns
+:2  %addr0_read_1 = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr0) nounwind
+
+ST_36: tmp_6 [1/1] 0.00ns
+:3  %tmp_6 = zext i8 %addr0_read_1 to i64
+
+ST_36: mem_addr_5 [1/1] 0.00ns
+:4  %mem_addr_5 = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_6
+
+ST_36: stg_331 [1/1] 2.71ns
+:5  store i8 %din0_read, i8* %mem_addr_5, align 1
+
+ST_36: stg_332 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_36: stg_333 [1/1] 0.00ns
+:7  br label %18
+
+
+ <State 37>: 0.00ns
+ST_37: w_req0_read_2 [1/1] 0.00ns
+:0  %w_req0_read_2 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @w_req0) nounwind
+
+ST_37: stg_335 [1/1] 0.00ns
+:1  br i1 %w_req0_read_2, label %19, label %20
+
+ST_37: stg_336 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack0, i1 true) nounwind
+
+ST_37: stg_337 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_37: stg_338 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack0, i1 false) nounwind
+
+
+ <State 38>: 0.00ns
+ST_38: stg_339 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack0, i1 true) nounwind
+
+ST_38: stg_340 [1/1] 0.00ns
+:1  br label %18
+
+
+ <State 39>: 0.00ns
+ST_39: stg_341 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack0, i1 false) nounwind
+
+ST_39: stg_342 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_39: stg_343 [1/1] 0.00ns
+:3  br label %._crit_edge8
+
+ST_39: stg_344 [1/1] 0.00ns
+._crit_edge8:0  br label %21
+
+
+ <State 40>: 2.71ns
+ST_40: addr0_read [1/2] 0.00ns
+:1  %addr0_read = call i8 @_ssdm_op_Read.ap_none.volatile.i8P(i8* @addr0) nounwind
+
+ST_40: tmp_2 [1/1] 0.00ns
+:2  %tmp_2 = zext i8 %addr0_read to i64
+
+ST_40: mem_addr_1 [1/1] 0.00ns
+:3  %mem_addr_1 = getelementptr inbounds [256 x i8]* %mem, i64 0, i64 %tmp_2
+
+ST_40: mem_load [2/2] 2.71ns
+:4  %mem_load = load i8* %mem_addr_1, align 1
+
+
+ <State 41>: 2.71ns
+ST_41: mem_load [1/2] 2.71ns
+:4  %mem_load = load i8* %mem_addr_1, align 1
+
+ST_41: stg_350 [2/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @dout0, i8 %mem_load) nounwind
+
+
+ <State 42>: 0.00ns
+ST_42: stg_351 [1/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i8P(i8* @dout0, i8 %mem_load) nounwind
+
+ST_42: stg_352 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_42: stg_353 [1/1] 0.00ns
+:7  br label %13
+
+
+ <State 43>: 0.00ns
+ST_43: r_req0_read_2 [1/1] 0.00ns
+:0  %r_req0_read_2 = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @r_req0) nounwind
+
+ST_43: stg_355 [1/1] 0.00ns
+:1  br i1 %r_req0_read_2, label %14, label %15
+
+ST_43: stg_356 [2/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack0, i1 true) nounwind
+
+ST_43: stg_357 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_43: stg_358 [2/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack0, i1 false) nounwind
+
+
+ <State 44>: 0.00ns
+ST_44: stg_359 [1/2] 0.00ns
+:0  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack0, i1 true) nounwind
+
+ST_44: stg_360 [1/1] 0.00ns
+:1  br label %13
+
+
+ <State 45>: 0.00ns
+ST_45: stg_361 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack0, i1 false) nounwind
+
+ST_45: stg_362 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_45: stg_363 [1/1] 0.00ns
+:3  br label %21
+
+ST_45: stg_364 [1/1] 0.00ns
+:0  br label %.preheader
+
+
+ <State 46>: 0.00ns
+ST_46: stg_365 [1/2] 0.00ns
+:1  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack0, i1 false) nounwind
+
+ST_46: stg_366 [1/2] 0.00ns
+:2  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack0, i1 false) nounwind
+
+ST_46: stg_367 [1/2] 0.00ns
+:3  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack1, i1 false) nounwind
+
+ST_46: stg_368 [1/2] 0.00ns
+:4  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack1, i1 false) nounwind
+
+ST_46: stg_369 [1/2] 0.00ns
+:5  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack2, i1 false) nounwind
+
+ST_46: stg_370 [1/2] 0.00ns
+:6  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack2, i1 false) nounwind
+
+ST_46: stg_371 [1/2] 0.00ns
+:7  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @r_ack3, i1 false) nounwind
+
+ST_46: stg_372 [1/2] 0.00ns
+:8  call void @_ssdm_op_Write.ap_none.volatile.i1P(i1* @w_ack3, i1 false) nounwind
+
+ST_46: stg_373 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_Wait(i32 1)
+
+ST_46: stg_374 [1/1] 0.00ns
+:10  br label %.preheader
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

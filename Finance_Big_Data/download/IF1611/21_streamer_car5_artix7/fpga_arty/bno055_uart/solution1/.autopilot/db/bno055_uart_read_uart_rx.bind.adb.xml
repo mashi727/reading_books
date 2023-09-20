@@ -1,0 +1,63 @@
+<stg><name>bno055_uart_read_uart_rx</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="2" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="2" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+:0  %uart_rx_read = call i1 @_ssdm_op_Read.ap_none.volatile.i1P(i1* @uart_rx) nounwind
+
+]]></node>
+<StgValue><ssdm name="uart_rx_read"/></StgValue>
+</operation>
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<node id="3" bw="0" op_0_bw="1">
+<![CDATA[
+:1  ret i1 %uart_rx_read
+
+]]></node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="4" name="uart_rx" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="uart_rx"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="6" from="_ssdm_op_Read.ap_none.volatile.i1P" to="uart_rx_read" fromId="5" toId="2">
+</dataflow>
+<dataflow id="7" from="uart_rx" to="uart_rx_read" fromId="4" toId="2">
+</dataflow>
+<dataflow id="8" from="uart_rx_read" to="stg_3" fromId="2" toId="3">
+</dataflow>
+</dataflows>
+
+
+</stg>

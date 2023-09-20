@@ -1,0 +1,8 @@
+motor_ctrl_urem_19ns_17ns_19_23_seq
+motor_ctrl_urem_21ns_17ns_20_25_seq
+motor_ctrl_write_mem
+motor_ctrl_read_mem
+motor_ctrl_bin2char
+motor_ctrl_diff_angle
+motor_ctrl_wait_tmr
+motor_ctrl

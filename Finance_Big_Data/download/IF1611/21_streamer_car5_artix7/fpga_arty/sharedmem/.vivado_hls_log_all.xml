@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'w_ack3' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.276+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'w_req3' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.227+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_ack3' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.205+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_req3' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.187+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'dout3' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.169+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'din3' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.146+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'addr3' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.108+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'w_ack2' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.086+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'w_req2' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.054+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_ack2' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.035+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_req2' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:15.016+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'dout2' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.984+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'din2' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.941+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'addr2' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.915+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'w_ack1' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.893+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'w_req1' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.861+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_ack1' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.836+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_req1' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.813+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'dout1' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.794+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'din1' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.769+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'addr1' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.740+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'w_ack0' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.722+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'w_req0' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.702+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_ack0' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.673+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'r_req0' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.654+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'dout0' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.586+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'din0' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.562+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'addr0' will be exposed as RTL port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.545+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'w_ack3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.524+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'r_ack3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.462+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dout3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.410+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'w_ack2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.375+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'r_ack2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.353+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dout2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.327+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'w_ack1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.311+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'r_ack1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.264+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dout1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.227+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'w_ack0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.211+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'r_ack0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.195+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dout0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:14.195+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] 'Loop-2' (sharedmem.c:144:3) in function 'sharedmem' is an infinite loop." projectName="sharedmem" solutionName="solution1" date="2016-05-27T17:33:13.293+0100" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

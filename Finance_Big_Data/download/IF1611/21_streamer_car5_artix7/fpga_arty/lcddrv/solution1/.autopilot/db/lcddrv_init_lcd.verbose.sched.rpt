@@ -1,0 +1,419 @@
+
+
+================================================================
+== Vivado HLS Report for 'lcddrv_init_lcd'
+================================================================
+* Date:           Fri May 27 17:26:42 2016
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        lcddrv
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a35ticsg324-1l
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      2.86|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-----------+-------+-----------+---------+
+    |      Latency      |      Interval     | Pipeline|
+    |  min  |    max    |  min  |    max    |   Type  |
+    +-------+-----------+-------+-----------+---------+
+    |  56247|  560000247|  56247|  560000247|   none  |
+    +-------+-----------+-------+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 40
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+* FSM state operations: 
+
+ <State 1>: 2.65ns
+ST_1: stg_41 [2/2] 2.65ns
+:0  call fastcc void @lcddrv_wait_tmr(i25 2000000) nounwind
+
+
+ <State 2>: 2.65ns
+ST_2: stg_42 [1/2] 2.65ns
+:0  call fastcc void @lcddrv_wait_tmr(i25 2000000) nounwind
+
+
+ <State 3>: 1.48ns
+ST_3: stg_43 [2/2] 1.48ns
+:1  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 3)
+
+
+ <State 4>: 0.00ns
+ST_4: stg_44 [1/2] 0.00ns
+:1  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 3)
+
+
+ <State 5>: 2.65ns
+ST_5: stg_45 [2/2] 2.65ns
+:2  call fastcc void @lcddrv_wait_tmr(i25 500000) nounwind
+
+
+ <State 6>: 2.65ns
+ST_6: stg_46 [1/2] 2.65ns
+:2  call fastcc void @lcddrv_wait_tmr(i25 500000) nounwind
+
+
+ <State 7>: 1.48ns
+ST_7: stg_47 [2/2] 1.48ns
+:3  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 3)
+
+
+ <State 8>: 0.00ns
+ST_8: stg_48 [1/2] 0.00ns
+:3  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 3)
+
+
+ <State 9>: 2.65ns
+ST_9: stg_49 [2/2] 2.65ns
+:4  call fastcc void @lcddrv_wait_tmr(i25 50000) nounwind
+
+
+ <State 10>: 2.65ns
+ST_10: stg_50 [1/2] 2.65ns
+:4  call fastcc void @lcddrv_wait_tmr(i25 50000) nounwind
+
+
+ <State 11>: 1.48ns
+ST_11: stg_51 [2/2] 1.48ns
+:5  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 3)
+
+
+ <State 12>: 0.00ns
+ST_12: stg_52 [1/2] 0.00ns
+:5  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 3)
+
+
+ <State 13>: 2.65ns
+ST_13: stg_53 [2/2] 2.65ns
+:6  call fastcc void @lcddrv_wait_tmr(i25 50000) nounwind
+
+
+ <State 14>: 2.65ns
+ST_14: stg_54 [1/2] 2.65ns
+:6  call fastcc void @lcddrv_wait_tmr(i25 50000) nounwind
+
+
+ <State 15>: 1.48ns
+ST_15: stg_55 [2/2] 1.48ns
+:7  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 2)
+
+
+ <State 16>: 0.00ns
+ST_16: stg_56 [1/2] 0.00ns
+:7  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 2)
+
+
+ <State 17>: 1.48ns
+ST_17: stg_57 [2/2] 1.48ns
+:8  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 2)
+
+
+ <State 18>: 0.00ns
+ST_18: stg_58 [1/2] 0.00ns
+:8  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 2)
+
+
+ <State 19>: 1.48ns
+ST_19: stg_59 [2/2] 1.48ns
+:9  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext -8)
+
+
+ <State 20>: 0.00ns
+ST_20: stg_60 [1/2] 0.00ns
+:9  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext -8)
+
+
+ <State 21>: 2.65ns
+ST_21: stg_61 [2/2] 2.65ns
+:10  call fastcc void @lcddrv_wait_tmr(i25 10000) nounwind
+
+
+ <State 22>: 2.65ns
+ST_22: stg_62 [1/2] 2.65ns
+:10  call fastcc void @lcddrv_wait_tmr(i25 10000) nounwind
+
+
+ <State 23>: 1.48ns
+ST_23: stg_63 [2/2] 1.48ns
+:11  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+
+ <State 24>: 0.00ns
+ST_24: stg_64 [1/2] 0.00ns
+:11  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+
+ <State 25>: 1.48ns
+ST_25: stg_65 [2/2] 1.48ns
+:12  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext -4)
+
+
+ <State 26>: 0.00ns
+ST_26: stg_66 [1/2] 0.00ns
+:12  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext -4)
+
+
+ <State 27>: 2.65ns
+ST_27: stg_67 [2/2] 2.65ns
+:13  call fastcc void @lcddrv_wait_tmr(i25 10000) nounwind
+
+
+ <State 28>: 2.65ns
+ST_28: stg_68 [1/2] 2.65ns
+:13  call fastcc void @lcddrv_wait_tmr(i25 10000) nounwind
+
+
+ <State 29>: 1.48ns
+ST_29: stg_69 [2/2] 1.48ns
+:14  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+
+ <State 30>: 0.00ns
+ST_30: stg_70 [1/2] 0.00ns
+:14  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+
+ <State 31>: 1.48ns
+ST_31: stg_71 [2/2] 1.48ns
+:15  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 1)
+
+
+ <State 32>: 0.00ns
+ST_32: stg_72 [1/2] 0.00ns
+:15  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 1)
+
+
+ <State 33>: 2.65ns
+ST_33: stg_73 [2/2] 2.65ns
+:16  call fastcc void @lcddrv_wait_tmr(i25 200000) nounwind
+
+
+ <State 34>: 2.65ns
+ST_34: stg_74 [1/2] 2.65ns
+:16  call fastcc void @lcddrv_wait_tmr(i25 200000) nounwind
+
+
+ <State 35>: 1.48ns
+ST_35: stg_75 [2/2] 1.48ns
+:17  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+
+ <State 36>: 0.00ns
+ST_36: stg_76 [1/2] 0.00ns
+:17  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 0)
+
+
+ <State 37>: 1.48ns
+ST_37: stg_77 [2/2] 1.48ns
+:18  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 2)
+
+
+ <State 38>: 0.00ns
+ST_38: stg_78 [1/2] 0.00ns
+:18  call fastcc void @lcddrv_lcd_send_cmd(i1 zeroext false, i4 zeroext 2)
+
+
+ <State 39>: 2.65ns
+ST_39: stg_79 [2/2] 2.65ns
+:19  call fastcc void @lcddrv_wait_tmr(i25 10000) nounwind
+
+
+ <State 40>: 2.65ns
+ST_40: stg_80 [1/2] 2.65ns
+:19  call fastcc void @lcddrv_wait_tmr(i25 10000) nounwind
+
+ST_40: stg_81 [1/1] 0.00ns
+:20  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

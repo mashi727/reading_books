@@ -1,0 +1,28 @@
+#include "hls_design_meta.h"
+const Port_Property HLS_Design_Meta::port_props[]={
+	Port_Property("ap_clk", 1, hls_in, -1, "", "", 1),
+	Port_Property("ap_rst", 1, hls_in, -1, "", "", 1),
+	Port_Property("ap_start", 1, hls_in, -1, "", "", 1),
+	Port_Property("ap_done", 1, hls_out, -1, "", "", 1),
+	Port_Property("ap_idle", 1, hls_out, -1, "", "", 1),
+	Port_Property("ap_ready", 1, hls_out, -1, "", "", 1),
+	Port_Property("i2c_in", 2, hls_in, 0, "ap_none", "in_data", 1),
+	Port_Property("i2c_sda_out_i", 1, hls_in, 1, "ap_none", "in_data", 1),
+	Port_Property("i2c_sda_out_o", 1, hls_out, 1, "ap_none", "out_data", 1),
+	Port_Property("i2c_sda_oe_i", 1, hls_in, 2, "ap_none", "in_data", 1),
+	Port_Property("i2c_sda_oe_o", 1, hls_out, 2, "ap_none", "out_data", 1),
+	Port_Property("dev_addr_in", 7, hls_in, 3, "ap_none", "in_data", 1),
+	Port_Property("auto_inc_regad_in", 1, hls_in, 4, "ap_none", "in_data", 1),
+	Port_Property("mem_addr_i", 8, hls_in, 5, "ap_none", "in_data", 1),
+	Port_Property("mem_addr_o", 8, hls_out, 5, "ap_none", "out_data", 1),
+	Port_Property("mem_din", 8, hls_in, 6, "ap_none", "in_data", 1),
+	Port_Property("mem_dout_i", 8, hls_in, 7, "ap_none", "in_data", 1),
+	Port_Property("mem_dout_o", 8, hls_out, 7, "ap_none", "out_data", 1),
+	Port_Property("mem_wreq_i", 1, hls_in, 8, "ap_none", "in_data", 1),
+	Port_Property("mem_wreq_o", 1, hls_out, 8, "ap_none", "out_data", 1),
+	Port_Property("mem_wack", 1, hls_in, 9, "ap_none", "in_data", 1),
+	Port_Property("mem_rreq_i", 1, hls_in, 10, "ap_none", "in_data", 1),
+	Port_Property("mem_rreq_o", 1, hls_out, 10, "ap_none", "out_data", 1),
+	Port_Property("mem_rack", 1, hls_in, 11, "ap_none", "in_data", 1),
+};
+const char* HLS_Design_Meta::dut_name = "i2c_slave_core";
