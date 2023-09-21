@@ -11,20 +11,53 @@ Key Quiestionを中心に、文献から情報を収集
 
 <!-- code_chunk_output -->
 
-- Fintech
-  - [Pythonによるファイナンス第2版](/books/fintech/Pythonによるファイナンス第2版/README.md)
-  - [Fintechプログラミング](/books/fintech/Pythonによるファイナンス第2版/README.md)
-  - [Pythonによる米国株テクニカル分析と検証](/books/fintech/Pythonによる米国株テクニカル分析と検証/README.md)
-  - [株とPython](/books/fintech/株とPython/README.md)
-  - [IF◯◯年◯月の記事から](/books/fintech/Finance_Big_Data/README.md)
-  - [](/books/fintech//README.md)
+# Fintech本
 
-- Programming
-  - [Create_GUI_Applications_with_PySide6](/bookscomp_programming/Create_GUI_Applications_with_PySide6/README.md)
+- [Pythonによるファイナンス第2版](https://www.dropbox.com/scl/fi/fi9emckn1dahkpzuu4sfq/Python-2.pdf?rlkey=rabm4oqkobvysz7sa0uzkrto4&dl=0)
+
+  <details>
+  <summary>メモ</summary>
+
+  - [あんなメモ](/books/fintech/Pythonによるファイナンス第2版/memo.md)
+  - [こんなメモ](/books/fintech/Pythonによるファイナンス第2版/konna.md)
+
+  </details>
+
+
+# Programming
+
+- [Create_GUI_Applications_with_PySide6](https://www.dropbox.com/scl/fi/z3q50qqkxktzblc8o2mqt/create-gui-applications-pyside6.pdf?rlkey=dl9bxumyfspu5pap82fe5sitj&dl=0)
+
+  <details>
+  <summary>メモ</summary>
+
+  - [あんなメモ](/books/fintech/Pythonによるファイナンス第2版/memo.md)
+  - [こんなメモ](/books/fintech/Pythonによるファイナンス第2版/konna.md)
+
+  </details>
+
 
 - 生産性向上
-  - [思考の整理学](/books/self_enlightenment/思考の整理学/README.md)
-  - [超記憶](/books/self_enlightenment/chouKioku/README.md)
+
+  - [思考の整理学](None)
+
+    <details>
+    <summary>メモ</summary>
+
+    - [朝飯前](/books/self_enlightenment/思考の整理学/朝飯前.md)
+    - []()
+
+    </details>
+
+  - [超記憶](None)
+
+    <details>
+    <summary>メモ</summary>
+
+    - [本](/books/self_enlightenment/chouKioku/choKioku.md)
+    - [なにかのメモ](/books/self_enlightenment/chouKioku/kioku.md)
+
+    </details>
 
 
 ===
