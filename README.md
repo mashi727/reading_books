@@ -37,27 +37,27 @@ Key Quiestionを中心に、文献から情報を収集
   </details>
 
 
-# 生産性向上
+- 生産性向上
 
-- [思考の整理学](None)
+  - [思考の整理学](None)
 
-  <details>
-  <summary>メモ</summary>
+    <details>
+    <summary>メモ</summary>
 
-  - [朝飯前](/books/self_enlightenment/思考の整理学/朝飯前.md)
-  - []()
+    - [朝飯前](/books/self_enlightenment/思考の整理学/朝飯前.md)
+    - []()
 
-  </details>
+    </details>
 
-- [超記憶](None)
+  - [超記憶](None)
 
-  <details>
-  <summary>メモ</summary>
+    <details>
+    <summary>メモ</summary>
 
-  - [本](/books/self_enlightenment/chouKioku/choKioku.md)
-  - [なにかのメモ](/books/self_enlightenment/chouKioku/kioku.md)
+    - [本](/books/self_enlightenment/chouKioku/choKioku.md)
+    - [なにかのメモ](/books/self_enlightenment/chouKioku/kioku.md)
 
-  </details>
+    </details>
 
 
 ===
