@@ -12,20 +12,25 @@ Key Quiestionを中心に、文献から情報を収集
 <!-- code_chunk_output -->
 
 # Fintech本
-- [Pythonによるファイナンス第2版](https://www.dropbox.com/scl/fi/fi9emckn1dahkpzuu4sfq/Python-2.pdf?rlkey=rabm4oqkobvysz7sa0uzkrto4&dl=0)
-  - [] 
 
+## [Pythonによるファイナンス第2版](https://www.dropbox.com/scl/fi/fi9emckn1dahkpzuu4sfq/Python-2.pdf?rlkey=rabm4oqkobvysz7sa0uzkrto4&dl=0)
 <details>
-<summary>読書メモ</summary>
-[あんなメモ](/books/fintech/Pythonによるファイナンス第2版/memo.md)<p>
-[こんなメモ](/books/fintech/Pythonによるファイナンス第2版/konna.md)
+<summary>Pythonによるファイナンス第2版メモ</summary>
 
-
+- [あんなメモ](/books/fintech/Pythonによるファイナンス第2版/memo.md)
+- [こんなメモ](/books/fintech/Pythonによるファイナンス第2版/konna.md)
 </details>
 
-- Programming関連の書籍
 
+# Programming
+## [Create_GUI_Applications_with_PySide6](https://www.dropbox.com/scl/fi/z3q50qqkxktzblc8o2mqt/create-gui-applications-pyside6.pdf?rlkey=dl9bxumyfspu5pap82fe5sitj&dl=0)
 
+<details>
+<summary>Create_GUI_Applications_with_PySide6メモ</summary>
+
+- [あんなメモ](/books/fintech/Pythonによるファイナンス第2版/memo.md)
+- [こんなメモ](/books/fintech/Pythonによるファイナンス第2版/konna.md)
+</details>
 
 
 
