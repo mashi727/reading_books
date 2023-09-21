@@ -11,11 +11,26 @@ Key Quiestionを中心に、文献から情報を収集
 
 <!-- code_chunk_output -->
 
-- Fintech関連の情報集約
-  - [Pythonによるファイナンス第2版](/books/fintech/Pythonによるファイナンス第2版/memo.md)
-    - [pdfへのリンク](https://www.dropbox.com/scl/fi/fi9emckn1dahkpzuu4sfq/Python-2.pdf?rlkey=rabm4oqkobvysz7sa0uzkrto4&dl=0)
+# Fintech本
+- [Pythonによるファイナンス第2版](https://www.dropbox.com/scl/fi/fi9emckn1dahkpzuu4sfq/Python-2.pdf?rlkey=rabm4oqkobvysz7sa0uzkrto4&dl=0)
+  - [] 
+
+<details>
+<summary>読書メモ</summary>
+[あんなメモ](/books/fintech/Pythonによるファイナンス第2版/memo.md)<p>
+[こんなメモ](/books/fintech/Pythonによるファイナンス第2版/konna.md)
 
 
+</details>
+
+- Programming関連の書籍
+
+
+
+
+
+===
+以下、未整理
 
 - [Fintech関連の情報集約](#fintech関連の情報集約)
 - [日々の雑感](#日々の雑感)
