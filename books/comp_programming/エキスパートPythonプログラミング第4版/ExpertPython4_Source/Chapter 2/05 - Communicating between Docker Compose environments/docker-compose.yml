@@ -1,0 +1,23 @@
+version: '3.8'
+
+networks:
+  default:
+    external:
+      name: my-interservice-network
+
+services:
+  echo-server:
+    build: .
+    ports:
+    - "5000:5000"
+    tty: true
+    environment:
+      - DATABASE_HOSTNAME=database
+      - DATABASE_PORT=5432
+      - DATABASE_PASSWORD=password
+
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password

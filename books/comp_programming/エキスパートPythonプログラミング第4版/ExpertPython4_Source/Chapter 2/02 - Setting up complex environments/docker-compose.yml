@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  echo-server:
+    # docker-composeにローカルディレクトリ(.)の
+    # Dockerfileをもとにイメージを作るように伝える
+    build: .
+
+    # "docker run"の"-p"オプションと同等
+    ports:
+    - "5000:5000"
+
+    # "docker run"の"-t"オプションと同等
+    tty: true
+
+  database:
+    image: postgres
+
+  cache:
+    image: redis

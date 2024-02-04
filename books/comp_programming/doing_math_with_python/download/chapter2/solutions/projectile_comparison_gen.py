@@ -23,18 +23,20 @@ def frange(start, final, interval):
     while start < final:
         numbers.append(start)
         start = start + interval
-    
+    print(numbers)
     return numbers
 
 def draw_trajectory(u, theta, t_flight):
     # list of x and y co-ordinates
     x = []
     y = []
-    intervals = frange(0, t_flight, 0.001)
+    intervals = frange(0, t_flight, 0.01)
+    print('intervals: ', intervals)
     for t in intervals:
         x.append(u*math.cos(theta)*t)
         y.append(u*math.sin(theta)*t - 0.5*g*t*t)
-
+    print(x)
+    print(y)    
     #create the graph
     draw_graph(x, y)
 
