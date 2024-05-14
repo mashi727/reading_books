@@ -1,0 +1,2 @@
+flask==2.2.2
+watchdog[watchmedo]==3.0.0
